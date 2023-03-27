@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bb48904dd600540b5ccd0a952fd508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tabletSceenRender: {fileID: 417396938}
   mainDroneCamera: {fileID: 289840215}
   mainDroneMaterial: {fileID: 2100000, guid: 0573ad67916d15b41bb32381cbd192bf, type: 2}
   downDroneCamera: {fileID: 854762569}
@@ -553,7 +554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452409461}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: -40.7, z: 0.1}
+  m_LocalPosition: {x: 0, y: -40.7, z: 0.01}
   m_LocalScale: {x: 0.2680521, y: 1, z: 0.20106153}
   m_ConstrainProportionsScale: 0
   m_Children: []
