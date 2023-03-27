@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 217695827}
   - component: {fileID: 217695826}
-  - component: {fileID: 217695825}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -141,14 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &217695825
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217695824}
-  m_Enabled: 1
 --- !u!20 &217695826
 Camera:
   m_ObjectHideFlags: 0
@@ -432,6 +423,7 @@ GameObject:
   - component: {fileID: 417396939}
   - component: {fileID: 417396938}
   - component: {fileID: 417396937}
+  - component: {fileID: 417396940}
   m_Layer: 0
   m_Name: Tablet Screen
   m_TagString: Untagged
@@ -488,7 +480,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09c97a18bcddc4247b0c4f4dea1c0719, type: 2}
+  - {fileID: 2100000, guid: 0573ad67916d15b41bb32381cbd192bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -518,6 +510,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417396935}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &417396940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417396935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bb48904dd600540b5ccd0a952fd508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainDroneCamera: {fileID: 289840215}
+  mainDroneMaterial: {fileID: 2100000, guid: 0573ad67916d15b41bb32381cbd192bf, type: 2}
+  downDroneCamera: {fileID: 854762569}
+  downDroneMaterial: {fileID: 2100000, guid: 1a188631d07a8314ebb5ad6b37ce5d3e, type: 2}
 --- !u!1 &452409461
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +594,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3efd8e5f8df7d844f966fd36862a0fd7, type: 2}
+  - {fileID: 2100000, guid: d7398658ecd22b4428afca77b0ba1b6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -869,7 +877,6 @@ GameObject:
   m_Component:
   - component: {fileID: 854762567}
   - component: {fileID: 854762569}
-  - component: {fileID: 854762568}
   m_Layer: 0
   m_Name: DroneDownCamera
   m_TagString: Untagged
@@ -892,14 +899,6 @@ Transform:
   m_Father: {fileID: 703923201}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!81 &854762568
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854762566}
-  m_Enabled: 1
 --- !u!20 &854762569
 Camera:
   m_ObjectHideFlags: 0
