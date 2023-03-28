@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DroneMovement : MonoBehaviour
 {
-    private float moveSpeed = 3;
-
-    public Transform orientation;
+    private float moveSpeed = 7;
     private float horizontalInput;
     private float verticalInput;
 
+
+    public Transform orientation;
     Vector3 moveDirection;
 
     Rigidbody droneRigidbody;
@@ -18,6 +18,7 @@ public class DroneMovement : MonoBehaviour
     void Start()
     {
         droneRigidbody = GetComponent<Rigidbody>();
+        droneRigidbody.useGravity = false;
         droneRigidbody.freezeRotation = true;
     }
 
@@ -29,7 +30,9 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        DroneGrounded();
         MoveDrone();
+        MaxDroneSpeed();
     }
 
     private void PlayerInput()
@@ -41,6 +44,22 @@ public class DroneMovement : MonoBehaviour
     private void MoveDrone()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        droneRigidbody.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
+        droneRigidbody.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+    }
+
+    private void MaxDroneSpeed()
+    {
+        Vector3 flatVelocity = new Vector3(droneRigidbody.velocity.x, 0f, droneRigidbody.velocity.z);
+
+        if (flatVelocity.magnitude > moveSpeed)
+        {
+            Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
+            droneRigidbody.velocity = new Vector3(limitedVelocity.x, droneRigidbody.velocity.y, limitedVelocity.z);
+        }
+    }
+
+    private void DroneGrounded()
+    {
+
     }
 }
