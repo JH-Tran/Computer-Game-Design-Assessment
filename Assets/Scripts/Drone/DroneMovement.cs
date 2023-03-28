@@ -5,6 +5,7 @@ using UnityEngine;
 public class DroneMovement : MonoBehaviour
 {
     private float moveSpeed = 7;
+    private float droneLowerSpeed = 2;
     private float horizontalInput;
     private float verticalInput;
 
@@ -30,8 +31,8 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        DroneGrounded();
         MoveDrone();
+        DroneLoweringDown();
         MaxDroneSpeed();
     }
 
@@ -58,8 +59,16 @@ public class DroneMovement : MonoBehaviour
         }
     }
 
-    private void DroneGrounded()
+    private void DroneLoweringDown()
     {
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            droneRigidbody.AddForce(Vector3.down * droneLowerSpeed);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            droneRigidbody.velocity = Vector3.zero;
+            droneRigidbody.angularVelocity = Vector3.zero;
+        }
     }
 }
