@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class DroneMovement : MonoBehaviour
 {
     private float moveSpeed = 7;
@@ -10,6 +11,7 @@ public class DroneMovement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+    private bool droneEnable = true;
 
     public Transform orientation;
     Vector3 moveDirection;
@@ -20,7 +22,6 @@ public class DroneMovement : MonoBehaviour
     void Start()
     {
         droneRigidbody = GetComponent<Rigidbody>();
-        droneRigidbody.useGravity = false;
         droneRigidbody.freezeRotation = true;
     }
 
@@ -32,10 +33,19 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveDrone();
-        DroneMoveUp();
-        DroneMoveDown();
-        MaxDroneSpeed();
+        if (droneEnable == true)
+        {
+            droneRigidbody.useGravity = false;
+            MoveDrone();
+            DroneMoveUp();
+            DroneMoveDown();
+            MaxDroneSpeed();
+        }
+        else
+        {
+            droneRigidbody.useGravity = true;
+        }
+
     }
 
     private void PlayerInput()
@@ -43,7 +53,10 @@ public class DroneMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
-
+    public void changeDroneState(bool state)
+    {
+        droneEnable = state;
+    }
     private void MoveDrone()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
