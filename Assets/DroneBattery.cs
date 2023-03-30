@@ -8,10 +8,12 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] DroneMovement droneMovement;
     [SerializeField] DroneCamera droneCamera;
 
-    //Max battery is in seconds
-    [SerializeField] private float batteryMaxTime = 10f;
-    [SerializeField] private float batteryTime;
-    [SerializeField] private bool isTimerOn;
+    //Timers are in seconds
+    private float batteryMaxTime = 10f;
+    private float batteryTime;
+    private float batteryCooldownTime = 5f;
+
+    private bool isTimerOn;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class DroneBattery : MonoBehaviour
                 isTimerOn = false;
                 droneCamera.changeDroneState(isTimerOn);
                 droneMovement.changeDroneState(isTimerOn);
+                StartCoroutine(activeDrone(batteryCooldownTime));
             }
         }
     }
@@ -44,5 +47,11 @@ public class DroneBattery : MonoBehaviour
         isTimerOn = true;
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
+    }
+
+    IEnumerator activeDrone(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TimerReset();
     }
 }

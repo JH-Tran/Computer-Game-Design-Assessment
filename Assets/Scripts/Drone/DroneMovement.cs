@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class DroneMovement : MonoBehaviour
 {
-    private float moveSpeed = 7;
-    private float droneDownSpeed = 3;
-    private float droneUpSpeed = 4;
+    private float moveSpeed = 10;
+    private float droneDownSpeed = 15;
+    private float droneUpSpeed = 20;
     private float horizontalInput;
     private float verticalInput;
 
