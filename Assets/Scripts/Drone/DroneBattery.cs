@@ -9,7 +9,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] DroneCamera droneCamera;
 
     //Timers are in seconds
-    private float batteryMaxTime = 10f;
+    private float batteryMaxTime = 120f;
     private float batteryTime;
     private float batteryCooldownTime = 5f;
 
