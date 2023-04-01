@@ -5,6 +5,9 @@ using UnityEngine;
 public class DroneTabletScreen : MonoBehaviour
 {
     [SerializeField] private Renderer tabletSceenRender;
+    
+    [SerializeField] private DroneBattery droneBatteryScript;
+    [SerializeField] private Material outOfBatteryMaterial;
 
     [SerializeField] private Camera mainDroneCamera;
     [SerializeField] private Material mainDroneMaterial;
@@ -23,17 +26,20 @@ public class DroneTabletScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q))
+        if (droneBatteryScript.getBattery() > 0)
         {
-            if (tabletSceenRender.material.name.Replace(" (Instance)", "") == mainDroneMaterial.name)
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q))
             {
-                tabletSceenRender.material = downDroneMaterial;
-            }
-            else if (tabletSceenRender.material.name.Replace(" (Instance)", "") == downDroneMaterial.name)
-            {
-                tabletSceenRender.material = mainDroneMaterial;
-            }
+                if (tabletSceenRender.material.name.Replace(" (Instance)", "") == mainDroneMaterial.name)
+                {
+                    tabletSceenRender.material = downDroneMaterial;
+                }
+                else if (tabletSceenRender.material.name.Replace(" (Instance)", "") == downDroneMaterial.name)
+                {
+                    tabletSceenRender.material = mainDroneMaterial;
+                }
 
+            }
         }
     }
     private void SetUpDroneCameras()

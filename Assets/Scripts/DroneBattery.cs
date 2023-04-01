@@ -8,6 +8,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] DroneMovement droneMovement;
     [SerializeField] DroneCamera droneCamera;
     [SerializeField] private Image batteryInner;
+    [SerializeField] private Image screenSaver;
 
     private float batteryMaxTime = 15f;
     [SerializeField] private float batteryTime;
@@ -19,6 +20,7 @@ public class DroneBattery : MonoBehaviour
     void Start()
     {
         TimerReset();
+        screenSaver.enabled = false;
     }
 
     // Update is called once per frame
@@ -32,12 +34,14 @@ public class DroneBattery : MonoBehaviour
         {
             if (batteryTime > 0)
             {
+                screenSaver.enabled = false;
                 batteryTime -= Time.deltaTime;
                 batteryInner.fillAmount = batteryTime/batteryMaxTime;
             }
             else
             {
                 batteryTime = 0;
+                screenSaver.enabled = true;
                 isTimerOn = false;
                 droneCamera.changeDroneState(isTimerOn);
                 droneMovement.changeDroneState(isTimerOn);
@@ -54,6 +58,11 @@ public class DroneBattery : MonoBehaviour
         isTimerOn = true;
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
+    }
+
+    public float getBattery()
+    {
+        return batteryTime;
     }
     IEnumerator activeDrone(float delay)
     {

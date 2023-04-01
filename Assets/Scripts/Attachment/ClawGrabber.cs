@@ -38,7 +38,7 @@ public class ClawGrabber : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if (other.CompareTag("Object"))
         {
             if (isGrabbingObject == true && isObjectHold == false)
@@ -58,6 +58,7 @@ public class ClawGrabber : MonoBehaviour
         if (isGrabbingObject == true && isObjectHold == false)
         {
             isGrabbingObject = false;
+            grabIndicator.color = Color.red;
         }
     }
 

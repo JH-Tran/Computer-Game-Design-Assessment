@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 131104068}
   - component: {fileID: 131104067}
   m_Layer: 0
-  m_Name: Image
+  m_Name: BatteryBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,10 +859,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabletSceenRender: {fileID: 417396938}
+  droneBatteryScript: {fileID: 707707124}
+  outOfBatteryMaterial: {fileID: 2100000, guid: 185983a67fd826e4c845cb2997fc3762, type: 2}
   mainDroneCamera: {fileID: 289840215}
   mainDroneMaterial: {fileID: 2100000, guid: 0573ad67916d15b41bb32381cbd192bf, type: 2}
   downDroneCamera: {fileID: 854762569}
   downDroneMaterial: {fileID: 2100000, guid: 1a188631d07a8314ebb5ad6b37ce5d3e, type: 2}
+--- !u!1 &651142731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651142732}
+  - component: {fileID: 651142734}
+  - component: {fileID: 651142733}
+  m_Layer: 0
+  m_Name: ScreenOff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &651142732
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651142731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.837229, y: 0.5642608, z: 0.6194813}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 707707120}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: 1.072}
+  m_SizeDelta: {x: 3, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &651142733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651142731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &651142734
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651142731}
+  m_CullTransparentMesh: 1
 --- !u!1 &707707119
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +975,7 @@ RectTransform:
   m_Children:
   - {fileID: 2120438911}
   - {fileID: 131104066}
+  - {fileID: 651142732}
   m_Father: {fileID: 920321479}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -104.99, y: 179.984, z: 180}
@@ -965,7 +1044,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &707707124
 MonoBehaviour:
@@ -982,6 +1061,7 @@ MonoBehaviour:
   droneMovement: {fileID: 1087046322}
   droneCamera: {fileID: 1087046323}
   batteryInner: {fileID: 2120438912}
+  screenSaver: {fileID: 651142733}
   batteryTime: 0
 --- !u!1 &708099508
 GameObject:
@@ -1348,8 +1428,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203400022}
-  m_LocalRotation: {x: 0.6088308, y: 0.00011388153, z: 0.00008748177, w: -0.79330015}
-  m_LocalPosition: {x: 0, y: 0, z: 0.911}
+  m_LocalRotation: {x: 0.60883075, y: 0.00011388153, z: 0.000087481756, w: -0.79330015}
+  m_LocalPosition: {x: 0, y: 0, z: 0.9110032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1359,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -104.99, y: 179.984, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.156}
+  m_AnchoredPosition: {x: 0, y: -0.15599823}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203400024
