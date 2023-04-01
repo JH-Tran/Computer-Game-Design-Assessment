@@ -976,13 +976,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd51970cdb8bbbf4aa49e4209395d03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batteryFillIndicator: {fileID: 0}
   droneMovement: {fileID: 1087046322}
   droneCamera: {fileID: 1087046323}
-  batteryMaxTime: 15
+  batteryInner: {fileID: 2120438912}
   batteryTime: 0
-  batteryCooldownTime: 5
-  isTimerOn: 0
 --- !u!1 &854762566
 GameObject:
   m_ObjectHideFlags: 0
