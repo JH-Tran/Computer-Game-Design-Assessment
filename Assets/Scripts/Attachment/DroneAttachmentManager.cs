@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class DroneAttachmentManager : MonoBehaviour
 {
-
     [SerializeField] GameObject claw;
-    private bool useItem = false;
+    [SerializeField] GameObject attachmentIcons;
+    //private bool useItem = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        claw.SetActive(false);
+        claw.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        /*if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             if (useItem == false)
             {
@@ -29,6 +29,6 @@ public class DroneAttachmentManager : MonoBehaviour
                 claw.SetActive(false);
                 useItem = false;
             }
-        }
+        }*/
     }
 }

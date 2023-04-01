@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClawGrabber : MonoBehaviour
 {
     [SerializeField] private BoxCollider clawCollider;
+    [SerializeField] private Image grabIndicator;
 
     [SerializeField] private bool isGrabbingObject = false;
     [SerializeField] private bool isObjectHold = false;
+    private float autoOffGrab = 2;
     private List<GameObject> objectGrabbed = new List<GameObject>();
 
     private void Start()
     {
-
+        grabIndicator.color = Color.red;
     }
 
     private void Update()
@@ -21,11 +24,14 @@ public class ClawGrabber : MonoBehaviour
         {
             if (isGrabbingObject == false)
             {
+                grabIndicator.color = Color.yellow;
                 isGrabbingObject = true;
+                StartCoroutine(autoTurnOffGrab());
             }
             else if (isGrabbingObject == true && isObjectHold == true)
             {
                 DropObject();
+                grabIndicator.color = Color.red;
             }
         }
     }
@@ -37,11 +43,21 @@ public class ClawGrabber : MonoBehaviour
         {
             if (isGrabbingObject == true && isObjectHold == false)
             {
+                grabIndicator.color = Color.green;
                 other.transform.parent = gameObject.transform;
                 objectGrabbed.Add(other.gameObject);
                 isObjectHold = true;
                 Destroy(other.GetComponent<Rigidbody>());
             }
+        }
+    }
+
+    IEnumerator autoTurnOffGrab()
+    {
+        yield return new WaitForSeconds(autoOffGrab);
+        if (isGrabbingObject == true && isObjectHold == false)
+        {
+            isGrabbingObject = false;
         }
     }
 
@@ -61,5 +77,10 @@ public class ClawGrabber : MonoBehaviour
             isObjectHold = false;
         }
         isGrabbingObject = false;
+    }
+
+    public bool getGrabbingObject()
+    {
+        return isGrabbingObject;
     }
 }
