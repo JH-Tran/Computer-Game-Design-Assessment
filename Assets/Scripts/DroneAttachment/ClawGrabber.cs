@@ -7,9 +7,9 @@ public class ClawGrabber : MonoBehaviour
     [SerializeField] private BoxCollider clawCollider;
     [SerializeField] private Transform clawInitalPosition;
 
-    public bool isGrabbingObject = false;
-    public bool isObjectHold = false;
-    public List<GameObject> objectGrabbed = new List<GameObject>();
+    private bool isGrabbingObject = false;
+    private bool isObjectHold = false;
+    private List<GameObject> objectGrabbed = new List<GameObject>();
 
     private void Start()
     {
@@ -55,10 +55,8 @@ public class ClawGrabber : MonoBehaviour
                 if (objectGrabbed[i].GetComponent<Rigidbody>() == null)
                 {
                     objectGrabbed[i].gameObject.AddComponent<Rigidbody>();
-                    Debug.Log("BODY");
                 }
                 objectGrabbed[i].transform.parent = null;
-                Debug.Log("PARENT");
             }
             objectGrabbed.Clear();
             isObjectHold = false;
