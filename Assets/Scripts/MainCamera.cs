@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void OnApplicationFocus(bool focus)
     {
         if (focus)
