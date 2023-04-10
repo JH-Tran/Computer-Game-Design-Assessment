@@ -9,12 +9,13 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] DroneCamera droneCamera;
     [SerializeField] private Image batteryInner;
     [SerializeField] private Image screenSaver;
+    public ClawGrabber clawGrabber;
 
     private float batteryMaxTime = 15f;
-    [SerializeField] private float batteryTime;
+    public float batteryTime;
     private float batteryCooldownTime = 5f;
 
-    private bool isTimerOn;
+    public bool isTimerOn;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,8 @@ public class DroneBattery : MonoBehaviour
                 droneCamera.changeDroneState(isTimerOn);
                 droneMovement.changeDroneState(isTimerOn);
                 StartCoroutine(activeDrone(batteryCooldownTime));
+                clawGrabber.DropObject();
+                clawGrabber.grabIndicator.color = Color.red;
             }
         }
     }

@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class ClawGrabber : MonoBehaviour
 {
     [SerializeField] private BoxCollider clawCollider;
-    [SerializeField] private Image grabIndicator;
+    public Image grabIndicator;
+    public DroneBattery droneBattery;
 
-    [SerializeField] private bool isGrabbingObject = false;
-    [SerializeField] private bool isObjectHold = false;
+    public bool isGrabbingObject = false;
+    public bool isObjectHold = false;
     private float autoOffGrab = 2;
     private List<GameObject> objectGrabbed = new List<GameObject>();
+
 
     private void Start()
     {
@@ -20,18 +22,22 @@ public class ClawGrabber : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyUp(KeyCode.F))
         {
-            if (isGrabbingObject == false)
+            if (droneBattery.isTimerOn == true)
             {
-                grabIndicator.color = Color.yellow;
-                isGrabbingObject = true;
-                StartCoroutine(autoTurnOffGrab());
-            }
-            else if (isGrabbingObject == true && isObjectHold == true)
-            {
-                DropObject();
-                grabIndicator.color = Color.red;
+                if (isGrabbingObject == false)
+                {
+                    grabIndicator.color = Color.yellow;
+                    isGrabbingObject = true;
+                    StartCoroutine(autoTurnOffGrab());
+                }
+                else if (isGrabbingObject == true && isObjectHold == true)
+                {
+                    DropObject();
+                    grabIndicator.color = Color.red;
+                }
             }
         }
     }

@@ -2103,7 +2103,9 @@ MonoBehaviour:
   droneCamera: {fileID: 1087046323}
   batteryInner: {fileID: 2120438912}
   screenSaver: {fileID: 651142733}
+  clawGrabber: {fileID: 1302092304}
   batteryTime: 0
+  isTimerOn: 0
 --- !u!1 &708099508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,6 +3668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clawCollider: {fileID: 1302092301}
   grabIndicator: {fileID: 708099509}
+  droneBattery: {fileID: 707707124}
   isGrabbingObject: 0
   isObjectHold: 0
 --- !u!1 &1344055768
