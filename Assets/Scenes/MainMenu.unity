@@ -2014,7 +2014,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 381311153}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: LoadTest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
