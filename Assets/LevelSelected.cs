@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelected : MonoBehaviour
 {
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
     public void PlayLevel1()
     {
         SceneManager.LoadScene("Level 1");

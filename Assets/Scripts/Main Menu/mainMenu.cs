@@ -16,13 +16,13 @@ public class mainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tutorial");
     }
     public void LoadTest()
     {
         SceneManager.LoadScene("TestScene");
     }
-    public void LoadLevel()
+    public void LoadLevelSelector()
     {
         mainMenuUI.SetActive(false);
         levelSelectorUI.SetActive(true);
