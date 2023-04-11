@@ -325,6 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e29608cb76df24695e819a1838296e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  droneCamera: {fileID: 217695824}
+  playerCamera: {fileID: 2097898218}
+  isPlayerCameraOn: 0
 --- !u!4 &165076027
 Transform:
   m_ObjectHideFlags: 0
@@ -386,7 +389,6 @@ GameObject:
   m_Component:
   - component: {fileID: 217695827}
   - component: {fileID: 217695826}
-  - component: {fileID: 217695828}
   m_Layer: 0
   m_Name: Drone Camera
   m_TagString: MainCamera
@@ -452,18 +454,6 @@ Transform:
   m_Father: {fileID: 920321479}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
---- !u!114 &217695828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217695824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88e29608cb76df24695e819a1838296e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &221900441
 GameObject:
   m_ObjectHideFlags: 0
@@ -6656,7 +6646,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2097898219}
   - component: {fileID: 2097898221}
-  - component: {fileID: 2097898220}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -6679,14 +6668,6 @@ Transform:
   m_Father: {fileID: 602929535}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2097898220
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097898218}
-  m_Enabled: 1
 --- !u!20 &2097898221
 Camera:
   m_ObjectHideFlags: 0

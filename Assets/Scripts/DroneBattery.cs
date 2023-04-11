@@ -10,9 +10,9 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Image batteryInner;
     [SerializeField] private Image screenSaver;
 
-    private float batteryMaxTime = 15f;
-    [SerializeField] private float batteryTime;
-    private float batteryCooldownTime = 5f;
+    private float batteryMaxTime = 20f;
+    private float batteryTime;
+    private float batteryCooldownTime = 4f;
 
     private bool isTimerOn;
 

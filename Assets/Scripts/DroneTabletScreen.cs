@@ -28,7 +28,7 @@ public class DroneTabletScreen : MonoBehaviour
     {
         if (droneBatteryScript.getBattery() > 0)
         {
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (tabletSceenRender.material.name.Replace(" (Instance)", "") == mainDroneMaterial.name)
                 {
