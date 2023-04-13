@@ -12,9 +12,13 @@ public class Interactor : MonoBehaviour
     public Transform interactorSource;
     public float interactRange = 10;
 
-    void Start()
+    [SerializeField] private bool isBlueActive, isRedActive, isGreenActive;
+
+    public void Start()
     {
-        
+        isBlueActive = false;
+        isRedActive = false;
+        isGreenActive = false;
     }
 
     void Update()
@@ -28,6 +32,28 @@ public class Interactor : MonoBehaviour
                     interactObject.Interact();
                 }
             }
+        }
+    }
+
+    public void SetOneActivateColour(string colour)
+    {
+        if (colour.Equals("blue"))
+        {
+            isBlueActive = true;
+            isRedActive = false;
+            isGreenActive = false;
+        }
+        else if (colour.Equals("red"))
+        {
+            isBlueActive = false;
+            isRedActive = true;
+            isGreenActive = false;
+        }
+        else if (colour.Equals("green"))
+        {
+            isBlueActive = false;
+            isRedActive = false;
+            isGreenActive = true;
         }
     }
 }
