@@ -2211,6 +2211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 602929535}
+  - component: {fileID: 602929536}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2236,6 +2237,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602929536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602929534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4685b2cb9df46484d93fffc99e7aaffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactorSource: {fileID: 264222919}
+  interactRange: 10
+  isBlueActive: 0
+  isRedActive: 0
+  isGreenActive: 0
 --- !u!1 &651142731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,7 +2692,6 @@ MonoBehaviour:
   batteryInner: {fileID: 2120438912}
   screenSaver: {fileID: 651142733}
   clawGrabber: {fileID: 1302092304}
-  batteryTime: 0
   isTimerOn: 0
 --- !u!1 &708099508
 GameObject:
@@ -6787,7 +6804,6 @@ GameObject:
   - component: {fileID: 2097898219}
   - component: {fileID: 2097898221}
   - component: {fileID: 2097898222}
-  - component: {fileID: 2097898223}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -6867,20 +6883,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerTranformation: {fileID: 264222919}
---- !u!114 &2097898223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097898218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4685b2cb9df46484d93fffc99e7aaffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactorSource: {fileID: 264222919}
-  interactRange: 10
 --- !u!1 &2104038008
 GameObject:
   m_ObjectHideFlags: 0
