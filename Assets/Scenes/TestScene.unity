@@ -2780,7 +2780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 1087046321}
-  checkpointTransform: {fileID: 0}
+  checkpointPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1087046323
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5664895698186810407, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -3362,7 +3362,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287683639}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< KTHbranch
 --- !u!114 &1302092304 stripped
+=======
+--- !u!1 &1302092299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302092300}
+  - component: {fileID: 1302092301}
+  - component: {fileID: 1302092304}
+  m_Layer: 0
+  m_Name: ClawHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1302092300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302092299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.82, z: 0}
+  m_LocalScale: {x: 1, y: 3.6879396, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 799539129}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1302092301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302092299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1302092304
+>>>>>>> Battery and object update with obstacle
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
   m_PrefabInstance: {fileID: 5664895699273856660}
@@ -3734,6 +3784,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: ece4b434555a1c44494adb4480848511, type: 3}
+      propertyPath: m_Name
+      value: Drone Model
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: ece4b434555a1c44494adb4480848511, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -3752,6 +3806,10 @@ PrefabInstance:
     - target: {fileID: -5477749408508380018, guid: ece4b434555a1c44494adb4480848511, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: ece4b434555a1c44494adb4480848511, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: ece4b434555a1c44494adb4480848511, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5233,6 +5291,7 @@ GameObject:
   - component: {fileID: 2011916011}
   - component: {fileID: 2011916010}
   - component: {fileID: 2011916014}
+  - component: {fileID: 2011916015}
   m_Layer: 0
   m_Name: Red Cube
   m_TagString: Object
@@ -5334,6 +5393,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2011916015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011916009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!1 &2017590235
 GameObject:
   m_ObjectHideFlags: 0
