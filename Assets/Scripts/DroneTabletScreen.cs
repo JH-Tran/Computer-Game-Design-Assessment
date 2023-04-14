@@ -38,7 +38,6 @@ public class DroneTabletScreen : MonoBehaviour
                 {
                     tabletSceenRender.material = mainDroneMaterial;
                 }
-
             }
         }
     }
