@@ -10,13 +10,9 @@ interface IInteractable
 public class Interactor : MonoBehaviour
 {
     public Transform interactorSource;
-    public float interactRange = 10;
-    public GameObject drone;
-    public GameObject remote;
-    public bool pickedup = false;
+    public float interactRange = 50;
 
     [SerializeField] private bool isBlueActive, isRedActive, isGreenActive;
-
 
     public void Start()
     {
@@ -27,7 +23,7 @@ public class Interactor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Ray r = new Ray(interactorSource.position, interactorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange)) {
@@ -37,18 +33,6 @@ public class Interactor : MonoBehaviour
                 }
             }
         }
-        PickUpRemote();
-    }
-
-    public bool PickUpRemote()
-    {
-        if (pickedup == true)
-        {
-            drone.SetActive(true);
-            remote.SetActive(true);
-            return true;
-        }
-        return false;
     }
 
     public void SetOneActivateColour(string colour)
@@ -73,5 +57,4 @@ public class Interactor : MonoBehaviour
             isGreenActive = true;
         }
     }
-
 }
