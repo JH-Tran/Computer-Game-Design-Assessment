@@ -17,10 +17,12 @@ public class DroneMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody droneRigidbody;
+    public Vector3 checkpointPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        checkpointPosition = transform.position;
         droneRigidbody = GetComponent<Rigidbody>();
         droneRigidbody.freezeRotation = true;
     }
@@ -47,7 +49,6 @@ public class DroneMovement : MonoBehaviour
         }
 
     }
-
     private void PlayerInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -56,6 +57,10 @@ public class DroneMovement : MonoBehaviour
     public void changeDroneState(bool state)
     {
         droneEnable = state;
+    }
+    public void resetToCheckpoint()
+    {
+        gameObject.transform.position = checkpointPosition;
     }
     private void MoveDrone()
     {
