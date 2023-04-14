@@ -14,6 +14,11 @@ public class ObjectOrigin : MonoBehaviour
 
     public void setOriginPosition()
     {
+        if (gameObject.transform.parent != null)
+        {
+            gameObject.GetComponentInParent<ClawGrabber>().ForceDropObject();
+            gameObject.transform.parent = null;
+        }
         gameObject.transform.position = objectOrigin;
     }
 }

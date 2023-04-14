@@ -53,6 +53,7 @@ public class DroneBattery : MonoBehaviour
     }
     public void DisableDrone(float cooldown)
     {
+        batteryInner.fillAmount = 0;
         batteryTime = 0;
         screenSaver.enabled = true;
         isTimerOn = false;
