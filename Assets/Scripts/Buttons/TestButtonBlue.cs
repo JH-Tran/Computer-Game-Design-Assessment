@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestButtonBlue : MonoBehaviour
+public class TestButtonBlue : MonoBehaviour, IInteractable
 {
     private GameObject playerObject;
     public void Start()
