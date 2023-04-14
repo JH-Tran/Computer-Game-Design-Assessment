@@ -896,7 +896,7 @@ PrefabInstance:
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: crosshairImage
       value: 
-      objectReference: {fileID: 21300000, guid: 8bfc245d8651b284796bf7076962ce42, type: 3}
+      objectReference: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: speedReduction
       value: 0.6
@@ -943,6 +943,29 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1831550421990878110}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+--- !u!1 &1282849913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1282849912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282849921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282849913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a23bdc39e468634e9925fcdf0e56521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactorSource: {fileID: 1877406114}
+  interactRange: 100
+  drone: {fileID: 1546128907}
+  remote: {fileID: 1306371319713755428}
+  pickupRemote: {fileID: 2121471991}
+  pickedup: 0
 --- !u!1 &1286536306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 53a735e8b4f5c1346bfda156db45fccb, type: 3}
@@ -1299,7 +1322,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
-      value: Drone 1
+      value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_RootOrder
@@ -1363,6 +1390,11 @@ PrefabInstance:
 --- !u!20 &1546128906 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5664895699027333853, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+  m_PrefabInstance: {fileID: 1546128905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1546128907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
   m_PrefabInstance: {fileID: 1546128905}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724523357
@@ -1660,11 +1692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53a735e8b4f5c1346bfda156db45fccb, type: 3}
       propertyPath: m_Name
-      value: Drone_Remote
+      value: Drone_Remote_Object
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53a735e8b4f5c1346bfda156db45fccb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53a735e8b4f5c1346bfda156db45fccb, type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1679,7 +1715,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5664895698186810407, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
   m_PrefabInstance: {fileID: 1546128905}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1546128907}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c015ea2d69fa61f48a80382503cc33a6, type: 3}
@@ -1690,7 +1726,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5664895698186810406, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
   m_PrefabInstance: {fileID: 1546128905}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1546128907}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 438f7c48bdea540408c4657f80342597, type: 3}
@@ -1728,6 +1764,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2121471993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121471991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6610163bd0cbb1a4eaaa91e6a979e088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &2121471995
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121471991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1306371319713755428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,12 +1802,12 @@ GameObject:
   - component: {fileID: 29}
   - component: {fileID: 1831550421990878111}
   m_Layer: 0
-  m_Name: Drone_Remote (2)
+  m_Name: Drone_Remote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1543647903086870033
 GameObject:
   m_ObjectHideFlags: 0
