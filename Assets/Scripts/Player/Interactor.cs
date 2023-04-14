@@ -10,7 +10,7 @@ interface IInteractable
 public class Interactor : MonoBehaviour
 {
     public Transform interactorSource;
-    public float interactRange = 10;
+    public float interactRange = 50;
 
     [SerializeField] private bool isBlueActive, isRedActive, isGreenActive;
 
@@ -37,6 +37,7 @@ public class Interactor : MonoBehaviour
 
     public void SetOneActivateColour(string colour)
     {
+        Debug.Log(colour);
         if (colour.Equals("blue"))
         {
             isBlueActive = true;
