@@ -6,8 +6,8 @@ using UnityEngine;
 public class DroneMovement : MonoBehaviour
 {
     private float moveSpeed = 10;
-    private float droneDownSpeed = 35;
-    private float droneUpSpeed = 35;
+    private float droneDownSpeed = 70;
+    private float droneUpSpeed = 70;
     private float horizontalInput;
     private float verticalInput;
 
