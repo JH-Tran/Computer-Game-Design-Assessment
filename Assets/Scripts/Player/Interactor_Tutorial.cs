@@ -51,12 +51,16 @@ public class Interactor_Tutorial : MonoBehaviour
                     {
                         playerButtonPressed.isOpen = true;
                         playerButtonPressed.x = 2;
+                        playerButtonPressed.door2Anim.SetBool("isOpen", true);
+                        playerButtonPressed.isOpen = true;
                     }
 
                     else if (playerButtonPressed.isOpen == true)
                     {
                         playerButtonPressed.isOpen = false;
                         playerButtonPressed.x = 1;
+                        playerButtonPressed.door2Anim.SetBool("isOpen", false);
+                        playerButtonPressed.isOpen = false;
                     }
                 }
             }
