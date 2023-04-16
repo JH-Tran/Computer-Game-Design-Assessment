@@ -18,6 +18,7 @@ public class Interactor_Tutorial : MonoBehaviour
     public GameObject pedestal;
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
+    [SerializeField] FirstPersonController fpController;
 
     public GameObject playerButton;
     public Animator playerButtonAnim;
@@ -41,6 +42,7 @@ public class Interactor_Tutorial : MonoBehaviour
                 if (hitInfo.transform.gameObject.tag == "Remote")
                 {
                     pickedup = true;
+                    //Removes E and mouse signs
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
@@ -71,6 +73,7 @@ public class Interactor_Tutorial : MonoBehaviour
             {
                 drone.SetActive(true);
                 remote.SetActive(true);
+                fpController.PlayerCameraLock(true);
                 if (pickupRemote.activeSelf == true)
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);
