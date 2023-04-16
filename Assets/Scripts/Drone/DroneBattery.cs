@@ -11,7 +11,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Image screenSaver;
     private ClawGrabber clawGrabber;
 
-    private float batteryMaxTime = 120f;
+    private float batteryMaxTime = 15f;
     private float batteryTime;
     private float batteryCooldownTime = 4f;
 
