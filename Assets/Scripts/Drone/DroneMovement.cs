@@ -17,12 +17,11 @@ public class DroneMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody droneRigidbody;
-    public Vector3 checkpointPosition;
+    [SerializeField] private Transform checkpointTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        checkpointPosition = transform.position;
         droneRigidbody = GetComponent<Rigidbody>();
         droneRigidbody.freezeRotation = true;
     }
@@ -60,7 +59,12 @@ public class DroneMovement : MonoBehaviour
     }
     public void resetToCheckpoint()
     {
-        gameObject.transform.position = checkpointPosition;
+        gameObject.transform.position = checkpointTransform.position;
+        gameObject.transform.rotation = checkpointTransform.rotation;
+    }
+    public void updateCheckpointPosition(Transform updatedTransform)
+    {
+        checkpointTransform = updatedTransform;
     }
     private void MoveDrone()
     {
