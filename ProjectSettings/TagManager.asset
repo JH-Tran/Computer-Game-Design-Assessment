@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PlayerHealthBar
   - Object
+  - Part2
+  - Part1
+  - Drone
+  - Remote
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Battery_Life
-  - 
+  - TabletScreen
   - 
   - 
   - 

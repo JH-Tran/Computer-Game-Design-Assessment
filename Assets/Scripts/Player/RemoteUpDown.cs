@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RemoteUpDown : MonoBehaviour
 {
+    [SerializeField] FirstPersonController playerCam;
+
     private Animator anim;
-    private bool lookingUp = true;
+    [SerializeField] private bool lookingUp = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +25,12 @@ public class RemoteUpDown : MonoBehaviour
                 anim.SetBool("isHolding", false);
                 lookingUp = false;
             }
-
             else
             {
                 anim.SetBool("isHolding", true);
                 lookingUp = true;
             }
+            playerCam.PlayerCameraLock(lookingUp);
         }
     }
 }

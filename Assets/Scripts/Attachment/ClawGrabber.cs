@@ -17,6 +17,9 @@ public class ClawGrabber : MonoBehaviour
 
     private void Start()
     {
+        clawCollider = gameObject.GetComponent<BoxCollider>();
+        grabIndicator = GameObject.Find("GrabIcon").GetComponent<Image>();
+        droneBattery = GameObject.Find("Drone Battery").GetComponent<DroneBattery>();
         grabIndicator.color = Color.red;
     }
 
