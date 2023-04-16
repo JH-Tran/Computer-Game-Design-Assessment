@@ -17,6 +17,7 @@ using UnityEngine.UI;
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
+    private Light tabletLight;
 
     #region Camera Movement Variables
 
@@ -38,6 +39,8 @@ public class FirstPersonController : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private Image crosshairObject;
+
+    private bool isPlayerCameraLock = false;
 
     #region Camera Zoom Variables
 
@@ -134,7 +137,7 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        tabletLight = GetComponentInChildren<Light>();
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
@@ -202,79 +205,87 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        #region Camera
-
-        // Control camera movement
-        if(cameraCanMove)
+        if (!isPlayerCameraLock)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+            tabletLight.enabled = false;
+            #region Camera
 
-            if (!invertCamera)
+            // Control camera movement
+            if (cameraCanMove)
             {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
-            else
-            {
-                // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
+                yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
-            // Clamp pitch between lookAngle
-            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
-
-            transform.localEulerAngles = new Vector3(0, yaw, 0);
-            playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
-        }
-
-        #region Camera Zoom
-
-        if (enableZoom)
-        {
-            // Changes isZoomed when key is pressed
-            // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
-            {
-                if (!isZoomed)
+                if (!invertCamera)
                 {
-                    isZoomed = true;
+                    pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
                 }
                 else
                 {
-                    isZoomed = false;
+                    // Inverted Y
+                    pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+                }
+
+                // Clamp pitch between lookAngle
+                pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+
+                transform.localEulerAngles = new Vector3(0, yaw, 0);
+                playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+            }
+
+            #region Camera Zoom
+
+            if (enableZoom)
+            {
+                // Changes isZoomed when key is pressed
+                // Behavior for toogle zoom
+                if (Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
+                {
+                    if (!isZoomed)
+                    {
+                        isZoomed = true;
+                    }
+                    else
+                    {
+                        isZoomed = false;
+                    }
+                }
+
+                // Changes isZoomed when key is pressed
+                // Behavior for hold to zoom
+                if (holdToZoom && !isSprinting)
+                {
+                    if (Input.GetKeyDown(zoomKey))
+                    {
+                        isZoomed = true;
+                    }
+                    else if (Input.GetKeyUp(zoomKey))
+                    {
+                        isZoomed = false;
+                    }
+                }
+
+                // Lerps camera.fieldOfView to allow for a smooth transistion
+                if (isZoomed)
+                {
+                    playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomStepTime * Time.deltaTime);
+                }
+                else if (!isZoomed && !isSprinting)
+                {
+                    playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, zoomStepTime * Time.deltaTime);
                 }
             }
 
-            // Changes isZoomed when key is pressed
-            // Behavior for hold to zoom
-            if(holdToZoom && !isSprinting)
-            {
-                if(Input.GetKeyDown(zoomKey))
-                {
-                    isZoomed = true;
-                }
-                else if(Input.GetKeyUp(zoomKey))
-                {
-                    isZoomed = false;
-                }
-            }
-
-            // Lerps camera.fieldOfView to allow for a smooth transistion
-            if(isZoomed)
-            {
-                playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomStepTime * Time.deltaTime);
-            }
-            else if(!isZoomed && !isSprinting)
-            {
-                playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, zoomStepTime * Time.deltaTime);
-            }
+            #endregion
+            #endregion
         }
-
-        #endregion
-        #endregion
+        else
+        {
+            tabletLight.enabled = true;
+        }
 
         #region Sprint
 
-        if(enableSprint)
+        if (enableSprint)
         {
             if(isSprinting)
             {
@@ -525,6 +536,11 @@ public class FirstPersonController : MonoBehaviour
             timer = 0;
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
+    }
+
+    public void PlayerCameraLock(bool isLock)
+    {
+        isPlayerCameraLock = isLock;
     }
 }
 
