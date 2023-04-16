@@ -41,6 +41,8 @@ public class Interactor_Tutorial : MonoBehaviour
                 if (hitInfo.transform.gameObject.tag == "Remote")
                 {
                     pickedup = true;
+                    GameObject.FindGameObjectWithTag("Part1").SetActive(false);
+                    GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
                     spotlight.SetActive(false);
                 }
@@ -64,17 +66,16 @@ public class Interactor_Tutorial : MonoBehaviour
                     }
                 }
             }
-        }
 
-        if (pickedup == true)
-        {
-            drone.SetActive(true);
-            remote.SetActive(true);
-            if (pickupRemote.activeSelf == true)
+            if (pickedup == true)
             {
-                GameObject.FindWithTag("Remote").SetActive(false);
+                drone.SetActive(true);
+                remote.SetActive(true);
+                if (pickupRemote.activeSelf == true)
+                {
+                    GameObject.FindWithTag("Remote").SetActive(false);
+                }
             }
-
         }
     }
 }

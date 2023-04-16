@@ -8,6 +8,8 @@ public class ButtonPressed : MonoBehaviour
     public int x;
     Renderer rend;
     public bool isOpen = false;
+    public GameObject e;
+    private bool condition = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class ButtonPressed : MonoBehaviour
     void Update()
     {
         rend.sharedMaterial = material[x];
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -30,6 +33,11 @@ public class ButtonPressed : MonoBehaviour
         {
             isOpen = true;
             x = 2;
+            if (condition == true)
+            {
+                e.SetActive(true);
+                condition = false;
+            }
         }
     }
     private void OnCollisionExit(Collision other)
