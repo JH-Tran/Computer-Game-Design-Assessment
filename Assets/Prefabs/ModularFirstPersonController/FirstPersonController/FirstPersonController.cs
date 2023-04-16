@@ -17,6 +17,7 @@ using UnityEngine.UI;
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
+    private Light tabletLight;
 
     #region Camera Movement Variables
 
@@ -136,7 +137,7 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        tabletLight = GetComponentInChildren<Light>();
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
@@ -206,6 +207,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (!isPlayerCameraLock)
         {
+            tabletLight.enabled = false;
             #region Camera
 
             // Control camera movement
@@ -275,6 +277,10 @@ public class FirstPersonController : MonoBehaviour
 
             #endregion
             #endregion
+        }
+        else
+        {
+            tabletLight.enabled = true;
         }
 
         #region Sprint
