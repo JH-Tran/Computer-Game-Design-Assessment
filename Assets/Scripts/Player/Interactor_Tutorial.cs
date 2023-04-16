@@ -47,6 +47,7 @@ public class Interactor_Tutorial : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
                     spotlight.SetActive(false);
+                    fpController.PlayerCameraLock(true);
                 }
 
                 if (hitInfo.transform.gameObject == playerButton)
@@ -73,7 +74,6 @@ public class Interactor_Tutorial : MonoBehaviour
             {
                 drone.SetActive(true);
                 remote.SetActive(true);
-                fpController.PlayerCameraLock(true);
                 if (pickupRemote.activeSelf == true)
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);

@@ -40,7 +40,7 @@ public class FirstPersonController : MonoBehaviour
     private float pitch = 0.0f;
     private Image crosshairObject;
 
-    private bool isPlayerCameraLock = false;
+    private bool isPlayerCameraLock = true;
 
     #region Camera Zoom Variables
 
