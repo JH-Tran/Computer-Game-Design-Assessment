@@ -3049,8 +3049,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &851521024
 =======
+=======
+>>>>>>> main
 --- !u!114 &165076026
 >>>>>>> main
 MonoBehaviour:
@@ -3066,8 +3069,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droneCamera: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   playerCamera: {fileID: 1924705238}
 =======
+=======
+>>>>>>> main
   playerCamera: {fileID: 2097898218}
 >>>>>>> main
   isPlayerCameraOn: 0
@@ -3121,6 +3127,7 @@ Transform:
   m_Father: {fileID: 671401550}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!54 &942231678
 Rigidbody:
@@ -3203,6 +3210,8 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &965023488
 =======
+=======
+>>>>>>> main
 --- !u!1 &243234938
 >>>>>>> main
 GameObject:
@@ -4816,6 +4825,9 @@ Transform:
 =======
   - {fileID: 2097898219}
   m_Father: {fileID: 1024518474}
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4883,8 +4895,11 @@ MeshFilter:
   m_GameObject: {fileID: 1751601813}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1810928796
 =======
+=======
+>>>>>>> main
 --- !u!1 &297809041
 >>>>>>> main
 GameObject:
@@ -7448,8 +7463,11 @@ MeshFilter:
   m_GameObject: {fileID: 1885763488}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1911563286
 =======
+=======
+>>>>>>> main
 --- !u!1 &1303360822
 >>>>>>> main
 GameObject:
@@ -10056,6 +10074,7 @@ Transform:
   m_GameObject: {fileID: 2146206865}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
   m_LocalPosition: {x: -10, y: 3, z: 4}
+<<<<<<< HEAD
 >>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10098,12 +10117,25 @@ Transform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 270, z: 0}
 --- !u!64 &2049229056
+=======
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1024518474}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 90, y: 270, z: 0}
+--- !u!64 &2146206867
+>>>>>>> main
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2049229054}
+=======
+  m_GameObject: {fileID: 2146206865}
+>>>>>>> main
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -10111,13 +10143,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!23 &2049229057
+=======
+--- !u!23 &2146206868
+>>>>>>> main
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2049229054}
+=======
+  m_GameObject: {fileID: 2146206865}
+>>>>>>> main
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -10153,12 +10193,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!33 &2049229058
+=======
+--- !u!33 &2146206869
+>>>>>>> main
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2049229054}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
@@ -10630,4 +10675,8 @@ MeshFilter:
   m_GameObject: {fileID: 2145250328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
+>>>>>>> main
+=======
+  m_GameObject: {fileID: 2146206865}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 >>>>>>> main
