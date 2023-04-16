@@ -11,16 +11,16 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Image screenSaver;
     private ClawGrabber clawGrabber;
 
-    private float batteryMaxTime = 15f;
+    private float batteryMaxTime = 25f;
     private float batteryTime;
-    private float batteryCooldownTime = 4f;
+    private float batteryCooldownTime = 3f;
 
     public bool isTimerOn;
 
     void Start()
     {
-        droneCamera = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneCamera>();
-        droneMovement = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneMovement>();
+        droneCamera = GameObject.Find("Drone1.0").GetComponent<DroneCamera>();
+        droneMovement = GameObject.Find("Drone1.0").GetComponent<DroneMovement>();
         clawGrabber = GameObject.Find("ClawHitBox").GetComponent<ClawGrabber>();
         TimerReset();
         screenSaver.enabled = false;

@@ -5177,15 +5177,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
-      value: Drone
+      value: Drone1.0
       objectReference: {fileID: 0}
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_TagString
-      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_RootOrder
@@ -5230,30 +5226,6 @@ PrefabInstance:
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: droneBattery
-      value: 
-      objectReference: {fileID: 2224848700145906451}
-    - target: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: grabIndicator
-      value: 
-      objectReference: {fileID: 2224848700146306642}
-    - target: {fileID: 5664895699027333842, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895699027333853, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: far clip plane
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895699555035841, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895699555035843, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: far clip plane
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -7890,28 +7862,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131266813}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2224848700145906451 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-  m_PrefabInstance: {fileID: 7747724516311256300}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd51970cdb8bbbf4aa49e4209395d03a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2224848700146306642 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8459222996654260926, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-  m_PrefabInstance: {fileID: 7747724516311256300}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7747724516311256300
 PrefabInstance:
   m_ObjectHideFlags: 0
