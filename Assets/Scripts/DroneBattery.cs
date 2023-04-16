@@ -17,18 +17,12 @@ public class DroneBattery : MonoBehaviour
 
     public bool isTimerOn;
 
-    // Start is called before the first frame update
     void Start()
     {
         TimerReset();
         screenSaver.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void FixedUpdate()
     {
         if (isTimerOn)
@@ -41,12 +35,7 @@ public class DroneBattery : MonoBehaviour
             }
             else
             {
-                batteryTime = 0;
-                screenSaver.enabled = true;
-                isTimerOn = false;
-                droneCamera.changeDroneState(isTimerOn);
-                droneMovement.changeDroneState(isTimerOn);
-                StartCoroutine(activeDrone(batteryCooldownTime));
+                DisableDrone();
                 clawGrabber.DropObject();
                 clawGrabber.grabIndicator.color = Color.red;
             }
@@ -62,7 +51,25 @@ public class DroneBattery : MonoBehaviour
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
     }
-
+    public void DisableDrone(float cooldown)
+    {
+        batteryInner.fillAmount = 0;
+        batteryTime = 0;
+        screenSaver.enabled = true;
+        isTimerOn = false;
+        droneCamera.changeDroneState(isTimerOn);
+        droneMovement.changeDroneState(isTimerOn);
+        StartCoroutine(activeDrone(cooldown));
+    }
+    private void DisableDrone()
+    {
+        batteryTime = 0;
+        screenSaver.enabled = true;
+        isTimerOn = false;
+        droneCamera.changeDroneState(isTimerOn);
+        droneMovement.changeDroneState(isTimerOn);
+        StartCoroutine(activeDrone(batteryCooldownTime));
+    }
     public float getBattery()
     {
         return batteryTime;

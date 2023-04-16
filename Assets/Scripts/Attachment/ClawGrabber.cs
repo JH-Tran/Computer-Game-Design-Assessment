@@ -86,6 +86,25 @@ public class ClawGrabber : MonoBehaviour
         isGrabbingObject = false;
     }
 
+    public void ForceDropObject()
+    {
+        if (objectGrabbed.Count > 0)
+        {
+            for (int i = 0; i < objectGrabbed.Count; i++)
+            {
+                if (objectGrabbed[i].GetComponent<Rigidbody>() == null)
+                {
+                    objectGrabbed[i].gameObject.AddComponent<Rigidbody>();
+                }
+                objectGrabbed[i].transform.parent = null;
+            }
+            objectGrabbed.Clear();
+            isObjectHold = false;
+        }
+        isGrabbingObject = false;
+        grabIndicator.color = Color.red;
+    }
+
     public bool getGrabbingObject()
     {
         return isGrabbingObject;
