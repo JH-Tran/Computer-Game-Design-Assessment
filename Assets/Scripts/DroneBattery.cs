@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class DroneBattery : MonoBehaviour
 {
-    [SerializeField] DroneMovement droneMovement;
-    [SerializeField] DroneCamera droneCamera;
+    [SerializeField] private DroneMovement droneMovement;
+    [SerializeField] private DroneCamera droneCamera;
     [SerializeField] private Image batteryInner;
     [SerializeField] private Image screenSaver;
-    public ClawGrabber clawGrabber;
+    private ClawGrabber clawGrabber;
 
     private float batteryMaxTime = 120f;
     private float batteryTime;
@@ -19,6 +19,9 @@ public class DroneBattery : MonoBehaviour
 
     void Start()
     {
+        droneCamera = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneCamera>();
+        droneMovement = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneMovement>();
+        clawGrabber = GameObject.Find("ClawHitBox").GetComponent<ClawGrabber>();
         TimerReset();
         screenSaver.enabled = false;
     }

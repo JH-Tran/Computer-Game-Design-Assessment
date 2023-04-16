@@ -19,6 +19,8 @@ public class DroneTabletScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainDroneCamera = GameObject.Find("DroneMainCamera").GetComponent<Camera>();
+        downDroneCamera = GameObject.Find("DroneDownCamera").GetComponent<Camera>();
         SetUpDroneCameras();
         tabletSceenRender.material = mainDroneMaterial;
     }

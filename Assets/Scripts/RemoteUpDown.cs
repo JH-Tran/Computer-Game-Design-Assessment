@@ -7,7 +7,7 @@ public class RemoteUpDown : MonoBehaviour
     [SerializeField] FirstPersonController playerCam;
 
     private Animator anim;
-    private bool lookingUp = true;
+    [SerializeField] private bool lookingUp = true;
 
     // Start is called before the first frame update
     void Start()

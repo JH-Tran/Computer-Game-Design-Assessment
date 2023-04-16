@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 6224516839074958645}
   - component: {fileID: 6224516839074958641}
   - component: {fileID: 6224516839074958640}
-  - component: {fileID: 7747724515033477229}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -286,7 +285,7 @@ Transform:
   m_Children:
   - {fileID: 6224516840027803948}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6224516839074958647
 MeshFilter:
@@ -424,30 +423,6 @@ MonoBehaviour:
   joint: {fileID: 6224516840027803948}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
---- !u!114 &7747724515033477229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6224516839074958650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a23bdc39e468634e9925fcdf0e56521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactorSource: {fileID: 6224516839833151401}
-  interactRange: 100
-  drone: {fileID: 0}
-  remote: {fileID: 8765231580942351816}
-  pickupRemote: {fileID: 0}
-  pickedup: 0
-  pedestal: {fileID: 0}
-  spotlight: {fileID: 0}
-  fpController: {fileID: 6224516839074958640}
-  playerButton: {fileID: 0}
-  playerButtonAnim: {fileID: 0}
-  playerButtonPressed: {fileID: 0}
 --- !u!1 &6224516839251059461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1056,7 @@ GameObject:
   - component: {fileID: 8459222996654260925}
   - component: {fileID: 8459222996654260926}
   m_Layer: 6
-  m_Name: ChargeLevel
+  m_Name: GrabIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
