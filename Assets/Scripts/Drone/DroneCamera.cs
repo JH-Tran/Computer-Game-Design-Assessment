@@ -7,10 +7,11 @@ public class DroneCamera : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 175f;
     private bool droneEnable = false;
     public Transform droneBody;
-    public Camera cameraObject;
+    public Camera droneCamera;
 
-    float xRotation;
-    float yRotation;
+    private float yaw;
+    private float pitch;
+    private float maxLookAngle = 90f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,18 +28,18 @@ public class DroneCamera : MonoBehaviour
         }
     }
 
+    //Camera look from FirstPersonController Asset by Jesse Case
     private void CameraLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+        pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        // Clamp pitch between lookAngle
+        pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
-        cameraObject.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        droneBody.rotation = Quaternion.Euler(0, yRotation, 0);
-        
+        transform.localEulerAngles = new Vector3(0, yaw, 0);
+        droneCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+
     }
 
     public void changeDroneState(bool state)
