@@ -8,7 +8,7 @@ public class FrameLimiter : MonoBehaviour
     private float[] frameDeltaTimeArray = new float[50];
     [SerializeField] private Text fpsText;
 
-    private void Awake()
+    private void Start()
     {
         Application.targetFrameRate = 60;
     }

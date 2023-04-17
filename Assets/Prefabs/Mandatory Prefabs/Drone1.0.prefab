@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c015ea2d69fa61f48a80382503cc33a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 175
+  mouseSensitivity: 2
   droneBody: {fileID: 5266812304262562805}
   droneCamera: {fileID: 5664895699555035843}
 --- !u!64 &1660847765887900559
