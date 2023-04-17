@@ -285,7 +285,7 @@ Transform:
   m_Children:
   - {fileID: 6224516840027803948}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6224516839074958647
 MeshFilter:
@@ -1241,7 +1241,6 @@ MonoBehaviour:
   droneCamera: {fileID: 0}
   batteryInner: {fileID: 8459222997389241227}
   screenSaver: {fileID: 8459222996456806726}
-  clawGrabber: {fileID: 0}
   isTimerOn: 0
 --- !u!1 &8459222996894140364
 GameObject:
@@ -1344,8 +1343,6 @@ MonoBehaviour:
   outOfBatteryMaterial: {fileID: 2100000, guid: 185983a67fd826e4c845cb2997fc3762, type: 2}
   mainDroneCamera: {fileID: 0}
   mainDroneMaterial: {fileID: 2100000, guid: 0573ad67916d15b41bb32381cbd192bf, type: 2}
-  downDroneCamera: {fileID: 0}
-  downDroneMaterial: {fileID: 2100000, guid: 1a188631d07a8314ebb5ad6b37ce5d3e, type: 2}
 --- !u!1 &8459222996974846538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765231580942351816}
   m_LocalRotation: {x: -0.7660445, y: 0, z: 0, w: 0.64278764}
-  m_LocalPosition: {x: -0.0017, y: 0.0039, z: 0.2144}
+  m_LocalPosition: {x: -0.0017, y: -0.002, z: 0.245}
   m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1705,6 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 6224516839074958640}
+  lookingUp: 1
 --- !u!1 &9144930623101973245
 GameObject:
   m_ObjectHideFlags: 0

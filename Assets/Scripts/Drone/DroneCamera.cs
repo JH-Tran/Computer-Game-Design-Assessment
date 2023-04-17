@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroneCamera : MonoBehaviour
 {
-    [SerializeField] private float mouseSensitivity = 175f;
+    [SerializeField] private float mouseSensitivity = 2f;
     private bool droneEnable = false;
     public Transform droneBody;
     public Camera droneCamera;
