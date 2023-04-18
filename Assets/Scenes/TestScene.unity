@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 194610969}
   - component: {fileID: 194610968}
   - component: {fileID: 194610967}
+  - component: {fileID: 194610971}
   m_Layer: 0
   m_Name: Blue Cube
   m_TagString: Object
@@ -351,6 +352,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194610965}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &194610971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194610965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!1 &208984371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,7 +4722,6 @@ GameObject:
   - component: {fileID: 1662282244}
   - component: {fileID: 1662282243}
   - component: {fileID: 1662282242}
-  - component: {fileID: 1662282246}
   m_Layer: 0
   m_Name: Orange Cube
   m_TagString: Object
@@ -4810,19 +4823,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662282240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1662282246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662282240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!1 &1680486034
 GameObject:
   m_ObjectHideFlags: 0
