@@ -5981,7 +5981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1767545141
+--- !u!114 &1767545149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5994,7 +5994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpController: {fileID: 1767545136}
---- !u!114 &1767545143
+--- !u!114 &1767545150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7875,6 +7875,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1455240605, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537436786, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6224516839074958646, guid: ff564b8f644b26145b297d14102eed18, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RemoteUpDown : MonoBehaviour
 {
     [SerializeField] FirstPersonController playerCam;
+    [SerializeField] DroneBattery droneBattery;
 
     private Animator anim;
     [SerializeField] private bool lookingUp = true;
@@ -12,6 +13,7 @@ public class RemoteUpDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        droneBattery = GetComponentInChildren<DroneBattery>();
         anim = GetComponent<Animator>();
     }
 
@@ -24,11 +26,13 @@ public class RemoteUpDown : MonoBehaviour
             {
                 anim.SetBool("isHolding", false);
                 lookingUp = false;
+                droneBattery.isScreenSaverVisible(false);
             }
             else
             {
                 anim.SetBool("isHolding", true);
                 lookingUp = true;
+                droneBattery.isScreenSaverVisible(true);
             }
             playerCam.PlayerCameraLock(lookingUp);
         }
