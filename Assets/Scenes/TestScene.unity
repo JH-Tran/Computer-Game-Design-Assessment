@@ -3205,6 +3205,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628403125, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: ballImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fdc29124acc8e69469da6b1d22d8afa8, type: 3}
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
       value: Drone1.0
@@ -3257,6 +3261,10 @@ PrefabInstance:
       propertyPath: checkpointTransform
       value: 
       objectReference: {fileID: 1896499101}
+    - target: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: clawIndicatorImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 133ec1f8c298e874f8c05c565aa08743, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -4595,6 +4603,18 @@ PrefabInstance:
     - target: {fileID: 6224516839074958650, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459222996654260924, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459222996654260924, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459222996654260924, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.652
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

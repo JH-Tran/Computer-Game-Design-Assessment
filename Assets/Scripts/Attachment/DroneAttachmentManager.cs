@@ -23,13 +23,16 @@ public class DroneAttachmentManager : MonoBehaviour
         {
             Debug.Log("Claw Active");
             claw.SetActive(true);
+            claw.GetComponentInChildren<ClawGrabber>().initaliseClawUI();
             ballMachine.SetActive(false);
         }
         else if (Input.GetKeyUp(KeyCode.Alpha2))
         {
             Debug.Log("Ball Machine Active");
+            claw.GetComponentInChildren<ClawGrabber>().ForceDropObject();
             claw.SetActive(false);
             ballMachine.SetActive(true);
+            ballMachine.GetComponent<BallMachine>().initaliseBallUI();
         }
     }
 }

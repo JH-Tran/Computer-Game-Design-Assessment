@@ -40,7 +40,7 @@ public class DroneBattery : MonoBehaviour
             {
                 DisableDrone();
                 clawGrabber.DropObject();
-                clawGrabber.grabIndicator.color = Color.red;
+                clawGrabber.currentFeatureIndicator.color = Color.red;
             }
         }
     }

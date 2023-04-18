@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 8459222996654260925}
   - component: {fileID: 8459222996654260926}
   m_Layer: 6
-  m_Name: GrabIcon
+  m_Name: FeatureIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,10 +1209,10 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 0
+  m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8459222996655996900

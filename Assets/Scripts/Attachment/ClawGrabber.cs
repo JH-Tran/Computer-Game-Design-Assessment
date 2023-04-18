@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ClawGrabber : MonoBehaviour
 {
     [SerializeField] private BoxCollider clawCollider;
-    public Image grabIndicator;
+    public Image currentFeatureIndicator;
+    [SerializeField] private Sprite clawIndicatorImage;
     public DroneBattery droneBattery;
 
     public bool isGrabbingObject = false;
@@ -14,13 +15,12 @@ public class ClawGrabber : MonoBehaviour
     private float autoOffGrab = 2;
     private List<GameObject> objectGrabbed = new List<GameObject>();
 
-
     private void Start()
     {
         clawCollider = gameObject.GetComponent<BoxCollider>();
-        grabIndicator = GameObject.Find("GrabIcon").GetComponent<Image>();
+        currentFeatureIndicator = GameObject.Find("FeatureIcon").GetComponent<Image>();
         droneBattery = GameObject.Find("Drone Battery").GetComponent<DroneBattery>();
-        grabIndicator.color = Color.red;
+        currentFeatureIndicator.color = Color.red;
     }
 
     private void Update()
@@ -32,14 +32,14 @@ public class ClawGrabber : MonoBehaviour
             {
                 if (isGrabbingObject == false)
                 {
-                    grabIndicator.color = Color.yellow;
+                    currentFeatureIndicator.color = Color.yellow;
                     isGrabbingObject = true;
                     StartCoroutine(autoTurnOffGrab());
                 }
                 else if (isGrabbingObject == true && isObjectHold == true)
                 {
                     DropObject();
-                    grabIndicator.color = Color.red;
+                    currentFeatureIndicator.color = Color.red;
                 }
             }
         }
@@ -52,7 +52,7 @@ public class ClawGrabber : MonoBehaviour
         {
             if (isGrabbingObject == true && isObjectHold == false)
             {
-                grabIndicator.color = Color.green;
+                currentFeatureIndicator.color = Color.green;
                 other.transform.parent = gameObject.transform;
                 objectGrabbed.Add(other.gameObject);
                 isObjectHold = true;
@@ -67,7 +67,7 @@ public class ClawGrabber : MonoBehaviour
         if (isGrabbingObject == true && isObjectHold == false)
         {
             isGrabbingObject = false;
-            grabIndicator.color = Color.red;
+            currentFeatureIndicator.color = Color.red;
         }
     }
 
@@ -105,7 +105,13 @@ public class ClawGrabber : MonoBehaviour
             isObjectHold = false;
         }
         isGrabbingObject = false;
-        grabIndicator.color = Color.red;
+        currentFeatureIndicator.color = Color.red;
+    }
+    public void initaliseClawUI()
+    {
+        currentFeatureIndicator.sprite = clawIndicatorImage;
+        currentFeatureIndicator.fillAmount = 1;
+        currentFeatureIndicator.color = Color.red;
     }
 
     public bool getGrabbingObject()
