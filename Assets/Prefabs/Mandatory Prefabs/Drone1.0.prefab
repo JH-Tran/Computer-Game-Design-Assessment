@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &628403123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628403124}
+  - component: {fileID: 628403125}
+  m_Layer: 8
+  m_Name: Ball Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &628403124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628403123}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.84000033, y: 1.8, z: 0.7899999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5664895697832023963}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &628403125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628403123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b54162e00eb5cf4ab8b89003170ef2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchTransform: {fileID: 3443640939888592027}
+  ball: {fileID: 7628095244333606059, guid: 06e50f5cbeca838409836fc1a7946bee, type: 3}
+  launchVelocity: 10
 --- !u!1 &4781883058251520335
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +60,7 @@ GameObject:
   - component: {fileID: 5664895698186810406}
   - component: {fileID: 5664895698186810407}
   - component: {fileID: 1660847765887900559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drone1.0
   m_TagString: Drone
   m_Icon: {fileID: 0}
@@ -37,7 +84,7 @@ Transform:
   - {fileID: 5664895699555035852}
   - {fileID: 5664895697832023963}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5664895698186810400
 Rigidbody:
@@ -110,7 +157,7 @@ GameObject:
   - component: {fileID: 332016092221959694}
   - component: {fileID: 8186843783309439697}
   - component: {fileID: 5664895699530280564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Drone
   m_Icon: {fileID: 0}
@@ -207,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5664895697832023963}
   - component: {fileID: 5664895697832023940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DroneAttachments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5664895698848237869}
+  - {fileID: 628403124}
   m_Father: {fileID: 5266812304262562805}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -243,7 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   claw: {fileID: 5664895698848237868}
-  attachmentIcons: {fileID: 0}
+  ballMachine: {fileID: 628403123}
+  attachmentIcons: {fileID: 5664895698848237868}
 --- !u!1 &5664895698274315423
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +306,7 @@ GameObject:
   - component: {fileID: 5664895698274315418}
   - component: {fileID: 5664895698274315417}
   - component: {fileID: 5664895698274315396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClawHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5664895698848237869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Claw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5664895699555035852}
   - component: {fileID: 5664895699555035843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DroneMainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +468,8 @@ Transform:
   m_LocalPosition: {x: 0.84, y: 1.8, z: 0.79}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3443640939888592027}
   m_Father: {fileID: 5266812304262562805}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -466,6 +516,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &7481042878724303931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3443640939888592027}
+  m_Layer: 8
+  m_Name: Ball Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3443640939888592027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481042878724303931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5664895699555035852}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8945533174130960926
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +558,7 @@ GameObject:
   - component: {fileID: 1344171749993905711}
   - component: {fileID: 352878416438828123}
   - component: {fileID: 3273654194198205121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

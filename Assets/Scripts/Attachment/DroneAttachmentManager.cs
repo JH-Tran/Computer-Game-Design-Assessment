@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class DroneAttachmentManager : MonoBehaviour
 {
+    //Test script for features. Developers Only
     [SerializeField] GameObject claw;
+    [SerializeField] GameObject ballMachine;
     [SerializeField] GameObject attachmentIcons;
-    //private bool useItem = true;
 
     // Start is called before the first frame update
     void Start()
     {
         claw.SetActive(true);
+        ballMachine.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            if (useItem == false)
-            {
-                claw.SetActive(true);
-                useItem = true;
-            }
-            else if (useItem == true)
-            {
-                claw.SetActive(false);
-                useItem = false;
-            }
-        }*/
+            Debug.Log("Claw Active");
+            claw.SetActive(true);
+            ballMachine.SetActive(false);
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            Debug.Log("Ball Machine Active");
+            claw.SetActive(false);
+            ballMachine.SetActive(true);
+        }
     }
 }

@@ -3205,6 +3205,30 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628403124, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628403124, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628403124, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628403125, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: droneObject
+      value: 
+      objectReference: {fileID: 1664173686}
+    - target: {fileID: 3443640939888592027, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443640939888592027, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
       value: Drone1.0
@@ -3257,6 +3281,10 @@ PrefabInstance:
       propertyPath: checkpointTransform
       value: 
       objectReference: {fileID: 1896499101}
+    - target: {fileID: 7481042878724303931, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_Name
+      value: BallUpSpawn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -4596,6 +4624,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8281991082052085618, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281991082052085618, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281991082052085618, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.231
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ff564b8f644b26145b297d14102eed18, type: 3}
@@ -4823,6 +4863,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662282240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1664173686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+  m_PrefabInstance: {fileID: 1050467185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1680486034
 GameObject:
   m_ObjectHideFlags: 0

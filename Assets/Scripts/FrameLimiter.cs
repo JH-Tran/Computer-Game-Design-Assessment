@@ -17,7 +17,7 @@ public class FrameLimiter : MonoBehaviour
     {
         frameDeltaTimeArray[lastFrameIndex] = Time.deltaTime;
         lastFrameIndex = (lastFrameIndex + 1) % frameDeltaTimeArray.Length;
-        fpsText.text = Mathf.RoundToInt(CalculatedFPS()).ToString();
+        fpsText.text = "FPS:" + Mathf.RoundToInt(CalculatedFPS()).ToString();
     }
 
     private float CalculatedFPS()
