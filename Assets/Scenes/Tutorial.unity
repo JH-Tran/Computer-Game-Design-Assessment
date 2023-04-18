@@ -5230,11 +5230,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
---- !u!20 &1546128906 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5664895699027333853, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-  m_PrefabInstance: {fileID: 1546128905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546128907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -7870,6 +7865,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1455240603, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 76.9962
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455240603, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 23.3095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455240605, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6224516839074958646, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7961,7 +7968,7 @@ PrefabInstance:
     - target: {fileID: 8459222996894140359, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: downDroneCamera
       value: 
-      objectReference: {fileID: 1546128906}
+      objectReference: {fileID: 0}
     - target: {fileID: 8459222996894140359, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: mainDroneCamera
       value: 

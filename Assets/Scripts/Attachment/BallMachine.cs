@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BallMachine : MonoBehaviour
 {
-    public Transform launchTransform;
+    [SerializeField] private Transform launchTransform;
 
-    public GameObject ball;
-    public float launchVelocity = 10f;
+    [SerializeField] private GameObject ball;
+    private float launchVelocity = 15f;
 
     //Cooldown of ability
 

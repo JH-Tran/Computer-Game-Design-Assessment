@@ -5,7 +5,7 @@ using UnityEngine;
 public class RemotePickUp : MonoBehaviour, IInteractable
 {
     private GameObject playerObject;
-    private bool pickedup = false;
+    //private bool pickedup = false;
 
     public void Start()
     {

@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
         }
         else
         {
-            
+            Destroy(other);
         }
     }
 }
