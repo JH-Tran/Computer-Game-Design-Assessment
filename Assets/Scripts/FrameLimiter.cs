@@ -10,7 +10,7 @@ public class FrameLimiter : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = -1;
     }
 
     private void Update()
