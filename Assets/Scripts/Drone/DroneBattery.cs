@@ -19,10 +19,10 @@ public class DroneBattery : MonoBehaviour
 
     private ClawGrabber clawGrabber;
     //Using battery 25, 4
-    private float batteryMaxTime = 2f;
+    private float batteryMaxTime = 25f;
     private float batteryTime;
     //Recharing Battery
-    private float batteryCooldownTime = 10f;
+    private float batteryCooldownTime = 4f;
     private float batterRechargeTime;
     private bool recharging = false;
     private bool isUsingTablet = false;
