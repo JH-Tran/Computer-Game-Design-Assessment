@@ -1218,6 +1218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e29608cb76df24695e819a1838296e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  droneCamera: {fileID: 0}
+  playerCamera: {fileID: 0}
+  isPlayerCameraOn: 0
 --- !u!4 &459887172
 Transform:
   m_ObjectHideFlags: 0
@@ -4592,6 +4595,26 @@ PrefabInstance:
     - target: {fileID: 6224516839074958650, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224516840070940458, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224516840070940458, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730393280762208562, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730393280762208562, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730393280762208562, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

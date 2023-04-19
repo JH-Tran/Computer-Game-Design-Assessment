@@ -62,10 +62,15 @@ public class DroneBattery : MonoBehaviour
             if (batterRechargeTime > 0)
             {
                 batterRechargeTime -= Time.deltaTime;
+                if (batterRechargeTime < 0)
+                {
+                    batterRechargeTime = 0;
+                }
                 screenOffTimer.text = String.Format("{0:0.##}", batterRechargeTime);
             }
             else
             {
+                batterRechargeTime = 0;
                 TimerReset();
             }
         }
@@ -83,6 +88,7 @@ public class DroneBattery : MonoBehaviour
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
     }
+    //Disable drone base on a different cooldown that can be used by other scripts
     public void DisableDrone(float cooldown)
     {
         batteryInner.fillAmount = 0;
@@ -93,6 +99,7 @@ public class DroneBattery : MonoBehaviour
         droneMovement.changeDroneState(isTimerOn);
         rechargingDrone(cooldown);
     }
+    //Origianl disable drone when the battery runs out.
     private void DisableDrone()
     {
         batteryTime = 0;
@@ -106,6 +113,7 @@ public class DroneBattery : MonoBehaviour
     {
         return batteryTime;
     }
+    //Drone recharing battery timer
     private void rechargingDrone(float delay)
     {
         if (isUsingTablet == false)
@@ -115,21 +123,26 @@ public class DroneBattery : MonoBehaviour
         batterRechargeTime = delay;
         recharging = true;
     }
-    public void isScreenSaverVisible(bool isVisible)
+    //Method for when tablet is being up or down to show the screen down time.
+    public void isScreenSaverVisible(bool isTabletVisible)
     {
-        if ((batterRechargeTime > 0) && isVisible == true)
+        if ((batterRechargeTime > 0) && isTabletVisible == true)
         {
+            Debug.Log("Start");
             StartCoroutine(returnScreenSaver());
             isUsingTablet = false;
         }
-        else if ((batterRechargeTime <= 0) && isVisible == true)
+        else if ((batterRechargeTime > 0) && isTabletVisible == false)
         {
+            Debug.Log("Stop");
+            StopAllCoroutines();
             screenSaverTexts.SetActive(false);
             isUsingTablet = false;
         }
         else
         {
-            screenSaverTexts.SetActive(isVisible);
+            StopAllCoroutines();
+            screenSaverTexts.SetActive(false);
             isUsingTablet = true;
         }
     }
