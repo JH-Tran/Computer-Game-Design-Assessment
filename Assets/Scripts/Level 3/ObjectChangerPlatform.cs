@@ -13,7 +13,6 @@ public class ObjectChangerPlatform : MonoBehaviour
             {
                 objectList.Add(other.gameObject);
             }
-           
         }
     }
 

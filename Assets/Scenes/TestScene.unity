@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!1 &258731228
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca727c16c93f9f428ab8d527b581ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCameraTransform: {fileID: 0}
+  playerCameraTransform: {fileID: 1260235199}
   interactRange: 20
   drone: {fileID: 1271093624}
   remote: {fileID: 1696473532}
@@ -689,7 +688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!1 &456733307
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!54 &474840042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3076,6 +3073,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212121103}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1260235199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6224516839833151401, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+  m_PrefabInstance: {fileID: 1629157668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1271093624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -3943,6 +3945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844660194}
+  - component: {fileID: 1844660195}
   m_Layer: 0
   m_Name: ObjectChanger
   m_TagString: Untagged
@@ -3967,6 +3970,20 @@ Transform:
   m_Father: {fileID: 998992212}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1844660195
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844660193}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 15.525018
+  m_Direction: 1
+  m_Center: {x: 0.000000053680875, y: 0.0000016667927, z: -0.00000010736175}
 --- !u!1001 &1855874907
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,9 +17,10 @@ public class Obstacle : MonoBehaviour
         {
             other.GetComponent<ObjectOrigin>().setOriginPosition();
         }
-        else
+        else if (other.CompareTag("Ball"))
         {
             Destroy(other);
         }
+
     }
 }

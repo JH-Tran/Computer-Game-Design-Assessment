@@ -10,6 +10,7 @@ TagManager:
   - Part1
   - Drone
   - Remote
+  - Ball
   layers:
   - Default
   - TransparentFX
