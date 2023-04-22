@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestButtonRed : MonoBehaviour, IInteractable
+public class TestButtonGreen : MonoBehaviour, IInteractable
 {
     private GameObject playerObject;
     public void Start()
@@ -12,6 +12,5 @@ public class TestButtonRed : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        playerObject.GetComponent<Interactor>().SetOneActivateColour("red");
     }
 }

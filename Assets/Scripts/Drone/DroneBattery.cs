@@ -116,7 +116,7 @@ public class DroneBattery : MonoBehaviour
     //Start drone recharge timer; if the tablet is out than the screensavertext is shown.
     private void rechargingDrone(float delay)
     {
-        if (isTabletVisible == true)
+        if (isTabletVisible == false)
         {
             screenSaverTexts.SetActive(true);
         }
