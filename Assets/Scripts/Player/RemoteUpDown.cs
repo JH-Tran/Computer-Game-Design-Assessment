@@ -8,13 +8,14 @@ public class RemoteUpDown : MonoBehaviour
     [SerializeField] DroneBattery droneBattery;
 
     private Animator anim;
-    [SerializeField] private bool lookingUp = true;
+    [SerializeField] private bool lookingAtTablet = true;
 
     // Start is called before the first frame update
     void Start()
     {
         droneBattery = GetComponentInChildren<DroneBattery>();
         anim = GetComponent<Animator>();
+        droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
     }
 
     // Update is called once per frame
@@ -22,19 +23,19 @@ public class RemoteUpDown : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            if(lookingUp == true)
+            if(lookingAtTablet == true)
             {
                 anim.SetBool("isHolding", false);
-                lookingUp = false;
-                droneBattery.isScreenSaverVisible(lookingUp);
+                lookingAtTablet = false;
+                droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
             }
             else
             {
                 anim.SetBool("isHolding", true);
-                lookingUp = true;
-                droneBattery.isScreenSaverVisible(lookingUp);
+                lookingAtTablet = true;
+                droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
             }
-            playerCam.PlayerCameraLock(lookingUp);
+            playerCam.PlayerCameraLock(lookingAtTablet);
         }
     }
 }

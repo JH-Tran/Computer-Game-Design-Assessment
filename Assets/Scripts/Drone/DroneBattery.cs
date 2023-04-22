@@ -18,14 +18,14 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Text screenOffTimer;
 
     private ClawGrabber clawGrabber;
-    //Using battery 25, 4
-    private float batteryMaxTime = 25f;
+    //Using battery to move drone around
+    private float batteryMaxTime = 2f;
     private float batteryTime;
     //Recharing Battery
-    private float batteryCooldownTime = 4f;
+    private float batteryCooldownTime = 10f;
     private float batterRechargeTime;
     private bool recharging = false;
-    private bool isTabletVisible = false;
+    private bool isLookingAtTablet;
     //If the drone is not disabled
     public bool isTimerOn;
 
@@ -67,10 +67,12 @@ public class DroneBattery : MonoBehaviour
                     batterRechargeTime = 0;
                 }
                 screenOffTimer.text = String.Format("{0:0.##}", batterRechargeTime);
+                isScreenSaverVisible();
             }
             else
             {
                 batterRechargeTime = 0;
+                disappearScreenSaver();
                 TimerReset();
             }
         }
@@ -113,10 +115,10 @@ public class DroneBattery : MonoBehaviour
     {
         return batteryTime;
     }
-    //Start drone recharge timer; if the tablet is out than the screensavertext is shown.
+    //Start drone recharge timer
     private void rechargingDrone(float delay)
     {
-        if (isTabletVisible == false)
+        if (isLookingAtTablet == true)
         {
             screenSaverTexts.SetActive(true);
         }
@@ -124,27 +126,29 @@ public class DroneBattery : MonoBehaviour
         recharging = true;
     }
     //Method for when tablet is being up or down to show the screen down time.
-    public void isScreenSaverVisible(bool isTabletVisible)
+    public void isScreenSaverVisible()
     {
-        if ((batterRechargeTime > 0) && isTabletVisible == true)
+        if ((batterRechargeTime > 0) && isLookingAtTablet == true)
         {
             StartCoroutine(returnScreenSaver());
-            this.isTabletVisible = true;
         }
-        else if ((batterRechargeTime > 0) && isTabletVisible == false)
+        else if ((batterRechargeTime > 0) && isLookingAtTablet == false)
         {
             StopAllCoroutines();
             screenSaverTexts.SetActive(false);
-            this.isTabletVisible = false;
-        }
-        else
-        {
-            StopAllCoroutines();
-            screenSaverTexts.SetActive(false);
-            this.isTabletVisible = true;
         }
     }
-    
+    private void disappearScreenSaver()
+    {
+        StopAllCoroutines();
+        screenSaverTexts.SetActive(false);
+    }
+    public void setPlayerLookingAtTablet(bool lookingAtTablet)
+    {
+        this.isLookingAtTablet = lookingAtTablet;
+    }
+
+
     IEnumerator returnScreenSaver()
     {
         yield return new WaitForSeconds(1);
