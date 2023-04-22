@@ -26,13 +26,13 @@ public class RemoteUpDown : MonoBehaviour
             {
                 anim.SetBool("isHolding", false);
                 lookingUp = false;
-                droneBattery.isScreenSaverVisible(false);
+                droneBattery.isScreenSaverVisible(lookingUp);
             }
             else
             {
                 anim.SetBool("isHolding", true);
                 lookingUp = true;
-                droneBattery.isScreenSaverVisible(true);
+                droneBattery.isScreenSaverVisible(lookingUp);
             }
             playerCam.PlayerCameraLock(lookingUp);
         }

@@ -13,7 +13,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Image batteryInner;
     //Black screen
     [SerializeField] private Image blackScreen;
-    //Screen Saver
+    //Screen Saver UI Text
     [SerializeField] private GameObject screenSaverTexts;
     [SerializeField] private Text screenOffTimer;
 
@@ -25,7 +25,7 @@ public class DroneBattery : MonoBehaviour
     private float batteryCooldownTime = 4f;
     private float batterRechargeTime;
     private bool recharging = false;
-    private bool isUsingTablet = false;
+    private bool isTabletVisible = false;
     //If the drone is not disabled
     public bool isTimerOn;
 
@@ -113,10 +113,10 @@ public class DroneBattery : MonoBehaviour
     {
         return batteryTime;
     }
-    //Drone recharing battery timer
+    //Start drone recharge timer; if the tablet is out than the screensavertext is shown.
     private void rechargingDrone(float delay)
     {
-        if (isUsingTablet == false)
+        if (isTabletVisible == true)
         {
             screenSaverTexts.SetActive(true);
         }
@@ -128,22 +128,20 @@ public class DroneBattery : MonoBehaviour
     {
         if ((batterRechargeTime > 0) && isTabletVisible == true)
         {
-            Debug.Log("Start");
             StartCoroutine(returnScreenSaver());
-            isUsingTablet = false;
+            this.isTabletVisible = true;
         }
         else if ((batterRechargeTime > 0) && isTabletVisible == false)
         {
-            Debug.Log("Stop");
             StopAllCoroutines();
             screenSaverTexts.SetActive(false);
-            isUsingTablet = false;
+            this.isTabletVisible = false;
         }
         else
         {
             StopAllCoroutines();
             screenSaverTexts.SetActive(false);
-            isUsingTablet = true;
+            this.isTabletVisible = true;
         }
     }
     

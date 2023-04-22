@@ -1663,6 +1663,7 @@ MonoBehaviour:
   droneCamera: {fileID: 0}
   batteryInner: {fileID: 8459222997389241227}
   blackScreen: {fileID: 8459222996456806726}
+  remoteUp: {fileID: 8281991082052085619}
   screenSaverTexts: {fileID: 2058900044477735185}
   screenOffTimer: {fileID: 1374434897}
   isTimerOn: 0
@@ -2126,7 +2127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 6224516839074958640}
-  droneBattery: {fileID: 0}
   lookingUp: 1
 --- !u!1 &9144930623101973245
 GameObject:
