@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerCheckpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        Debug.Log(gameObject.transform.position);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Drone"))
+        {
+            other.GetComponentInParent<DroneMovement>().updateCheckpointPosition(gameObject.transform);
+        }
     }
 }

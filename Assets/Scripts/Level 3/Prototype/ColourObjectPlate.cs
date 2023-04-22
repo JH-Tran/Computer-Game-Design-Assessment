@@ -27,7 +27,7 @@ public class ColourObjectPlate : MonoBehaviour
     {
         if (other.CompareTag("Object"))
         {
-            if (other.GetComponent<Renderer>().material == keyMaterial)
+            if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 isOpen = true;
             }
@@ -38,7 +38,7 @@ public class ColourObjectPlate : MonoBehaviour
     {
         if (other.CompareTag("Object"))
         {
-            if (other.GetComponent<Renderer>().material == keyMaterial)
+            if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 isOpen = false;
             }
