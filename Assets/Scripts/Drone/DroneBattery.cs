@@ -46,13 +46,15 @@ public class DroneBattery : MonoBehaviour
             if (batteryTime > 0)
             {
                 blackScreen.enabled = false;
+                ChangeDroneMovement(isLookingAtTablet);
                 batteryTime -= Time.deltaTime;
-                batteryInner.fillAmount = batteryTime/batteryMaxTime;
+                batteryInner.fillAmount = batteryTime / batteryMaxTime;
             }
             else
             {
                 screenSaverTexts.SetActive(false);
                 DisableDrone();
+                droneMovement.changeDroneGravity(true);
                 clawGrabber.DropObject();
                 clawGrabber.currentFeatureIndicator.color = Color.red;
             }
@@ -89,6 +91,7 @@ public class DroneBattery : MonoBehaviour
         screenSaverTexts.SetActive(false);
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
+        droneMovement.changeDroneGravity(false);
     }
     //Disable drone base on a different cooldown that can be used by other scripts
     public void DisableDrone(float cooldown)
@@ -111,9 +114,11 @@ public class DroneBattery : MonoBehaviour
         droneMovement.changeDroneState(isTimerOn);
         rechargingDrone(batteryCooldownTime);
     }
-    public float getBattery()
+    //Stop Movement
+    public void ChangeDroneMovement(bool droneState)
     {
-        return batteryTime;
+        droneCamera.changeDroneState(droneState);
+        droneMovement.changeDroneState(droneState);
     }
     //Start drone recharge timer
     private void rechargingDrone(float delay)
@@ -147,8 +152,6 @@ public class DroneBattery : MonoBehaviour
     {
         this.isLookingAtTablet = lookingAtTablet;
     }
-
-
     IEnumerator returnScreenSaver()
     {
         yield return new WaitForSeconds(1);

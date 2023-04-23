@@ -42,10 +42,6 @@ public class DroneMovement : MonoBehaviour
             DroneMoveDown();
             MaxDroneSpeed();
         }
-        else
-        {
-            droneRigidbody.useGravity = true;
-        }
 
     }
     private void PlayerInput()
@@ -56,6 +52,10 @@ public class DroneMovement : MonoBehaviour
     public void changeDroneState(bool state)
     {
         droneEnable = state;
+    }
+    public void changeDroneGravity(bool state)
+    {
+        droneRigidbody.useGravity = state;
     }
     public void resetToCheckpoint()
     {
