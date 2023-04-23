@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac5f36a080d83349832e425b1c7e810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOrigin: {x: 0, y: 0, z: 0}
 --- !u!54 &121332365
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5149,7 +5148,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
