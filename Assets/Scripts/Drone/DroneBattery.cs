@@ -100,6 +100,7 @@ public class DroneBattery : MonoBehaviour
         batteryTime = 0;
         blackScreen.enabled = true;
         isTimerOn = false;
+        clawGrabber.ForceDropObject();
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
         rechargingDrone(cooldown);

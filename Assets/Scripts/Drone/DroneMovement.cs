@@ -16,13 +16,13 @@ public class DroneMovement : MonoBehaviour
     public Transform orientation;
     Vector3 moveDirection;
 
-    Rigidbody droneRigidbody;
+    [SerializeField] Rigidbody droneRigidbody;
     [SerializeField] private Transform checkpointTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        droneRigidbody = GetComponent<Rigidbody>();
+        droneRigidbody = gameObject.GetComponent<Rigidbody>();
         droneRigidbody.freezeRotation = true;
     }
 

@@ -85,7 +85,7 @@ Transform:
   - {fileID: 5664895699555035852}
   - {fileID: 5664895697832023963}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5664895698186810400
 Rigidbody:
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 5266812304262562805}
+  droneRigidbody: {fileID: 5664895698186810400}
   checkpointTransform: {fileID: 0}
 --- !u!114 &5664895698186810407
 MonoBehaviour:

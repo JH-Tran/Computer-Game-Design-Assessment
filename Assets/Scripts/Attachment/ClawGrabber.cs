@@ -25,7 +25,6 @@ public class ClawGrabber : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyUp(KeyCode.F))
         {
             if (droneBattery.isTimerOn == true)
