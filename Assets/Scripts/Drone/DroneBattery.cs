@@ -19,7 +19,7 @@ public class DroneBattery : MonoBehaviour
 
     private ClawGrabber clawGrabber;
     //Using battery to move drone around. 25 max time and 4 cooldown (SUBJECT TO CHANGE)
-    private float batteryMaxTime = 25f;
+    public float batteryMaxTime = 25f;
     private float batteryTime;
     //Recharing Battery
     private float batteryCooldownTime = 4f;
