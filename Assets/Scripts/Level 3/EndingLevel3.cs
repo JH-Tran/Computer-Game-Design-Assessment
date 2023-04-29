@@ -9,6 +9,8 @@ public class EndingLevel3 : MonoBehaviour
     {
         if (other.gameObject.tag == "Drone")
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
     }
