@@ -8,6 +8,9 @@ public class DroneAttachmentManager : MonoBehaviour
     [SerializeField] GameObject claw;
     [SerializeField] GameObject ballMachine;
     [SerializeField] GameObject attachmentIcons;
+    //For the tutorial level and level 1 to disable
+    [SerializeField] bool enableBallMachine = true;
+    private bool isClawActive;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +22,25 @@ public class DroneAttachmentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            Debug.Log("Claw Active");
-            claw.SetActive(true);
-            claw.GetComponentInChildren<ClawGrabber>().initaliseClawUI();
-            ballMachine.SetActive(false);
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            Debug.Log("Ball Machine Active");
-            claw.GetComponentInChildren<ClawGrabber>().ForceDropObject();
-            claw.SetActive(false);
-            ballMachine.SetActive(true);
-            ballMachine.GetComponent<BallMachine>().initaliseBallUI();
+            if (enableBallMachine == true && isClawActive == true)
+            {
+                Debug.Log("Ball Machine Active");
+                claw.GetComponentInChildren<ClawGrabber>().ForceDropObject();
+                claw.SetActive(false);
+                ballMachine.SetActive(true);
+                ballMachine.GetComponent<BallMachine>().initaliseBallUI();
+                isClawActive = false;
+            }
+            else
+            {
+                Debug.Log("Claw Active");
+                claw.SetActive(true);
+                claw.GetComponentInChildren<ClawGrabber>().initaliseClawUI();
+                ballMachine.SetActive(false);
+                isClawActive = true;
+            }
         }
     }
 }
