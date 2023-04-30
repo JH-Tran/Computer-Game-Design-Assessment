@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckpointPlatform : MonoBehaviour
+public class RechargeStation : MonoBehaviour
 {
-
-    void FixedUpdate()
-    {
-        
-    }
+    [SerializeField] private Transform checkpoint;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Drone"))
         {
             GameObject.Find("Drone Battery").GetComponent<DroneBattery>().rechargeDroneBatteryFromAny();
+            GameObject.Find("Drone1.0").GetComponent<DroneMovement>().updateCheckpointPosition(checkpoint);
         }
     }
 
@@ -23,6 +20,7 @@ public class CheckpointPlatform : MonoBehaviour
         if (other.CompareTag("Drone"))
         {
             GameObject.Find("Drone Battery").GetComponent<DroneBattery>().removeRechargeStationInfo();
+            GameObject.Find("Drone1.0").GetComponent<DroneMovement>().updateCheckpointPosition(checkpoint);
         }
     }
 }
