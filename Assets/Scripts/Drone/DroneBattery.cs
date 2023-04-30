@@ -46,9 +46,9 @@ public class DroneBattery : MonoBehaviour
             if (batteryTime > 0)
             {
                 ChangeDroneMovement(isLookingAtTablet);
+                blackScreen.enabled = false;
                 if (droneMovement.getDroneVelocity() > 0.1)
                 {
-                    blackScreen.enabled = false;
                     batteryTime -= Time.deltaTime;
                     batteryInner.fillAmount = batteryTime / batteryMaxTime;
                 }
