@@ -17,4 +17,12 @@ public class CheckpointPlatform : MonoBehaviour
             GameObject.Find("Drone Battery").GetComponent<DroneBattery>().rechargeDroneBatteryFromAny();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Drone"))
+        {
+            GameObject.Find("Drone Battery").GetComponent<DroneBattery>().removeRechargeStationInfo();
+        }
+    }
 }
