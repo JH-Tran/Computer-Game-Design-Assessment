@@ -23,7 +23,7 @@ public class DroneBattery : MonoBehaviour
     private float batteryMaxTime = 90f;
     [SerializeField] private float batteryTime;
     //Recharing Battery
-    private float batteryCooldownTime = 4f;
+    private float batteryCooldownTime = 5f;
     private float batteryRechargeTime;
     private bool isBatteryRechargeFromZero = false;
     private bool isLookingAtTablet;
@@ -162,7 +162,7 @@ public class DroneBattery : MonoBehaviour
     }
     public void rechargeDroneBatteryFromAny()
     {
-        if (isLookingAtTablet == false)
+        if (isLookingAtTablet == false && isBatteryRechargeFromZero == false)
         {
             isTimerOn = false;
             if (batteryTime >= batteryMaxTime)
@@ -175,7 +175,7 @@ public class DroneBattery : MonoBehaviour
             }
             batteryInner.fillAmount = batteryTime / batteryMaxTime;
         }
-        else if (isLookingAtTablet == false && batteryRechargeTime <= 0)
+        else if (isLookingAtTablet == false && batteryRechargeTime <= 0 && isBatteryRechargeFromZero == false)
         {
             isTimerOn = true;
         }
