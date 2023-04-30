@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColourObjectPlate : MonoBehaviour
+public class ColourDoorObjectPlate : MonoBehaviour
 {
     //If the object has the same material as the door the door "opens".
     [SerializeField] private Material keyMaterial;

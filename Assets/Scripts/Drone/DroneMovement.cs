@@ -22,6 +22,7 @@ public class DroneMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         droneRigidbody = gameObject.GetComponent<Rigidbody>();
         droneRigidbody.freezeRotation = true;
     }

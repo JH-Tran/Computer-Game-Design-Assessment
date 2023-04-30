@@ -9,7 +9,7 @@ public class ColourButtonFunction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Interacted with this Button: " + materialType.name);
+        //Debug.Log("Interacted with this Button: " + materialType.name);
         foreach(GameObject gameO in objectChanger) {
             gameO.GetComponentInChildren<ObjectChangerPlatform>().changeObjectMaterials(materialType);
         }
