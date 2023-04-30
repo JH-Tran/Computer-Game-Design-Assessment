@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectChangerPlatform : MonoBehaviour
 {
-    [SerializeField] List<GameObject> objectList = new List<GameObject>();
+    //List updates when an object is in its trigger collider
+    private List<GameObject> objectList = new List<GameObject>();
 
     private void OnTriggerStay(Collider other)
     {

@@ -5,23 +5,9 @@ using UnityEngine;
 public class ColourObjectPlate : MonoBehaviour
 {
     //If the object has the same material as the door the door "opens".
-
-    [SerializeField] private GameObject Door;
     [SerializeField] private Material keyMaterial;
-    private bool isOpen = false;
+    [SerializeField] private Animator doorAnimator;
 
-    // Start is called before the first frame update
-    void FixedUpdate()
-    {
-        if (isOpen == true)
-        {
-            Door.SetActive(false);
-        }
-        else
-        {
-            Door.SetActive(true); 
-        }
-    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -29,7 +15,7 @@ public class ColourObjectPlate : MonoBehaviour
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
-                isOpen = true;
+                doorAnimator.SetBool("isDoorOpen", true);
             }
         }
     }
@@ -40,7 +26,7 @@ public class ColourObjectPlate : MonoBehaviour
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
-                isOpen = false;
+                doorAnimator.SetBool("isDoorOpen", false);
             }
         }
     }
