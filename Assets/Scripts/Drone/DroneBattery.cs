@@ -18,8 +18,8 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Text screenOffTimer;
 
     private ClawGrabber clawGrabber;
-    //Using battery to move drone around. 25 max time and 4 cooldown (SUBJECT TO CHANGE)
-    public float batteryMaxTime = 25f;
+    //Using battery to move drone around. 90 max time and 4 cooldown (SUBJECT TO CHANGE)
+    private float batteryMaxTime = 90f;
     private float batteryTime;
     //Recharing Battery
     private float batteryCooldownTime = 4f;
@@ -45,18 +45,21 @@ public class DroneBattery : MonoBehaviour
         {
             if (batteryTime > 0)
             {
-                blackScreen.enabled = false;
                 ChangeDroneMovement(isLookingAtTablet);
-                batteryTime -= Time.deltaTime;
-                batteryInner.fillAmount = batteryTime / batteryMaxTime;
+                if (droneMovement.getDroneVelocity() > 0.1)
+                {
+                    blackScreen.enabled = false;
+                    batteryTime -= Time.deltaTime;
+                    batteryInner.fillAmount = batteryTime / batteryMaxTime;
+                }
             }
             else
             {
                 screenSaverTexts.SetActive(false);
                 DisableDrone();
                 droneMovement.changeDroneGravity(true);
-                clawGrabber.DropObject();
-                clawGrabber.currentFeatureIndicator.color = Color.red;
+                clawGrabber.ForceDropObject();
+                droneMovement.resetToCheckpoint();
             }
         }
         if (recharging == true)
@@ -105,7 +108,7 @@ public class DroneBattery : MonoBehaviour
         droneMovement.changeDroneState(isTimerOn);
         rechargingDrone(cooldown);
     }
-    //Origianl disable drone when the battery runs out.
+    //Disable drone when the battery runs out set amount.
     private void DisableDrone()
     {
         batteryTime = 0;
