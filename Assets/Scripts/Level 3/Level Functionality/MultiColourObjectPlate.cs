@@ -11,7 +11,7 @@ public class MultiColourObjectPlate : MonoBehaviour
 
     [SerializeField] private Animator greyDoorAnimator;
     [SerializeField] private Animator yellowDoorAnimator;
-    [SerializeField] private Animator redDoorAnimator;
+    [SerializeField] private Animator[] redDoorAnimator;
 
 
     private void OnTriggerStay(Collider other)
@@ -28,7 +28,10 @@ public class MultiColourObjectPlate : MonoBehaviour
             }
             else if (other.GetComponent<Renderer>().material.name == redMaterial.name + " (Instance)")
             {
-                redDoorAnimator.SetBool("isDoorOpen", true);
+                foreach(Animator redAnimator in redDoorAnimator)
+                {
+                    redAnimator.SetBool("isDoorOpen", true);
+                }
             }
         }
     }
@@ -47,7 +50,10 @@ public class MultiColourObjectPlate : MonoBehaviour
             }
             else if (other.GetComponent<Renderer>().material.name == redMaterial.name + " (Instance)")
             {
-                redDoorAnimator.SetBool("isDoorOpen", false);
+                foreach (Animator redAnimator in redDoorAnimator)
+                {
+                    redAnimator.SetBool("isDoorOpen", false);
+                }
             }
         }
     }
