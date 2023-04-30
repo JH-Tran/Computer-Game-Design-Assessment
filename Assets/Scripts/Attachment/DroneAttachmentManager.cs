@@ -10,7 +10,7 @@ public class DroneAttachmentManager : MonoBehaviour
     [SerializeField] GameObject attachmentIcons;
     //For the tutorial level and level 1 to disable
     [SerializeField] bool enableBallMachine = true;
-    private bool isClawActive;
+    private bool isClawActive = true;
 
     // Start is called before the first frame update
     void Start()

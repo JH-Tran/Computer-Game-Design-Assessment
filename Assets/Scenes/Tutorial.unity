@@ -5826,6 +5826,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5664895697832023940, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: enableBallMachine
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5664895697832023963, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
