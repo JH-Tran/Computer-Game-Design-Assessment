@@ -15,7 +15,8 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private Image blackScreen;
     //Screen Saver UI Text
     [SerializeField] private GameObject screenSaverTexts;
-    [SerializeField] private Text screenOffTimer;
+    [SerializeField] private Text screenSaverExtraInformationText;
+    [SerializeField] private String[] flavourText;
 
     private ClawGrabber clawGrabber;
     //Using battery to move drone around. 90 max time and 4 cooldown (SUBJECT TO CHANGE)
@@ -23,7 +24,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private float batteryTime;
     //Recharing Battery
     private float batteryCooldownTime = 4f;
-    private float batterRechargeTime;
+    private float batteryRechargeTime;
     private bool isBatteryRechargeFromZero = false;
     private bool isLookingAtTablet;
     //If the drone is not disabled
@@ -76,19 +77,19 @@ public class DroneBattery : MonoBehaviour
     }
     private void rechargeBatteryFromZero()
     {
-        if (batterRechargeTime > 0)
+        Debug.Log(batteryRechargeTime);
+        if (batteryRechargeTime > 0)
         {
-            batterRechargeTime -= Time.deltaTime;
-            if (batterRechargeTime < 0)
+            batteryRechargeTime -= Time.deltaTime;
+            if (batteryRechargeTime < 0)
             {
-                batterRechargeTime = 0;
+                batteryRechargeTime = 0;
             }
-            screenOffTimer.text = String.Format("{0:0.##}", batterRechargeTime);
             isScreenSaverVisible();
         }
         else
         {
-            batterRechargeTime = 0;
+            batteryRechargeTime = 0;
             removeScreenSaver();
             TimerReset();
         }
@@ -116,6 +117,7 @@ public class DroneBattery : MonoBehaviour
         clawGrabber.ForceDropObject();
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
+        screenSaverExtraInformationText.text = flavourText[1];
         screenSaverDroneTime(cooldown);
     }
     //Disable drone when the battery runs out set amount.
@@ -126,6 +128,7 @@ public class DroneBattery : MonoBehaviour
         isTimerOn = false;
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
+        screenSaverExtraInformationText.text = flavourText[0];
         screenSaverDroneTime(batteryCooldownTime);
     }
     //Stop Movement
@@ -141,17 +144,17 @@ public class DroneBattery : MonoBehaviour
         {
             screenSaverTexts.SetActive(true);
         }
-        batterRechargeTime = delay;
+        batteryRechargeTime = delay;
         isBatteryRechargeFromZero = true;
     }
     //Method for when tablet is being up or down to show the screen down time.
     public void isScreenSaverVisible()
     {
-        if ((batterRechargeTime > 0) && isLookingAtTablet == true)
+        if ((batteryRechargeTime > 0) && isLookingAtTablet == true)
         {
             StartCoroutine(returnScreenSaver());
         }
-        else if ((batterRechargeTime > 0) && isLookingAtTablet == false)
+        else if ((batteryRechargeTime > 0) && isLookingAtTablet == false)
         {
             StopAllCoroutines();
             screenSaverTexts.SetActive(false);
@@ -172,7 +175,7 @@ public class DroneBattery : MonoBehaviour
             }
             batteryInner.fillAmount = batteryTime / batteryMaxTime;
         }
-        else
+        else if (isLookingAtTablet == false && batteryRechargeTime <= 0)
         {
             isTimerOn = true;
         }
