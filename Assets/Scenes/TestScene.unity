@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 22003984}
   m_Layer: 0
   m_Name: RechargePad
-  m_TagString: Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2286,9 +2286,10 @@ GameObject:
   - component: {fileID: 1038118473}
   - component: {fileID: 1038118476}
   - component: {fileID: 1038118475}
+  - component: {fileID: 1038118477}
   m_Layer: 0
   m_Name: RechargeArea
-  m_TagString: Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2319,8 +2320,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9999996, y: 0.7636219, z: 0.9999996}
-  m_Center: {x: 0, y: -0.11818879, z: 0}
+  m_Size: {x: 0.9999996, y: 1.4809479, z: 0.9999996}
+  m_Center: {x: 0, y: 0.2404746, z: 0}
 --- !u!33 &1038118476
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2329,6 +2330,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038118472}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1038118477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038118472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14edd8aadd173c449a9577edab6d1fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1050467185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3324,10 +3337,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1038118473}
   - {fileID: 1831548758}
   - {fileID: 22003982}
   - {fileID: 1674438505}
-  - {fileID: 1038118473}
   m_Father: {fileID: 998992212}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3758,7 +3771,7 @@ GameObject:
   - component: {fileID: 1674438507}
   m_Layer: 0
   m_Name: RechargeBottom
-  m_TagString: Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
