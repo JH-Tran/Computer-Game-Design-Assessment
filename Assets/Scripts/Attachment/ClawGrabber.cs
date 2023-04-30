@@ -31,7 +31,6 @@ public class ClawGrabber : MonoBehaviour
             {
                 if (isGrabbingObject == false)
                 {
-                    currentFeatureIndicator.color = Color.yellow;
                     isGrabbingObject = true;
                     StartCoroutine(autoTurnOffGrab());
                 }
@@ -56,6 +55,22 @@ public class ClawGrabber : MonoBehaviour
                 objectGrabbed.Add(other.gameObject);
                 isObjectHold = true;
                 Destroy(other.GetComponent<Rigidbody>());
+            }
+            else if (isGrabbingObject == false && isObjectHold == false)
+            {
+                currentFeatureIndicator.color = Color.yellow;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //Debug.Log(other.name);
+        if (other.CompareTag("Object"))
+        {
+            if (isGrabbingObject == false && isObjectHold == false)
+            {
+                currentFeatureIndicator.color = Color.red;
             }
         }
     }
