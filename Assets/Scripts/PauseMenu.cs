@@ -71,7 +71,6 @@ public class PauseMenu : MonoBehaviour
     public void droneFound()
     {
         droneCamScript = GameObject.Find("Drone1.0").GetComponent<DroneCamera>();
-        if (droneCamScript != null)
-            isDroneFound = true;
+        isDroneFound = true;
     }
 }
