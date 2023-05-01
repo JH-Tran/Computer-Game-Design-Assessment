@@ -12,7 +12,12 @@ public class mainMenu : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
         levelSelectorUI.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
+
+    
 
     public void PlayGame()
     {
