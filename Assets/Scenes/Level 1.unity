@@ -1936,6 +1936,10 @@ PrefabInstance:
       propertyPath: enableBallMachine
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: clawIndicatorImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cf5ab9fd336c1740846f256bb481c71, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
