@@ -205,6 +205,14 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
         if (!isPlayerCameraLock)
         {
             tabletLight.enabled = false;
@@ -538,9 +546,13 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    public void PlayerCameraLock(bool isLock)
+    public void isPlayerCameraLocked(bool isLock)
     {
         isPlayerCameraLock = isLock;
+    }
+    public bool getPlayerCameraLock()
+    {
+        return isPlayerCameraLock;
     }
 }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 interface IInteractableTut
 {
@@ -47,7 +48,7 @@ public class Interactor_Tutorial : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
                     spotlight.SetActive(false);
-                    fpController.PlayerCameraLock(true);
+                    fpController.isPlayerCameraLocked(true);
                 }
 
                 if (hitInfo.transform.gameObject == playerButton)

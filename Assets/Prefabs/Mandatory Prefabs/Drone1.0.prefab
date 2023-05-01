@@ -85,7 +85,7 @@ Transform:
   - {fileID: 5664895699555035852}
   - {fileID: 5664895697832023963}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5664895698186810400
 Rigidbody:
@@ -295,6 +295,7 @@ MonoBehaviour:
   claw: {fileID: 5664895698848237868}
   ballMachine: {fileID: 628403123}
   attachmentIcons: {fileID: 5664895698848237868}
+  enableBallMachine: 1
 --- !u!1 &5664895698274315423
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,8 +392,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 1.1379715, z: 2}
+  m_Center: {x: 0, y: -0.068986006, z: 0}
 --- !u!114 &5664895698274315396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3443640939888592027}
   m_Layer: 8
-  m_Name: BallUpSpawn
+  m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

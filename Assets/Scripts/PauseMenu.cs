@@ -6,10 +6,23 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenuObject;
-    private bool isGamePaused;
+    [SerializeField] FirstPersonController fpcScript;
+    [SerializeField] DroneCamera droneCamScript;
+    [SerializeField] bool isDroneFound = true;
+    private bool isGamePaused = false;
+    private bool isPlayerCameraLocked = false;
+    private bool isDroneCameraLocked = false;
+
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
 
     private void Start()
     {
+        if (isDroneFound == true)
+            droneCamScript = GameObject.Find("Drone1.0").GetComponent<DroneCamera>();
         pauseMenuObject.SetActive(false);
     }
 
@@ -29,14 +42,29 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
+        fpcScript.lockCursor = true;
+        fpcScript.isPlayerCameraLocked(isPlayerCameraLocked);
+        if (isDroneFound)
+            droneCamScript.changeDroneState(isDroneCameraLocked);
+
         pauseMenuObject.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
     }
     private void PauseGame()
     {
+        fpcScript.lockCursor = false;
+        //Get camera lock
+        isPlayerCameraLocked = fpcScript.getPlayerCameraLock();
+        fpcScript.isPlayerCameraLocked(true);
+        if (isDroneFound)
+        {
+            isDroneCameraLocked = droneCamScript.getDroneState();
+            droneCamScript.changeDroneState(false);
+        }
+
         pauseMenuObject.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
@@ -45,5 +73,10 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+    public void droneFound()
+    {
+        droneCamScript = GameObject.Find("Drone1.0").GetComponent<DroneCamera>();
+        isDroneFound = true;
     }
 }

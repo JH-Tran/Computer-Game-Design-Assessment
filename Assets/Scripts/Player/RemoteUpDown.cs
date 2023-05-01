@@ -35,7 +35,7 @@ public class RemoteUpDown : MonoBehaviour
                 lookingAtTablet = true;
                 droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
             }
-            playerCam.PlayerCameraLock(lookingAtTablet);
+            playerCam.isPlayerCameraLocked(lookingAtTablet);
         }
     }
 }
