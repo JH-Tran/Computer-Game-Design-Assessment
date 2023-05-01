@@ -12,7 +12,10 @@ public class mainMenu : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
         levelSelectorUI.SetActive(false);
+        Time.timeScale = 1;
     }
+
+    
 
     public void PlayGame()
     {

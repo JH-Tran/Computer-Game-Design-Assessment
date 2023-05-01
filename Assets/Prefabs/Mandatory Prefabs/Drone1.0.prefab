@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clawCollider: {fileID: 5664895698274315417}
   currentFeatureIndicator: {fileID: 0}
-  clawIndicatorImage: {fileID: 21300000, guid: 133ec1f8c298e874f8c05c565aa08743, type: 3}
+  clawIndicatorImage: {fileID: 21300000, guid: 2cf5ab9fd336c1740846f256bb481c71, type: 3}
   droneBattery: {fileID: 0}
   isGrabbingObject: 0
   isObjectHold: 0
