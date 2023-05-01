@@ -13,6 +13,12 @@ public class PauseMenu : MonoBehaviour
     private bool isPlayerCameraLocked = false;
     private bool isDroneCameraLocked = false;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
+
     private void Start()
     {
         if (isDroneFound == true)
