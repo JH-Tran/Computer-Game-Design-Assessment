@@ -20,7 +20,6 @@ public class Interactor_Tutorial : MonoBehaviour
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
     [SerializeField] FirstPersonController fpController;
-    [SerializeField] PauseMenu pauseMenu;
 
     public GameObject playerButton;
     public Animator playerButtonAnim;
@@ -80,7 +79,6 @@ public class Interactor_Tutorial : MonoBehaviour
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);
                 }
-                pauseMenu.droneFound();
             }
         }
     }
