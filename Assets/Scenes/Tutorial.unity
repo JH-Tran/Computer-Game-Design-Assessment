@@ -6196,6 +6196,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670752688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1679256332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7257261266702868942, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+  m_PrefabInstance: {fileID: 7747724516311256300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82796ac488df504ab9c5d384e0ec302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724523357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6492,6 +6503,7 @@ MonoBehaviour:
   pedestal: {fileID: 1724523357}
   spotlight: {fileID: 642788000}
   fpController: {fileID: 1767545136}
+  pauseMenu: {fileID: 1679256332}
   playerButton: {fileID: 1006853423}
   playerButtonAnim: {fileID: 1006853428}
   playerButtonPressed: {fileID: 1006853429}
@@ -8249,22 +8261,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1455240603, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 76.9962
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455240603, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 23.3095
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455240603, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1455240605, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1537436786, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8325,6 +8321,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7257261266702868942, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: isDroneFound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7747724514346260510, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_Range
       value: 2
@@ -8372,10 +8372,6 @@ PrefabInstance:
     - target: {fileID: 8281991082052085618, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.2144
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996456806720, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: clawGrabber

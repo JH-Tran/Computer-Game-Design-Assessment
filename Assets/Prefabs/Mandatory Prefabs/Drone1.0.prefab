@@ -295,6 +295,7 @@ MonoBehaviour:
   claw: {fileID: 5664895698848237868}
   ballMachine: {fileID: 628403123}
   attachmentIcons: {fileID: 5664895698848237868}
+  enableBallMachine: 1
 --- !u!1 &5664895698274315423
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3443640939888592027}
   m_Layer: 8
-  m_Name: BallUpSpawn
+  m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

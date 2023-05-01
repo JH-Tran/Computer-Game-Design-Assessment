@@ -46,4 +46,9 @@ public class DroneCamera : MonoBehaviour
     {
         droneEnable = state;
     }
+
+    public bool getDroneState()
+    {
+        return droneEnable;
+    }
 }

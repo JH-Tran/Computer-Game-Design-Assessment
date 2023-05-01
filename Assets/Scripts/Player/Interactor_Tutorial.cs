@@ -19,6 +19,7 @@ public class Interactor_Tutorial : MonoBehaviour
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
     [SerializeField] FirstPersonController fpController;
+    [SerializeField] PauseMenu pauseMenu;
 
     public GameObject playerButton;
     public Animator playerButtonAnim;
@@ -47,7 +48,7 @@ public class Interactor_Tutorial : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
                     spotlight.SetActive(false);
-                    fpController.PlayerCameraLock(true);
+                    fpController.isPlayerCameraLocked(true);
                 }
 
                 if (hitInfo.transform.gameObject == playerButton)
@@ -78,6 +79,7 @@ public class Interactor_Tutorial : MonoBehaviour
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);
                 }
+                pauseMenu.droneFound();
             }
         }
     }
