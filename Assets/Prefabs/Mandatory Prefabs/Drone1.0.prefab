@@ -60,11 +60,10 @@ GameObject:
   - component: {fileID: 5664895698186810400}
   - component: {fileID: 5664895698186810406}
   - component: {fileID: 5664895698186810407}
-  - component: {fileID: 1660847765887900559}
   m_Layer: 8
   m_Name: Drone1.0
   m_TagString: Drone
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -133,20 +132,6 @@ MonoBehaviour:
   mouseSensitivity: 2
   droneBody: {fileID: 5266812304262562805}
   droneCamera: {fileID: 5664895699555035843}
---- !u!64 &1660847765887900559
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4781883058251520335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4976938368257840762
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,8 +144,9 @@ GameObject:
   - component: {fileID: 332016092221959694}
   - component: {fileID: 8186843783309439697}
   - component: {fileID: 5664895699530280564}
+  - component: {fileID: 1992077036386157512}
   m_Layer: 8
-  m_Name: Cube
+  m_Name: DroneModel
   m_TagString: Drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976938368257840762}
   m_LocalRotation: {x: 0.000000053385076, y: 0.7071068, z: 0.70710677, w: -0.00000005338508}
-  m_LocalPosition: {x: 0.85, y: 1.47, z: -0.36}
+  m_LocalPosition: {x: 0, y: 0, z: -1.14}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -241,11 +227,24 @@ MeshCollider:
   m_GameObject: {fileID: 4976938368257840762}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: ece4b434555a1c44494adb4480848511, type: 3}
+--- !u!65 &1992077036386157512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976938368257840762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01374814, y: 0.013479025, z: 0.014850819}
+  m_Center: {x: 0.000054065586, y: 0.012244424, z: 0.0006889379}
 --- !u!1 &5664895697832023962
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664895697832023962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 1.688, z: 0.79}
+  m_LocalPosition: {x: -0.013000667, y: 0.21799994, z: 0.009999275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -392,8 +391,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.2379879, z: 3.0421195}
-  m_Center: {x: 2.8795304e-12, y: -0.1189946, z: -0.52106}
+  m_Size: {x: 2, y: 1.7874675, z: 1.4438343}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5664895698274315396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664895699555035841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 1.8, z: 0.79}
+  m_LocalPosition: {x: -0.013000667, y: 0.32999992, z: 0.009999275}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -563,7 +562,7 @@ GameObject:
   - component: {fileID: 352878416438828123}
   - component: {fileID: 3273654194198205121}
   m_Layer: 8
-  m_Name: Cylinder
+  m_Name: Fans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8945533174130960926}
   m_LocalRotation: {x: 0.000000053385076, y: 0.7071068, z: 0.70710677, w: -0.00000005338508}
-  m_LocalPosition: {x: 0.8514348, y: 1.4699999, z: 0.10755205}
+  m_LocalPosition: {x: 0, y: -0.00000011920929, z: -0.67244864}
   m_LocalScale: {x: 88.19767, y: 88.19767, z: 88.19767}
   m_ConstrainProportionsScale: 0
   m_Children: []
