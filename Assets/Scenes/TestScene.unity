@@ -2200,7 +2200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.38
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2234,10 +2234,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5664895698186810406, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: checkpointTransform
-      value: 
-      objectReference: {fileID: 1831548758}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
@@ -3696,11 +3692,6 @@ Transform:
   m_Father: {fileID: 919174460}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1831548758 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2311061884546745981, guid: e82d232015b3b0344866e55778d3e794, type: 3}
-  m_PrefabInstance: {fileID: 2311061886108545323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844660193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 792680995842807797, guid: db194864657449549ab0287d4796adcb, type: 3}
