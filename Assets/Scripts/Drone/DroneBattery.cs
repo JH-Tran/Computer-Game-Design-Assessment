@@ -32,7 +32,7 @@ public class DroneBattery : MonoBehaviour
     //If the drone is not disabled
     public bool isTimerOn;
     //Recharing battery from any percentage
-    private float rechargeSpeed = 3;
+    private float rechargeSpeed = 50;
 
     void Start()
     {
