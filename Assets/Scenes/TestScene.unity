@@ -2186,6 +2186,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1344171749993905711, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
       value: Drone1.0
@@ -2232,6 +2236,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945533174130960926, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3268,6 +3276,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6224516839074958640, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+      propertyPath: lockCursor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6224516839074958646, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_RootOrder
       value: 8
