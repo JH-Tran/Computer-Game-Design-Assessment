@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 49687d6942f1b6b4c94f9f355630a165, type: 2}
+  m_Motion: {fileID: 7400000, guid: 450c11dd646c47a4b9f1e318d05393be, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4866681a2120a684187b9a32893475d8, type: 2}
+  m_Motion: {fileID: 7400000, guid: e3160375120b852469c0004281f0e08d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -129,7 +129,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 120, y: 110, z: 0}
-  m_ExitPosition: {x: 600, y: 50, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -3935254138675006352}
 --- !u!91 &9100000
@@ -138,7 +138,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: door
+  m_Name: lockedDoor
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isOpen
@@ -181,7 +181,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3b2a7856e97203543a6f609cd3812085, type: 2}
+  m_Motion: {fileID: 7400000, guid: b23cc176a0941fa40b0da3dc3576f532, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -255,7 +255,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a9a00b13fed00c3498664b8b1b0dc99b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 99aefecfa2c906d41802bc7aef4e2be2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

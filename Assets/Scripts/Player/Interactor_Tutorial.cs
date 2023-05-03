@@ -17,6 +17,9 @@ public class Interactor_Tutorial : MonoBehaviour
     public GameObject pickupRemote;
     public bool pickedup = false;
     public GameObject pedestal;
+    public GameObject eToInteract2;
+    public GameObject raiseRemote;
+    public GameObject trigger5;
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
     [SerializeField] FirstPersonController fpController;
@@ -59,6 +62,22 @@ public class Interactor_Tutorial : MonoBehaviour
                         playerButtonPressed.x = 2;
                         playerButtonPressed.door2Anim.SetBool("isOpen", true);
                         playerButtonPressed.isOpen = true;
+                        if (trigger5.activeSelf == true)
+                        {
+                            trigger5.GetComponent<TutorialTrigger>().icons.SetActive(false);
+                            trigger5.GetComponent<TutorialTrigger>().box.SetActive(false);
+                            trigger5.SetActive(false);
+                        }
+
+                        if (eToInteract2.activeSelf == true)
+                        {
+                            eToInteract2.SetActive(false);
+                        }
+
+                        if (raiseRemote.activeSelf == false)
+                        {
+                            raiseRemote.SetActive(true);
+                        }
                     }
 
                     else if (playerButtonPressed.isOpen == true)
@@ -67,6 +86,16 @@ public class Interactor_Tutorial : MonoBehaviour
                         playerButtonPressed.x = 1;
                         playerButtonPressed.door2Anim.SetBool("isOpen", false);
                         playerButtonPressed.isOpen = false;
+                        trigger5.SetActive(true);
+                        if (eToInteract2.activeSelf == false)
+                        {
+                            eToInteract2.SetActive(true);
+                        }
+
+                        if (raiseRemote.activeSelf == true)
+                        {
+                            raiseRemote.SetActive(false);
+                        }
                     }
                 }
             }
