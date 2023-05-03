@@ -25,6 +25,13 @@ public class Interactor_Tutorial : MonoBehaviour
     public Animator playerButtonAnim;
     public PlayerButtonPressed playerButtonPressed;
 
+    //Change Button sign when interacted
+    [SerializeField] GameObject pressButtonSign;
+    [SerializeField] GameObject playerToDroneSign;
+    [SerializeField] GameObject droneToPersonTrigger;
+    [SerializeField] GameObject droneToPersonIcon;
+    [SerializeField] GameObject tutIcon;
+
     void Start()
     {
         pedestalAnim = pedestal.GetComponent<Animator>();
@@ -43,8 +50,7 @@ public class Interactor_Tutorial : MonoBehaviour
                 if (hitInfo.transform.gameObject.tag == "Remote")
                 {
                     pickedup = true;
-                    //Removes E and mouse signs
-                    GameObject.FindGameObjectWithTag("Part1").SetActive(false);
+                    //Removes E
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     pedestalAnim.SetBool("isEmpty", true);
                     spotlight.SetActive(false);
@@ -59,6 +65,13 @@ public class Interactor_Tutorial : MonoBehaviour
                         playerButtonPressed.x = 2;
                         playerButtonPressed.door2Anim.SetBool("isOpen", true);
                         playerButtonPressed.isOpen = true;
+                        //Change player room sign to press the button
+                        pressButtonSign.SetActive(false);
+                        playerToDroneSign.SetActive(true);
+                        //Disable the drone to person sign 
+                        droneToPersonTrigger.SetActive(false);
+                        droneToPersonIcon.SetActive(false);
+                        tutIcon.SetActive(false);
                     }
 
                     else if (playerButtonPressed.isOpen == true)
@@ -67,6 +80,11 @@ public class Interactor_Tutorial : MonoBehaviour
                         playerButtonPressed.x = 1;
                         playerButtonPressed.door2Anim.SetBool("isOpen", false);
                         playerButtonPressed.isOpen = false;
+                        //Change player room sign to show player to drone sign
+                        pressButtonSign.SetActive(true);
+                        playerToDroneSign.SetActive(false);
+                        //Enables the drone to person sign
+                        droneToPersonTrigger.SetActive(true);
                     }
                 }
             }
