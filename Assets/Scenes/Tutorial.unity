@@ -6558,8 +6558,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a23bdc39e468634e9925fcdf0e56521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactorSource: {fileID: 1901508572}
+  playerCameraTransform: {fileID: 0}
   interactRange: 100
+  isPlayerInteracting: 1
+  interactorSource: {fileID: 1901508572}
   drone: {fileID: 1546128907}
   remote: {fileID: 1550013635}
   pickupRemote: {fileID: 2121471991}

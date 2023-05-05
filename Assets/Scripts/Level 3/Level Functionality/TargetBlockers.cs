@@ -14,10 +14,7 @@ public class TargetBlockers : MonoBehaviour
         {
             foreach (GameObject i in TargetObject)
             {
-                if (i.GetComponent<Renderer>().material.name == targetHitMaterial.name + " (Instance)")
-                {
-                    i.GetComponent<Renderer>().material = targetHitMaterial;
-                }
+                i.GetComponent<Renderer>().material = targetHitMaterial;
             }
             blocker.SetActive(false);
         }

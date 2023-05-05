@@ -15,7 +15,7 @@ public class MultiColourObjectPlate : MonoBehaviour
 
     [SerializeField] private GameObject[] basketBorder;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Object"))
         {

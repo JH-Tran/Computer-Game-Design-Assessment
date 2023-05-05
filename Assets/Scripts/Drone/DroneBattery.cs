@@ -19,11 +19,11 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private String[] flavourText;
 
     private ClawGrabber clawGrabber;
-    //Using battery to move drone around. 90 max time and 4 cooldown (SUBJECT TO CHANGE)
+    //Using battery to move drone around. 90 max time and 3 cooldown (SUBJECT TO CHANGE)
     private float batteryMaxTime = 90f;
     [SerializeField] private float batteryTime;
     //Recharing Battery
-    private float batteryCooldownTime = 5f;
+    private float batteryCooldownTime = 3f;
     private float batteryRechargeTime;
     private bool isBatteryRechargeFromZero = false;
     private bool isLookingAtTablet;

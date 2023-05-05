@@ -11,7 +11,7 @@ public class Interactor : MonoBehaviour
 {
     public Transform playerCameraTransform;
     public float interactRange = 15;
-    public bool isPlayerInteracting = true;
+    public bool isPlayerInteracting = false;
 
     public void playerInteraction()
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InteractorLevel3 : Interactor
 {
-    private string highlightTagName = "Button";
     // Start is called before the first frame update
     void Start()
     {

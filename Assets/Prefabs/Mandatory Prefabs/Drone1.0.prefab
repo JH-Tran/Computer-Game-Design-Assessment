@@ -132,6 +132,7 @@ MonoBehaviour:
   mouseSensitivity: 2
   droneBody: {fileID: 5266812304262562805}
   droneCamera: {fileID: 5664895699555035843}
+  droneAttachmentManager: {fileID: 0}
 --- !u!1 &4921307764705138017
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +331,8 @@ MonoBehaviour:
   swapItemGameObject: {fileID: 0}
   ballIcon: {fileID: 21300000, guid: fdc29124acc8e69469da6b1d22d8afa8, type: 3}
   grabberIcon: {fileID: 21300000, guid: 2cf5ab9fd336c1740846f256bb481c71, type: 3}
+  droneMovementScript: {fileID: 0}
+  isDroneEnabled: 1
 --- !u!1 &5664895698274315423
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,8 +429,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.675714, z: 1.4438343}
-  m_Center: {x: 0, y: -0.8970211, z: 0}
+  m_Size: {x: 2, y: 2.5974908, z: 1.3639259}
+  m_Center: {x: 0, y: -0.8579095, z: -0.039954185}
 --- !u!114 &5664895698274315396
 MonoBehaviour:
   m_ObjectHideFlags: 0

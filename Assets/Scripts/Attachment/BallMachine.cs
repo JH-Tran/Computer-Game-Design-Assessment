@@ -13,7 +13,7 @@ public class BallMachine : MonoBehaviour
     [SerializeField] private Transform launchTransform;
     [SerializeField] private GameObject ball;
     [SerializeField] private List<GameObject> ballList;
-    private float launchVelocity = 15f;
+    private float launchVelocity = 20f;
     //Number of ball in the scene at one time is the value + 1
     private int numberOfBalls = 1;
 
