@@ -25,12 +25,14 @@ public class RemoteUpDown : MonoBehaviour
         anim = GetComponent<Animator>();
         droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
         playerStateObject.GetComponent<Image>().sprite = droneStateIcon;
+        droneAttachmentManagerScript = GameObject.Find("DroneAttachments").GetComponent<DroneAttachmentManager>();
+        interactor = GetComponentInParent<Interactor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Tab) && Time.timeScale != 0)
         {
             if(lookingAtTablet == true)
             {
@@ -38,6 +40,9 @@ public class RemoteUpDown : MonoBehaviour
                 lookingAtTablet = false;
                 droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
                 playerStateObject.GetComponent<Image>().sprite = playerStateIcon;
+
+                interactor.setPlayerInteracting(true);
+                droneAttachmentManagerScript.isDroneEnabled = false;
             }
             else
             {
@@ -45,6 +50,9 @@ public class RemoteUpDown : MonoBehaviour
                 lookingAtTablet = true;
                 droneBattery.setPlayerLookingAtTablet(lookingAtTablet);
                 playerStateObject.GetComponent<Image>().sprite = droneStateIcon;
+
+                interactor.setPlayerInteracting(false);
+                droneAttachmentManagerScript.isDroneEnabled = true;
             }
             playerCam.isPlayerCameraLocked(lookingAtTablet);
         }

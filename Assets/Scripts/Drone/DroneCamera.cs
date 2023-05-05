@@ -15,8 +15,7 @@ public class DroneCamera : MonoBehaviour
     [SerializeField] DroneAttachmentManager droneAttachmentManager;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         droneCamera.transform.localEulerAngles = new Vector3(0, 0, 0);
         droneAttachmentManager = GameObject.Find("Drone1.0").GetComponentInChildren<DroneAttachmentManager>();

@@ -14,6 +14,10 @@ public class InteractorLevel3 : Interactor
     // Update is called once per frame
     void Update()
     {
-        playerInteraction();
+        if (isPlayerInteracting == true)
+        {
+            playerInteraction();
+        }
+        
     }
 }

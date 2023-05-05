@@ -13,11 +13,6 @@ public class Interactor : MonoBehaviour
     public float interactRange = 15;
     public bool isPlayerInteracting = true;
 
-    void Update()
-    {
-        
-    }
-
     public void playerInteraction()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -31,5 +26,10 @@ public class Interactor : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void setPlayerInteracting(bool state)
+    {
+        isPlayerInteracting = state;
     }
 }
