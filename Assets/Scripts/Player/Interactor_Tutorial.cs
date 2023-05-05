@@ -42,7 +42,7 @@ public class Interactor_Tutorial : Interactor
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerInteracting == true)
         {
             RaycastHit hitInfo;
             Ray r = new Ray(interactorSource.position, interactorSource.forward);
