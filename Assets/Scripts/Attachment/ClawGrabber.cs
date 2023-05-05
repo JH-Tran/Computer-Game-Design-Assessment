@@ -23,27 +23,6 @@ public class ClawGrabber : MonoBehaviour
         currentFeatureIndicator.color = Color.red;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (droneBattery.isTimerOn == true)
-            {
-                if (isGrabbingObject == false)
-                {
-                    isGrabbingObject = true;
-                    currentFeatureIndicator.color = Color.yellow;
-                    StartCoroutine(autoTurnOffGrab());
-                }
-                else if (isGrabbingObject == true && isObjectHold == true)
-                {
-                    DropObject();
-                    currentFeatureIndicator.color = Color.red;
-                }
-            }
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log(other.name);
@@ -132,5 +111,23 @@ public class ClawGrabber : MonoBehaviour
     public bool getGrabbingObject()
     {
         return isGrabbingObject;
+    }
+
+    public void useGrabber()
+    {
+        if (droneBattery.isTimerOn == true)
+        {
+            if (isGrabbingObject == false)
+            {
+                isGrabbingObject = true;
+                currentFeatureIndicator.color = Color.yellow;
+                StartCoroutine(autoTurnOffGrab());
+            }
+            else if (isGrabbingObject == true && isObjectHold == true)
+            {
+                DropObject();
+                currentFeatureIndicator.color = Color.red;
+            }
+        }
     }
 }

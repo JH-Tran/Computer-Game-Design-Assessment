@@ -17,7 +17,7 @@ public class BallMachine : MonoBehaviour
     //Number of ball in the scene at one time is the value + 1
     private int numberOfBalls = 1;
 
-    private float ballCooldown = 0.5f;
+    private float ballCooldown = 2f;
     private float ballCooldownCurrent;
 
     private void Start()
@@ -40,8 +40,18 @@ public class BallMachine : MonoBehaviour
         else
         {
             currentFeatureIndicator.fillAmount = 1;
+            ballCooldownCurrent = 0;
         }
-        if (Input.GetKeyDown(KeyCode.E) && ballCooldownCurrent <= 0)
+    }
+
+    public void initaliseBallUI()
+    {
+        currentFeatureIndicator.sprite = ballImage;
+        currentFeatureIndicator.color = Color.white;
+    }
+
+    public void useBallMachine() {
+        if (ballCooldownCurrent <= 0)
         {
             if (ballList.Count > numberOfBalls)
             {
@@ -54,11 +64,5 @@ public class BallMachine : MonoBehaviour
             ballCooldownCurrent = ballCooldown;
             currentFeatureIndicator.fillAmount = 0;
         }
-    }
-
-    public void initaliseBallUI()
-    {
-        currentFeatureIndicator.sprite = ballImage;
-        currentFeatureIndicator.color = Color.white;
     }
 }

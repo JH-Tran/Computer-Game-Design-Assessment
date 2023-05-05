@@ -15,6 +15,9 @@ public class RemoteUpDown : MonoBehaviour
     [SerializeField] Sprite droneStateIcon;
     [SerializeField] Sprite playerStateIcon;
 
+    [SerializeField] DroneAttachmentManager droneAttachmentManagerScript;
+    [SerializeField] Interactor interactor;
+
     // Start is called before the first frame update
     void Start()
     {

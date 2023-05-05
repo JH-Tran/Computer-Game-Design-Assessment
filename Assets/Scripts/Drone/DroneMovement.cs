@@ -118,5 +118,8 @@ public class DroneMovement : MonoBehaviour
     {
         return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
     }
-
+    public bool getDroneEnable()
+    {
+        return droneEnable;
+    }
 }

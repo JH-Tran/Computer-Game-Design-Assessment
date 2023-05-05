@@ -15,6 +15,9 @@ public class DroneAttachmentManager : MonoBehaviour
     [SerializeField] GameObject swapItemGameObject;
     [SerializeField] Sprite ballIcon;
     [SerializeField] Sprite grabberIcon;
+    //
+    [SerializeField] DroneMovement droneMovementScript;
+    public bool isDroneEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +38,7 @@ public class DroneAttachmentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q) && isDroneEnabled == true)
         {
             if (enableBallMachine == true && isClawActive == true)
             {
@@ -59,6 +62,15 @@ public class DroneAttachmentManager : MonoBehaviour
                     swapFeatureImage.GetComponent<Image>().sprite = ballIcon;
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && isClawActive == true && isDroneEnabled == true)
+        {
+            grabber.GetComponentInChildren<ClawGrabber>().useGrabber();
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && isClawActive == false && enableBallMachine == true && isDroneEnabled == true)
+        {
+            ballMachine.GetComponent<BallMachine>().useBallMachine();
         }
     }
 }

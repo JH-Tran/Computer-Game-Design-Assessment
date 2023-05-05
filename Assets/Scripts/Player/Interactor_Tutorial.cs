@@ -8,10 +8,9 @@ interface IInteractableTut
     public void Interact();
 }
 
-public class Interactor_Tutorial : MonoBehaviour
+public class Interactor_Tutorial : Interactor
 {
     public Transform interactorSource;
-    public float interactRange = 10;
     public GameObject drone;
     public GameObject remote;
     public GameObject pickupRemote;

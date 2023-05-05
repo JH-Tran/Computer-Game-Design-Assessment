@@ -10,10 +10,8 @@ interface IInteractable
 public class Interactor : MonoBehaviour
 {
     public Transform playerCameraTransform;
-    public float interactRange = 20;
-    public GameObject drone;
-    public GameObject remote;
-    public bool pickedup = false;
+    public float interactRange = 15;
+    public bool isPlayerInteracting = true;
 
     void Update()
     {
