@@ -15,7 +15,7 @@ public class BallMachine : MonoBehaviour
     [SerializeField] private List<GameObject> ballList;
     private float launchVelocity = 15f;
     //Number of ball in the scene at one time is the value + 1
-    private int numberOfBalls = 0;
+    private int numberOfBalls = 1;
 
     private float ballCooldown = 0.5f;
     private float ballCooldownCurrent;
@@ -28,6 +28,10 @@ public class BallMachine : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currentFeatureIndicator.color != Color.white)
+        {
+            currentFeatureIndicator.color = Color.white;
+        }
         if (ballCooldownCurrent > 0)
         {
             ballCooldownCurrent -= Time.deltaTime;
@@ -37,7 +41,7 @@ public class BallMachine : MonoBehaviour
         {
             currentFeatureIndicator.fillAmount = 1;
         }
-        if (Input.GetKeyDown(KeyCode.F) && ballCooldownCurrent <= 0)
+        if (Input.GetKeyDown(KeyCode.E) && ballCooldownCurrent <= 0)
         {
             if (ballList.Count > numberOfBalls)
             {

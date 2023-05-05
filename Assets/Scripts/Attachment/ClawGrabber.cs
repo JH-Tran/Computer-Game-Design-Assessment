@@ -25,13 +25,14 @@ public class ClawGrabber : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             if (droneBattery.isTimerOn == true)
             {
                 if (isGrabbingObject == false)
                 {
                     isGrabbingObject = true;
+                    currentFeatureIndicator.color = Color.yellow;
                     StartCoroutine(autoTurnOffGrab());
                 }
                 else if (isGrabbingObject == true && isObjectHold == true)
