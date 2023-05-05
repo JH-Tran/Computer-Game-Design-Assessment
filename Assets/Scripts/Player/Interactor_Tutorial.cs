@@ -32,6 +32,9 @@ public class Interactor_Tutorial : MonoBehaviour
     [SerializeField] GameObject droneToPersonIcon;
     [SerializeField] GameObject tutIcon;
 
+    //PauseMenu
+    [SerializeField] PauseMenu pauseMenuScript;
+
     void Start()
     {
         pedestalAnim = pedestal.GetComponent<Animator>();
@@ -97,6 +100,8 @@ public class Interactor_Tutorial : MonoBehaviour
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);
                 }
+                pauseMenuScript.droneFound();
+
             }
         }
     }

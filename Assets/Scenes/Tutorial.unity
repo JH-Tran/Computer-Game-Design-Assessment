@@ -4149,6 +4149,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068453629}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1117094196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7257261266702868942, guid: ff564b8f644b26145b297d14102eed18, type: 3}
+  m_PrefabInstance: {fileID: 7747724516311256300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82796ac488df504ab9c5d384e0ec302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1141840181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,11 +5512,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466059708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!20 &1473733703 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5664895699555035843, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-  m_PrefabInstance: {fileID: 1546128905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1485874193
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,6 +6575,7 @@ MonoBehaviour:
   droneToPersonTrigger: {fileID: 1053592888}
   droneToPersonIcon: {fileID: 996128172}
   tutIcon: {fileID: 499350116}
+  pauseMenuScript: {fileID: 1117094196}
 --- !u!1 &1792149646
 GameObject:
   m_ObjectHideFlags: 0
@@ -7416,28 +7423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac0cd65408cae34495ecefae3a0e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1938017449 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5664895698186810407, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-  m_PrefabInstance: {fileID: 1546128905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546128907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c015ea2d69fa61f48a80382503cc33a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1938017450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5664895698186810406, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-  m_PrefabInstance: {fileID: 1546128905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546128907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438f7c48bdea540408c4657f80342597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1955185957
 GameObject:
   m_ObjectHideFlags: 0
@@ -8138,17 +8123,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098512053}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2117225432 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5664895698274315396, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-  m_PrefabInstance: {fileID: 1546128905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3999e3c2e9ba1745a3cfe47fdb0f748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2121471991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 53a735e8b4f5c1346bfda156db45fccb, type: 3}
@@ -8345,10 +8319,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6224516839074958640, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: crosshair
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6224516839074958646, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8397,21 +8367,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6224516839833151404, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7257261266702868942, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: isDroneFound
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747724514346260510, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_Range
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747724514346260510, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_Lightmapping
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7747724515033477229, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: drone
@@ -8453,39 +8411,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.2144
       objectReference: {fileID: 0}
-    - target: {fileID: 8459222996456806720, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: clawGrabber
-      value: 
-      objectReference: {fileID: 2117225432}
-    - target: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: droneCamera
-      value: 
-      objectReference: {fileID: 1938017449}
-    - target: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: droneMovement
-      value: 
-      objectReference: {fileID: 1938017450}
-    - target: {fileID: 8459222996894140359, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: downDroneCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996894140359, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: mainDroneCamera
-      value: 
-      objectReference: {fileID: 1473733703}
-    - target: {fileID: 8459222996894140364, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8765231580942351816, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084333723318744048, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
