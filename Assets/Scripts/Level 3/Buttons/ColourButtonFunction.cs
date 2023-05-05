@@ -14,4 +14,9 @@ public class ColourButtonFunction : MonoBehaviour, IInteractable
             gameO.GetComponentInChildren<ObjectChangerPlatform>().changeObjectMaterials(materialType);
         }
     }
+
+    public void buttonHighlight()
+    {
+        
+    }
 }

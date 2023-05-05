@@ -8,7 +8,6 @@ public class TargetDoorManagerLevel3 : MonoBehaviour
     private Animator doorAnimator;
     private int targetCount = 0;
     [SerializeField] private GameObject[] doorLightIndicator;
-    [SerializeField] private GameObject[] pipeLightIndicator;
     [SerializeField] Material activeIndicator;
 
     [SerializeField] GameObject cubeBlocker;
@@ -62,12 +61,10 @@ public class TargetDoorManagerLevel3 : MonoBehaviour
         if (targetCount == 1)
         {
             doorLightIndicator[0].GetComponent<Renderer>().material = activeIndicator;
-            pipeLightIndicator[0].GetComponent<Renderer>().material = activeIndicator;
         }
         if (targetCount == 2)
         {
             doorLightIndicator[1].GetComponent<Renderer>().material = activeIndicator;
-            pipeLightIndicator[1].GetComponent<Renderer>().material = activeIndicator;
             cubeBlocker.SetActive(false);
         }
         if (targetCount == 3)

@@ -27,9 +27,13 @@ public class ObjectChangerPlatform : MonoBehaviour
 
     public void changeObjectMaterials(Material material)
     {
-        foreach (GameObject gameO in objectList)
+        if (objectList.Count != 0)
         {
-            gameO.gameObject.GetComponent<Renderer>().material = material;
-        } 
+            foreach (GameObject gameO in objectList)
+            {
+                gameO.gameObject.GetComponent<Renderer>().material = material;
+            }
+        }
+
     }
 }

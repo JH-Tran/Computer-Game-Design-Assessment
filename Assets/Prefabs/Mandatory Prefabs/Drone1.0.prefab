@@ -274,8 +274,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01374814, y: 0.013479025, z: 0.014850819}
-  m_Center: {x: 0.000054065586, y: 0.012244424, z: 0.0006889379}
+  m_Size: {x: 0.018586867, y: 0.017028866, z: 0.015944537}
+  m_Center: {x: -7.965413e-17, y: 0.010469496, z: 0.0001420778}
 --- !u!1 &5664895697832023962
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +326,8 @@ MonoBehaviour:
   ballMachine: {fileID: 628403123}
   attachmentIcons: {fileID: 5664895698848237868}
   enableBallMachine: 1
-  swapFeatureIcons: {fileID: 0}
+  swapFeatureImage: {fileID: 0}
+  swapItemGameObject: {fileID: 0}
   ballIcon: {fileID: 21300000, guid: fdc29124acc8e69469da6b1d22d8afa8, type: 3}
   grabberIcon: {fileID: 21300000, guid: 2cf5ab9fd336c1740846f256bb481c71, type: 3}
 --- !u!1 &5664895698274315423
