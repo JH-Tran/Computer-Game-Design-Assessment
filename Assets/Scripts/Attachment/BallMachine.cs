@@ -17,7 +17,7 @@ public class BallMachine : MonoBehaviour
     //Number of ball in the scene at one time is the value + 1
     private int numberOfBalls = 1;
 
-    private float ballCooldown = 2f;
+    private float ballCooldown = 1f;
     private float ballCooldownCurrent;
 
     private void Start()

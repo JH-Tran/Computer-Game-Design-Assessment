@@ -7,11 +7,16 @@ public class ClawGrabber : MonoBehaviour
 {
     [SerializeField] private BoxCollider clawCollider;
     public Image currentFeatureIndicator;
-    [SerializeField] private Sprite clawIndicatorImage;
+    [SerializeField] private Sprite initalMagnetSprite;
+    [SerializeField] private Sprite magnetObjectSprite;
+    [SerializeField] private Sprite activeMagnetNoObjectSprite;
+    [SerializeField] private Sprite activeMagnetObjectSprite;
+
     public DroneBattery droneBattery;
 
-    public bool isGrabbingObject = false;
-    public bool isObjectHold = false;
+    public bool isMagnetActive = false;
+    public bool isMagnetHoldingObject = false;
+    public bool isObjectFound = false;
     private float autoOffGrab = 2;
     private List<GameObject> objectGrabbed = new List<GameObject>();
 
@@ -20,6 +25,7 @@ public class ClawGrabber : MonoBehaviour
         clawCollider = gameObject.GetComponent<BoxCollider>();
         currentFeatureIndicator = GameObject.Find("FeatureIcon").GetComponent<Image>();
         droneBattery = GameObject.Find("Drone Battery").GetComponent<DroneBattery>();
+        updateDroneGrabberUI();
         currentFeatureIndicator.color = Color.red;
     }
 
@@ -28,16 +34,19 @@ public class ClawGrabber : MonoBehaviour
         //Debug.Log(other.name);
         if (other.CompareTag("Object"))
         {
-            if (isGrabbingObject == true && isObjectHold == false)
+            isObjectFound = true;
+            if (isMagnetActive == true && isMagnetHoldingObject == false)
             {
                 currentFeatureIndicator.color = Color.green;
                 other.transform.parent = gameObject.transform;
                 objectGrabbed.Add(other.gameObject);
-                isObjectHold = true;
+                isMagnetHoldingObject = true;
                 Destroy(other.GetComponent<Rigidbody>());
+                updateDroneGrabberUI();
             }
-            else if (isGrabbingObject == false && isObjectHold == false)
+            else if (isMagnetActive == false && isMagnetHoldingObject == false)
             {
+                updateDroneGrabberUI();
                 currentFeatureIndicator.color = Color.yellow;
             }
         }
@@ -48,8 +57,10 @@ public class ClawGrabber : MonoBehaviour
         //Debug.Log(other.name);
         if (other.CompareTag("Object"))
         {
-            if (isGrabbingObject == false && isObjectHold == false)
+            isObjectFound = false;
+            if (isMagnetActive == false && isMagnetHoldingObject == false)
             {
+                updateDroneGrabberUI();
                 currentFeatureIndicator.color = Color.red;
             }
         }
@@ -58,16 +69,17 @@ public class ClawGrabber : MonoBehaviour
     IEnumerator autoTurnOffGrab()
     {
         yield return new WaitForSeconds(autoOffGrab);
-        if (isGrabbingObject == true && isObjectHold == false)
+        if (isMagnetActive == true && isMagnetHoldingObject == false)
         {
-            isGrabbingObject = false;
+            isMagnetActive = false;
+            updateDroneGrabberUI();
             currentFeatureIndicator.color = Color.red;
         }
     }
 
     public void DropObject()
     {
-        if (objectGrabbed.Count > 0 && isObjectHold == true)
+        if (objectGrabbed.Count > 0 && isMagnetHoldingObject == true)
         {
             for (int i = 0; i < objectGrabbed.Count; i++)
             {
@@ -78,9 +90,10 @@ public class ClawGrabber : MonoBehaviour
                 objectGrabbed[i].transform.parent = null;
             }
             objectGrabbed.Clear();
-            isObjectHold = false;
+            isMagnetHoldingObject = false;
         }
-        isGrabbingObject = false;
+        isMagnetActive = false;
+        updateDroneGrabberUI();
     }
 
     public void ForceDropObject()
@@ -96,38 +109,62 @@ public class ClawGrabber : MonoBehaviour
                 objectGrabbed[i].transform.parent = null;
             }
             objectGrabbed.Clear();
-            isObjectHold = false;
+            isMagnetHoldingObject = false;
         }
-        isGrabbingObject = false;
+        isMagnetActive = false;
+        updateDroneGrabberUI();
         currentFeatureIndicator.color = Color.red;
     }
     public void initaliseClawUI()
     {
-        currentFeatureIndicator.sprite = clawIndicatorImage;
+        currentFeatureIndicator.sprite = initalMagnetSprite;
         currentFeatureIndicator.fillAmount = 1;
+        updateDroneGrabberUI();
         currentFeatureIndicator.color = Color.red;
     }
 
     public bool getGrabbingObject()
     {
-        return isGrabbingObject;
+        return isMagnetActive;
     }
 
     public void useGrabber()
     {
         if (droneBattery.isTimerOn == true)
         {
-            if (isGrabbingObject == false)
+            if (isMagnetActive == false)
             {
-                isGrabbingObject = true;
+                isMagnetActive = true;
+                updateDroneGrabberUI();
                 currentFeatureIndicator.color = Color.yellow;
                 StartCoroutine(autoTurnOffGrab());
             }
-            else if (isGrabbingObject == true && isObjectHold == true)
+            else if (isMagnetActive == true && isMagnetHoldingObject == true)
             {
                 DropObject();
+                updateDroneGrabberUI();
                 currentFeatureIndicator.color = Color.red;
             }
+        }
+    }
+
+    private void updateDroneGrabberUI()
+    {
+        if (isMagnetActive && isObjectFound)
+        {
+            currentFeatureIndicator.sprite = activeMagnetObjectSprite;
+        }
+        else if (isMagnetActive && !isObjectFound)
+        {
+            currentFeatureIndicator.sprite = activeMagnetNoObjectSprite;
+        }
+        else if (!isMagnetActive && isObjectFound)
+        {
+            currentFeatureIndicator.sprite = magnetObjectSprite;
+        }
+        else if (!isMagnetActive && !isObjectFound)
+        {
+            currentFeatureIndicator.sprite = initalMagnetSprite;
         }
     }
 }

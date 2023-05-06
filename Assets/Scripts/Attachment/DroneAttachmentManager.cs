@@ -15,7 +15,6 @@ public class DroneAttachmentManager : MonoBehaviour
     [SerializeField] GameObject swapItemGameObject;
     [SerializeField] Sprite ballIcon;
     [SerializeField] Sprite grabberIcon;
-    //
     [SerializeField] DroneMovement droneMovementScript;
     public bool isDroneEnabled = true;
 
@@ -24,6 +23,7 @@ public class DroneAttachmentManager : MonoBehaviour
     {
         grabber.SetActive(true);
         ballMachine.SetActive(false);
+        //If there is no ball machine feature enabled than player cannot swap features.
         if (enableBallMachine == false)
         {
             swapItemGameObject = GameObject.Find("SwapFeature");
