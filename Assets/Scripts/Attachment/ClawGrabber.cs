@@ -38,12 +38,11 @@ public class ClawGrabber : MonoBehaviour
             if (isMagnetActive == true && isMagnetHoldingObject == false)
             {
                 currentFeatureIndicator.color = Color.green;
+                other.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
                 other.transform.parent = gameObject.transform;
                 objectGrabbed.Add(other.gameObject);
                 isMagnetHoldingObject = true;
                 Destroy(other.GetComponent<Rigidbody>());
-                other.GetComponent<Transform>().localScale = new Vector3 (2,0.54f,2);
-                other.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
                 updateDroneGrabberUI();
             }
             else if (isMagnetActive == false && isMagnetHoldingObject == false)
