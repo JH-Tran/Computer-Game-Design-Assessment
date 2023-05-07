@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SecretEndingManager : MonoBehaviour
 {
-    [SerializeField] bool[] isBasketColourVerifiedList;
+    // bool isBasketColourVerifiedList;
     //Ending platform 1 is the finishing platform
-    [SerializeField] GameObject[] endingPlatform;
+    [SerializeField] GameObject endingPlatform;
 
     private void Start()
     {
-        endingPlatform[1].SetActive(false);
+        endingPlatform.SetActive(true);
     }
-    public void setBasketVerification(int basketId, bool isBasketCorrect)
+/*    public void setBasketVerification(int basketId, bool isBasketCorrect)
     {
         isBasketColourVerifiedList[basketId] = isBasketCorrect;
         if (isBasketCorrect == true)
@@ -54,5 +54,5 @@ public class SecretEndingManager : MonoBehaviour
             endingPlatform[0].SetActive(true);
             endingPlatform[1].SetActive(false);
         }
-    }
+    }*/
 }

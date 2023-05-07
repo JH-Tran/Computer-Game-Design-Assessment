@@ -23,6 +23,7 @@ public class TutorialTrigger : MonoBehaviour
     {
         if(other.CompareTag("Drone"))
         {
+            other.GetComponentInParent<DroneMovement>().updateCheckpointPosition(gameObject.transform);
             box.SetActive(true);
             icons.SetActive(true);
         }

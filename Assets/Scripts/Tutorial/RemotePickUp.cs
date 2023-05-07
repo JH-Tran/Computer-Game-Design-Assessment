@@ -20,6 +20,6 @@ public class RemotePickUp : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        playerObject.GetComponent<Interactor>().pickedup = true;
+        playerObject.GetComponent<Interactor_Tutorial>().pickedup = true;
     }
 }

@@ -19,20 +19,19 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private String[] flavourText;
 
     private ClawGrabber clawGrabber;
-    //Using battery to move drone around. 90 max time and 4 cooldown (SUBJECT TO CHANGE)
+    //Using battery to move drone around. 90 max time and 3 cooldown (SUBJECT TO CHANGE)
     private float batteryMaxTime = 90f;
     [SerializeField] private float batteryTime;
     //Recharing Battery
-    private float batteryCooldownTime = 5f;
+    private float batteryCooldownTime = 3f;
     private float batteryRechargeTime;
     private bool isBatteryRechargeFromZero = false;
     private bool isLookingAtTablet;
 
-    [SerializeField] private GameObject rechargeStationInfoCanvas;
     //If the drone is not disabled
     public bool isTimerOn;
     //Recharing battery from any percentage
-    private float rechargeSpeed = 3;
+    private float rechargeSpeed = 50;
 
     void Start()
     {
@@ -42,7 +41,6 @@ public class DroneBattery : MonoBehaviour
         TimerReset();
         blackScreen.enabled = false;
         screenSaverTexts.SetActive(false);
-        rechargeStationInfoCanvas.SetActive(false);
     }
 
     void FixedUpdate()
@@ -167,10 +165,6 @@ public class DroneBattery : MonoBehaviour
     {
         if (isLookingAtTablet == false && isBatteryRechargeFromZero == false)
         {
-            if (rechargeStationInfoCanvas != null)
-            {
-                Destroy(rechargeStationInfoCanvas);
-            }
             isTimerOn = false;
             if (batteryTime >= batteryMaxTime)
             {
@@ -184,18 +178,7 @@ public class DroneBattery : MonoBehaviour
         }
         else if (isLookingAtTablet == true && batteryRechargeTime <= 0 && isBatteryRechargeFromZero == false)
         {
-            if (rechargeStationInfoCanvas != null)
-            {
-                rechargeStationInfoCanvas.SetActive(true);
-            }
             isTimerOn = true;
-        }
-    }
-    public void removeRechargeStationInfo()
-    {
-        if (rechargeStationInfoCanvas != null)
-        {
-            Destroy(rechargeStationInfoCanvas);
         }
     }
     private void removeScreenSaver()

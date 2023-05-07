@@ -18,7 +18,7 @@ public class BasketColourCount : MonoBehaviour
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
-                secretEndingManagerScript.setBasketVerification(basketID, true);
+                //secretEndingManagerScript.setBasketVerification(basketID, true);
                 basketBaseRenderer.material = rightIndicatorMaterial;
             }
             else
@@ -34,7 +34,7 @@ public class BasketColourCount : MonoBehaviour
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
-                secretEndingManagerScript.setBasketVerification(basketID, false);
+                //secretEndingManagerScript.setBasketVerification(basketID, false);
                 basketBaseRenderer.material = wrongIndicatorMaterial;
             }
             else

@@ -67,7 +67,7 @@ public class DroneMovement : MonoBehaviour
         gameObject.transform.position = checkpointTransform.position;
         gameObject.transform.rotation = checkpointTransform.rotation;
     }
-    public void updateCheckpointPosition(Transform updatedTransform)
+    public void updateCheckpointPosition(Transform updatedTransform) 
     {
         checkpointTransform = updatedTransform;
     }
@@ -118,5 +118,8 @@ public class DroneMovement : MonoBehaviour
     {
         return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
     }
-
+    public bool getDroneEnable()
+    {
+        return droneEnable;
+    }
 }

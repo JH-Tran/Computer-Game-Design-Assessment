@@ -13,11 +13,11 @@ public class BallMachine : MonoBehaviour
     [SerializeField] private Transform launchTransform;
     [SerializeField] private GameObject ball;
     [SerializeField] private List<GameObject> ballList;
-    private float launchVelocity = 15f;
+    private float launchVelocity = 20f;
     //Number of ball in the scene at one time is the value + 1
     private int numberOfBalls = 0;
 
-    private float ballCooldown = 0.5f;
+    private float ballCooldown = 1f;
     private float ballCooldownCurrent;
 
     private void Start()
@@ -28,6 +28,10 @@ public class BallMachine : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currentFeatureIndicator.color != Color.white)
+        {
+            currentFeatureIndicator.color = Color.white;
+        }
         if (ballCooldownCurrent > 0)
         {
             ballCooldownCurrent -= Time.deltaTime;
@@ -36,8 +40,18 @@ public class BallMachine : MonoBehaviour
         else
         {
             currentFeatureIndicator.fillAmount = 1;
+            ballCooldownCurrent = 0;
         }
-        if (Input.GetKeyDown(KeyCode.F) && ballCooldownCurrent <= 0)
+    }
+
+    public void initaliseBallUI()
+    {
+        currentFeatureIndicator.sprite = ballImage;
+        currentFeatureIndicator.color = Color.white;
+    }
+
+    public void useBallMachine() {
+        if (ballCooldownCurrent <= 0)
         {
             if (ballList.Count > numberOfBalls)
             {
@@ -50,11 +64,5 @@ public class BallMachine : MonoBehaviour
             ballCooldownCurrent = ballCooldown;
             currentFeatureIndicator.fillAmount = 0;
         }
-    }
-
-    public void initaliseBallUI()
-    {
-        currentFeatureIndicator.sprite = ballImage;
-        currentFeatureIndicator.color = Color.white;
     }
 }

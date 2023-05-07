@@ -12,11 +12,14 @@ public class DroneCamera : MonoBehaviour
     private float yaw;
     private float pitch;
     private float maxLookAngle = 90f;
+    [SerializeField] DroneAttachmentManager droneAttachmentManager;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         droneCamera.transform.localEulerAngles = new Vector3(0, 0, 0);
+        droneAttachmentManager = GameObject.Find("Drone1.0").GetComponentInChildren<DroneAttachmentManager>();
+        droneAttachmentManager.isDroneEnabled = droneEnable;
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class DroneCamera : MonoBehaviour
     public void changeDroneState(bool state)
     {
         droneEnable = state;
+        droneAttachmentManager.isDroneEnabled = state;
     }
 
     public bool getDroneState()
