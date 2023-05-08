@@ -111,6 +111,7 @@ public class ClawGrabber : MonoBehaviour
             }
             objectGrabbed.Clear();
             isMagnetHoldingObject = false;
+            isObjectFound = false;
         }
         isMagnetActive = false;
         updateDroneGrabberUI();
