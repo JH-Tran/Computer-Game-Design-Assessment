@@ -16,6 +16,9 @@ public class Interactor_Tutorial : Interactor
     public GameObject pickupRemote;
     public bool pickedup = false;
     public GameObject pedestal;
+    public GameObject eToInteract2;
+    public GameObject raiseRemote;
+    public GameObject trigger5;
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
     [SerializeField] FirstPersonController fpController;
