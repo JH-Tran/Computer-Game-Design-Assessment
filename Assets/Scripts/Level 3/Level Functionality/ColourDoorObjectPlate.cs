@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColourDoorObjectPlate : MonoBehaviour
 {
     //If the object has the same material as the door the door "opens".
-    [SerializeField] private Material keyMaterial;
+    public Material keyMaterial;
     [SerializeField] private Animator doorAnimator;
     //BasketColour
     [SerializeField] private GameObject[] basketBorder;

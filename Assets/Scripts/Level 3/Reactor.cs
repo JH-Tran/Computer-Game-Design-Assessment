@@ -14,13 +14,22 @@ public class Reactor : MonoBehaviour
     {
         if (isReactorStatic)
         {
-            reactorGlass.GetComponent<Renderer>().material = reactorActiveMaterial;
+            activateReactor();
         }
         else
         {
-            reactorGlass.GetComponent<Renderer>().material = notReactorActiveMaterial;
+            deactivateReactor();
         }
-
         blackCube.GetComponent<Transform>().rotation = Random.rotation;
+    }
+
+    public void activateReactor()
+    {
+        reactorGlass.GetComponent<Renderer>().material = reactorActiveMaterial;
+    }
+
+    public void deactivateReactor()
+    {
+        reactorGlass.GetComponent<Renderer>().material = notReactorActiveMaterial;
     }
 }
