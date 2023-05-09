@@ -17,7 +17,7 @@ public class SettingsMenu : MonoBehaviour
         {
             currentGraphicsQuality.text = currentGraphicsBasicText + "Low";
         }
-        else if (QualitySettings.GetQualityLevel() == 2)
+        else if (QualitySettings.GetQualityLevel() == 0)
         {
             currentGraphicsQuality.text = currentGraphicsBasicText + "Fastest";
         }
