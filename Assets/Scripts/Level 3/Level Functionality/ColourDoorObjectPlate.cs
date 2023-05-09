@@ -10,6 +10,7 @@ public class ColourDoorObjectPlate : MonoBehaviour
     //BasketColour
     [SerializeField] private GameObject[] basketBorder;
     [SerializeField] private Material defaultMaterial;
+    [SerializeField] private bool isBasketChangingColour = true;
 
 
     private void OnTriggerStay(Collider other)
@@ -20,11 +21,14 @@ public class ColourDoorObjectPlate : MonoBehaviour
             {
                 doorAnimator.SetBool("isDoorOpen", true);
             }
-            if (other.GetComponent<Renderer>().material.name != basketBorder[0].GetComponent<Renderer>().material.name + " (Instance)")
+            if (isBasketChangingColour == true)
             {
-                foreach (GameObject i in basketBorder)
+                if (other.GetComponent<Renderer>().material.name != basketBorder[0].GetComponent<Renderer>().material.name + " (Instance)")
                 {
-                    i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
+                    foreach (GameObject i in basketBorder)
+                    {
+                        i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
+                    }
                 }
             }
         }
