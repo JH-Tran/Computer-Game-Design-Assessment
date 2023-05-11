@@ -1746,6 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialType: {fileID: 2100000, guid: dad39ae26bdf201478871b4c8824b0f6, type: 2}
+  activeButtonMaterial: {fileID: 0}
   objectChanger:
   - {fileID: 1844660193}
 --- !u!1 &878488734
@@ -2204,7 +2205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.17
+      value: -4.334
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2486,6 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialType: {fileID: 2100000, guid: d75c1d6c04b497e448a32dd053e71604, type: 2}
+  activeButtonMaterial: {fileID: 0}
   objectChanger:
   - {fileID: 1844660193}
 --- !u!1 &1165105433
@@ -3367,6 +3369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialType: {fileID: 2100000, guid: d5b6c1d6abb34f54eb7c77a77534c549, type: 2}
+  activeButtonMaterial: {fileID: 0}
   objectChanger:
   - {fileID: 1844660193}
 --- !u!1 &1662282240
