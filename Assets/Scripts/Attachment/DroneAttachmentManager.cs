@@ -50,7 +50,7 @@ public class DroneAttachmentManager : MonoBehaviour
                 isClawActive = false;
                 swapFeatureImage.GetComponent<Image>().sprite = grabberIcon;
             }
-            else
+            else if (enableBallMachine == true && isClawActive == false)
             {
                 Debug.Log("Claw Active");
                 grabber.SetActive(true);
