@@ -73,4 +73,8 @@ public class DroneAttachmentManager : MonoBehaviour
             ballMachine.GetComponent<BallMachine>().useBallMachine();
         }
     }
+    public bool getClawActive()
+    {
+        return isClawActive;
+    }
 }

@@ -19,6 +19,7 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private String[] flavourText;
 
     private ClawGrabber clawGrabber;
+    private DroneAttachmentManager droneAttachmentManager;
     //Using battery to move drone around. 90 max time and 3 cooldown (SUBJECT TO CHANGE)
     private float batteryMaxTime = 90f;
     [SerializeField] private float batteryTime;
@@ -38,6 +39,7 @@ public class DroneBattery : MonoBehaviour
         droneCamera = GameObject.Find("Drone1.0").GetComponent<DroneCamera>();
         droneMovement = GameObject.Find("Drone1.0").GetComponent<DroneMovement>();
         clawGrabber = GameObject.Find("ClawHitBox").GetComponent<ClawGrabber>();
+        droneAttachmentManager = GameObject.Find("DroneAttachments").GetComponent<DroneAttachmentManager>();
         TimerReset();
         blackScreen.enabled = false;
         screenSaverTexts.SetActive(false);
@@ -72,7 +74,10 @@ public class DroneBattery : MonoBehaviour
             screenSaverTexts.SetActive(false);
             DisableDrone();
             droneMovement.changeDroneGravity(true);
-            clawGrabber.ForceDropObject();
+            if (droneAttachmentManager.getClawActive())
+            {
+                clawGrabber.ForceDropObject();
+            }
             droneMovement.resetToCheckpoint();
         }
     }
@@ -115,7 +120,10 @@ public class DroneBattery : MonoBehaviour
         batteryTime = 0;
         blackScreen.enabled = true;
         isTimerOn = false;
-        clawGrabber.ForceDropObject();
+        if (droneAttachmentManager.getClawActive())
+        {
+            clawGrabber.ForceDropObject();
+        }
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
         screenSaverExtraInformationText.text = flavourText[1];
