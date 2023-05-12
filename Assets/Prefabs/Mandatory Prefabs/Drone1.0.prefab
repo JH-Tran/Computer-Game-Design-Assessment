@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &628403123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628403124}
+  - component: {fileID: 628403125}
+  m_Layer: 8
+  m_Name: Ball Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &628403124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628403123}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5664895697832023963}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &628403125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628403123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b54162e00eb5cf4ab8b89003170ef2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballImage: {fileID: 21300000, guid: fdc29124acc8e69469da6b1d22d8afa8, type: 3}
+  launchTransform: {fileID: 3443640939888592027}
+  ball: {fileID: 7628095244333606059, guid: 06e50f5cbeca838409836fc1a7946bee, type: 3}
+  ballList: []
 --- !u!1 &4781883058251520335
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,11 +60,18 @@ GameObject:
   - component: {fileID: 5664895698186810400}
   - component: {fileID: 5664895698186810406}
   - component: {fileID: 5664895698186810407}
+<<<<<<< HEAD
   - component: {fileID: 1660847765887900559}
   m_Layer: 0
   m_Name: Drone1.0
   m_TagString: Drone
   m_Icon: {fileID: 0}
+=======
+  m_Layer: 8
+  m_Name: Drone1.0
+  m_TagString: Drone
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> origin
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35,10 +90,13 @@ Transform:
   - {fileID: 9036155377745860752}
   - {fileID: 1344171749993905711}
   - {fileID: 5664895699555035852}
-  - {fileID: 5664895699027333843}
   - {fileID: 5664895697832023963}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 7
+=======
+  m_RootOrder: 0
+>>>>>>> origin
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5664895698186810400
 Rigidbody:
@@ -69,7 +127,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 5266812304262562805}
+<<<<<<< HEAD
   checkpointPosition: {x: 0, y: 0, z: 0}
+=======
+  droneRigidbody: {fileID: 5664895698186810400}
+  checkpointTransform: {fileID: 0}
+>>>>>>> origin
 --- !u!114 &5664895698186810407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,14 +145,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c015ea2d69fa61f48a80382503cc33a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   mouseSensitivity: 175
   droneBody: {fileID: 5266812304262562805}
 --- !u!64 &1660847765887900559
 MeshCollider:
+=======
+  mouseSensitivity: 2
+  droneBody: {fileID: 5266812304262562805}
+  droneCamera: {fileID: 5664895699555035843}
+  droneAttachmentManager: {fileID: 0}
+--- !u!1 &4921307764705138017
+GameObject:
+>>>>>>> origin
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 4781883058251520335}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -98,6 +171,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8257557049321922082}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8257557049321922082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921307764705138017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -10, z: -0}
+  m_LocalScale: {x: 1, y: 3.6879396, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5664895698848237869}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> origin
 --- !u!1 &4976938368257840762
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,9 +210,10 @@ GameObject:
   - component: {fileID: 332016092221959694}
   - component: {fileID: 8186843783309439697}
   - component: {fileID: 5664895699530280564}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  - component: {fileID: 1992077036386157512}
+  m_Layer: 8
+  m_Name: DroneModel
+  m_TagString: Drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976938368257840762}
   m_LocalRotation: {x: 0.000000053385076, y: 0.7071068, z: 0.70710677, w: -0.00000005338508}
-  m_LocalPosition: {x: 0.85, y: 1.47, z: -0.36}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,7 +240,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976938368257840762}
-  m_Mesh: {fileID: -5495902117074765545, guid: ece4b434555a1c44494adb4480848511, type: 3}
+  m_Mesh: {fileID: 4493585093827132993, guid: ece4b434555a1c44494adb4480848511, type: 3}
 --- !u!23 &8186843783309439697
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -192,11 +293,24 @@ MeshCollider:
   m_GameObject: {fileID: 4976938368257840762}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: ece4b434555a1c44494adb4480848511, type: 3}
+--- !u!65 &1992077036386157512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976938368257840762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.018586867, y: 0.030616134, z: 0.022111367}
+  m_Center: {x: 1.7761728e-10, y: 0.003675836, z: 0.00032667205}
 --- !u!1 &5664895697832023962
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5664895697832023963}
   - component: {fileID: 5664895697832023940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DroneAttachments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,11 +336,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664895697832023962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 1.688, z: 0.79}
+  m_LocalPosition: {x: 0, y: 0, z: 0.26000047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5664895698848237869}
+  - {fileID: 628403124}
   m_Father: {fileID: 5266812304262562805}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -242,8 +357,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71fbadc6d16671b4f9f94616188b7c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claw: {fileID: 5664895698848237868}
-  attachmentIcons: {fileID: 0}
+  grabber: {fileID: 5664895698274315423}
+  ballMachine: {fileID: 628403123}
+  attachmentIcons: {fileID: 5664895698848237868}
+  enableBallMachine: 1
+  swapFeatureImage: {fileID: 0}
+  swapItemGameObject: {fileID: 0}
+  ballIcon: {fileID: 21300000, guid: fdc29124acc8e69469da6b1d22d8afa8, type: 3}
+  grabberIcon: {fileID: 21300000, guid: 8a85fd85247b3ed4787ab3193cfc65b1, type: 3}
+  droneMovementScript: {fileID: 0}
+  isDroneEnabled: 1
 --- !u!1 &5664895698274315423
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +380,7 @@ GameObject:
   - component: {fileID: 5664895698274315418}
   - component: {fileID: 5664895698274315417}
   - component: {fileID: 5664895698274315396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClawHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,8 +463,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2.5974908, z: 1.5494099}
+  m_Center: {x: 0, y: -0.8579095, z: 0.05278778}
 --- !u!114 &5664895698274315396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,10 +478,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clawCollider: {fileID: 5664895698274315417}
-  grabIndicator: {fileID: 0}
+  currentFeatureIndicator: {fileID: 0}
+  initalMagnetSprite: {fileID: 21300000, guid: 8a85fd85247b3ed4787ab3193cfc65b1, type: 3}
+  magnetObjectSprite: {fileID: 21300000, guid: ccc85925a9099274fb735863c530f9a3, type: 3}
+  activeMagnetNoObjectSprite: {fileID: 21300000, guid: cad9f1177f1d3ce4c875a6a98292a624, type: 3}
+  activeMagnetObjectSprite: {fileID: 21300000, guid: 19d365bd77f04ea4198303d0cb0759f2, type: 3}
   droneBattery: {fileID: 0}
-  isGrabbingObject: 0
-  isObjectHold: 0
+  isMagnetActive: 0
+  isMagnetHoldingObject: 0
+  isObjectFound: 0
 --- !u!1 &5664895698848237868
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5664895698848237869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Claw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,85 +515,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8257557049321922082}
   - {fileID: 5664895698274315416}
   m_Father: {fileID: 5664895697832023963}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5664895699027333842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5664895699027333843}
-  - component: {fileID: 5664895699027333853}
-  m_Layer: 0
-  m_Name: DroneDownCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5664895699027333843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5664895699027333842}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.84, y: 1.8, z: 0.79}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5266812304262562805}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!20 &5664895699027333853
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5664895699027333842}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 65
-  orthographic: 0
-  orthographic size: 3
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 19c962fd1d1231a43b25ffa0a3ec36d3, type: 2}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &5664895699555035841
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +530,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5664895699555035852}
   - component: {fileID: 5664895699555035843}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 8
+>>>>>>> origin
   m_Name: DroneMainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,10 +549,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664895699555035841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 1.6, z: 2.341}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3443640939888592027}
   m_Father: {fileID: 5266812304262562805}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -541,6 +600,40 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD
+=======
+--- !u!1 &7481042878724303931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3443640939888592027}
+  m_Layer: 8
+  m_Name: BallSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3443640939888592027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481042878724303931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5664895699555035852}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> origin
 --- !u!1 &8945533174130960926
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,13 +645,13 @@ GameObject:
   - component: {fileID: 1344171749993905711}
   - component: {fileID: 352878416438828123}
   - component: {fileID: 3273654194198205121}
-  m_Layer: 0
-  m_Name: Cylinder
+  m_Layer: 8
+  m_Name: Fans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344171749993905711
 Transform:
   m_ObjectHideFlags: 0
@@ -567,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8945533174130960926}
   m_LocalRotation: {x: 0.000000053385076, y: 0.7071068, z: 0.70710677, w: -0.00000005338508}
-  m_LocalPosition: {x: 0.8514348, y: 1.4699999, z: 0.10755205}
+  m_LocalPosition: {x: 0, y: -0.1, z: -0.47999957}
   m_LocalScale: {x: 88.19767, y: 88.19767, z: 88.19767}
   m_ConstrainProportionsScale: 0
   m_Children: []

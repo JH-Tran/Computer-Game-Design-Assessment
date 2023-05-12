@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 interface IInteractableTut
 {
     public void Interact();
 }
 
-public class Interactor_Tutorial : MonoBehaviour
+public class Interactor_Tutorial : Interactor
 {
     public Transform interactorSource;
-    public float interactRange = 10;
     public GameObject drone;
     public GameObject remote;
     public GameObject pickupRemote;
     public bool pickedup = false;
     public GameObject pedestal;
+<<<<<<< HEAD
+=======
+    public GameObject eToInteract2;
+    public GameObject raiseRemote;
+    public GameObject trigger5;
+>>>>>>> origin
     private Animator pedestalAnim;
     [SerializeField] GameObject spotlight;
     [SerializeField] FirstPersonController fpController;
@@ -24,6 +30,19 @@ public class Interactor_Tutorial : MonoBehaviour
     public Animator playerButtonAnim;
     public PlayerButtonPressed playerButtonPressed;
 
+<<<<<<< HEAD
+=======
+    //Change Button sign when interacted
+    [SerializeField] GameObject pressButtonSign;
+    [SerializeField] GameObject playerToDroneSign;
+    [SerializeField] GameObject droneToPersonTrigger;
+    [SerializeField] GameObject droneToPersonIcon;
+    [SerializeField] GameObject tutIcon;
+
+    //PauseMenu
+    [SerializeField] PauseMenu pauseMenuScript;
+
+>>>>>>> origin
     void Start()
     {
         pedestalAnim = pedestal.GetComponent<Animator>();
@@ -32,7 +51,11 @@ public class Interactor_Tutorial : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.E))
+=======
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerInteracting == true)
+>>>>>>> origin
         {
             RaycastHit hitInfo;
             Ray r = new Ray(interactorSource.position, interactorSource.forward);
@@ -42,6 +65,7 @@ public class Interactor_Tutorial : MonoBehaviour
                 if (hitInfo.transform.gameObject.tag == "Remote")
                 {
                     pickedup = true;
+<<<<<<< HEAD
                     //Removes E and mouse signs
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
@@ -78,6 +102,59 @@ public class Interactor_Tutorial : MonoBehaviour
                 {
                     GameObject.FindWithTag("Remote").SetActive(false);
                 }
+=======
+                    //Removes E
+                    GameObject.FindGameObjectWithTag("Part1").SetActive(false);
+                    pedestalAnim.SetBool("isEmpty", true);
+                    spotlight.SetActive(false);
+                    fpController.isPlayerCameraLocked(true);
+                }
+
+                if (hitInfo.transform.gameObject == playerButton)
+                {
+                    if (playerButtonPressed.isOpen == false)
+                    {
+                        playerButtonPressed.isOpen = true;
+                        playerButtonPressed.x = 2;
+                        playerButtonPressed.door2Anim.SetBool("isOpen", true);
+                        playerButtonPressed.isOpen = true;
+                        //Change player room sign to press the button
+                        pressButtonSign.SetActive(false);
+                        playerToDroneSign.SetActive(true);
+                        //Disable the drone to person sign 
+                        droneToPersonTrigger.SetActive(false);
+                        droneToPersonIcon.SetActive(false);
+                        tutIcon.SetActive(false);
+                    }
+
+                    else if (playerButtonPressed.isOpen == true)
+                    {
+                        playerButtonPressed.isOpen = false;
+                        playerButtonPressed.x = 1;
+                        playerButtonPressed.door2Anim.SetBool("isOpen", false);
+                        playerButtonPressed.isOpen = false;
+                        //Change player room sign to show player to drone sign
+                        pressButtonSign.SetActive(true);
+                        playerToDroneSign.SetActive(false);
+                        //Enables the drone to person sign
+                        droneToPersonTrigger.SetActive(true);
+                    }
+                }
+
+
+            }
+
+            if (pickedup == true)
+            {
+                drone.SetActive(true);
+                remote.SetActive(true);
+                if (pickupRemote.activeSelf == true)
+                {
+                    GameObject.FindWithTag("Remote").SetActive(false);
+                }
+                pauseMenuScript.droneFound();
+
+>>>>>>> origin
             }
         }
     }

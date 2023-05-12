@@ -8,7 +8,11 @@ public class TutorialPlayerStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         fpController.PlayerCameraLock(false);
+=======
+        fpController.isPlayerCameraLocked(false);
+>>>>>>> origin
     }
 
     // Update is called once per frame

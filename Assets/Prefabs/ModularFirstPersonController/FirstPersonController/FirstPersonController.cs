@@ -205,8 +205,23 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
         if (!isPlayerCameraLock)
         {
+=======
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        if (!isPlayerCameraLock)
+        {
+>>>>>>> origin
             tabletLight.enabled = false;
             #region Camera
 
@@ -538,10 +553,21 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public void PlayerCameraLock(bool isLock)
     {
         isPlayerCameraLock = isLock;
     }
+=======
+    public void isPlayerCameraLocked(bool isLock)
+    {
+        isPlayerCameraLock = isLock;
+    }
+    public bool getPlayerCameraLock()
+    {
+        return isPlayerCameraLock;
+    }
+>>>>>>> origin
 }
 
 

@@ -16,14 +16,13 @@ public class DroneMovement : MonoBehaviour
     public Transform orientation;
     Vector3 moveDirection;
 
-    Rigidbody droneRigidbody;
-    public Vector3 checkpointPosition;
+    [SerializeField] Rigidbody droneRigidbody;
+    [SerializeField] private Transform checkpointTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        checkpointPosition = transform.position;
-        droneRigidbody = GetComponent<Rigidbody>();
+        droneRigidbody = gameObject.GetComponent<Rigidbody>();
         droneRigidbody.freezeRotation = true;
     }
 
@@ -43,11 +42,6 @@ public class DroneMovement : MonoBehaviour
             DroneMoveDown();
             MaxDroneSpeed();
         }
-        else
-        {
-            droneRigidbody.useGravity = true;
-        }
-
     }
     private void PlayerInput()
     {
@@ -58,9 +52,18 @@ public class DroneMovement : MonoBehaviour
     {
         droneEnable = state;
     }
+    public void changeDroneGravity(bool state)
+    {
+        droneRigidbody.useGravity = state;
+    }
     public void resetToCheckpoint()
     {
-        gameObject.transform.position = checkpointPosition;
+        gameObject.transform.position = checkpointTransform.position;
+        gameObject.transform.rotation = checkpointTransform.rotation;
+    }
+    public void updateCheckpointPosition(Transform updatedTransform) 
+    {
+        checkpointTransform = updatedTransform;
     }
     private void MoveDrone()
     {
@@ -105,4 +108,12 @@ public class DroneMovement : MonoBehaviour
         }
     }
 
+    public float getDroneVelocity()
+    {
+        return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+    }
+    public bool getDroneEnable()
+    {
+        return droneEnable;
+    }
 }

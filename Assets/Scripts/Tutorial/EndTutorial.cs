@@ -21,7 +21,11 @@ public class EndTutorial : MonoBehaviour
     {
         if (other.gameObject.tag == "Drone")
         {
+<<<<<<< HEAD
             SceneManager.LoadScene(3);
+=======
+            SceneManager.LoadScene("Level 1");
+>>>>>>> origin
         }
     }
 }

@@ -10,6 +10,10 @@ TagManager:
   - Part1
   - Drone
   - Remote
+<<<<<<< HEAD
+=======
+  - Ball
+>>>>>>> origin
   layers:
   - Default
   - TransparentFX
@@ -19,8 +23,13 @@ TagManager:
   - UI
   - Battery_Life
   - TabletScreen
+<<<<<<< HEAD
   - 
   - 
+=======
+  - Drone
+  - Ball
+>>>>>>> origin
   - 
   - 
   - 
