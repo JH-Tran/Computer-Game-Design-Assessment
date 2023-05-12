@@ -20,5 +20,6 @@ public class BallGravity : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ballRigid.useGravity = true;
+        ballRigid.AddForce(transform.up * 0.01f);
     }
 }

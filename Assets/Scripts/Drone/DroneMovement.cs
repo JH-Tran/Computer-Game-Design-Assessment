@@ -37,17 +37,11 @@ public class DroneMovement : MonoBehaviour
         if (droneEnable == true)
         {
             droneRigidbody.useGravity = false;
-            droneRigidbody.isKinematic = false;
             MoveDrone();
             DroneMoveUp();
             DroneMoveDown();
             MaxDroneSpeed();
         }
-        else
-        {
-            droneRigidbody.isKinematic = true;
-        }
-
     }
     private void PlayerInput()
     {
