@@ -92,6 +92,8 @@ public class Interactor_Tutorial : Interactor
                         droneToPersonTrigger.SetActive(true);
                     }
                 }
+
+
             }
 
             if (pickedup == true)
