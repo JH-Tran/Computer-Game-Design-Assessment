@@ -2402,14 +2402,6 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4237713436474399914, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b871e1fc298a27442bf50fbff436a858, type: 2}
-    - target: {fileID: 4847736043500600758, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b871e1fc298a27442bf50fbff436a858, type: 2}
     - target: {fileID: 5002693104898665956, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
       propertyPath: m_Name
       value: PlayerRoom
@@ -2422,18 +2414,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.25
       objectReference: {fileID: 0}
-    - target: {fileID: 7570191558196642404, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b871e1fc298a27442bf50fbff436a858, type: 2}
-    - target: {fileID: 8459230372638593732, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b871e1fc298a27442bf50fbff436a858, type: 2}
-    - target: {fileID: 8868718674239063442, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b871e1fc298a27442bf50fbff436a858, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1014067503993840497, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
