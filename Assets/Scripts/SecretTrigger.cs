@@ -6,17 +6,11 @@ public class SecretTrigger : MonoBehaviour
 {
     public GameObject trigger;
     public GameObject secretBox;
+    [SerializeField] private PlayerEndingInformation playerInfo;
 
-    // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        playerInfo = GameObject.FindGameObjectWithTag("PlayerInformation").GetComponent<PlayerEndingInformation>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +18,10 @@ public class SecretTrigger : MonoBehaviour
         if (collision.gameObject == secretBox)
         {
             trigger.SetActive(true);
+            if (playerInfo != null)
+            {
+                playerInfo.isLevel2SecretActive = true;
+            }
         }
     }
 }

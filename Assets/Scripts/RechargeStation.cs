@@ -20,6 +20,7 @@ public class RechargeStation : MonoBehaviour
         if (other.CompareTag("Drone"))
         {
             GameObject.Find("Drone1.0").GetComponent<DroneMovement>().updateCheckpointPosition(checkpoint);
+            GameObject.Find("Drone Battery").GetComponent<DroneBattery>().removeRechargeStationInfo();
         }
     }
 }
