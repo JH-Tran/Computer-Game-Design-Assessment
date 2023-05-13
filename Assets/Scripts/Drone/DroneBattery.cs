@@ -17,6 +17,9 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private GameObject screenSaverTexts;
     [SerializeField] private Text screenSaverExtraInformationText;
     [SerializeField] private String[] flavourText;
+    //Recharge Station Reminder
+    [SerializeField] private GameObject rechargeStationInfoCanvas;
+
 
     private ClawGrabber clawGrabber;
     private DroneAttachmentManager droneAttachmentManager;
@@ -40,9 +43,11 @@ public class DroneBattery : MonoBehaviour
         droneMovement = GameObject.Find("Drone1.0").GetComponent<DroneMovement>();
         clawGrabber = GameObject.Find("ClawHitBox").GetComponent<ClawGrabber>();
         droneAttachmentManager = GameObject.Find("DroneAttachments").GetComponent<DroneAttachmentManager>();
+        rechargeStationInfoCanvas = GameObject.Find("RechargeStationReminder");
         TimerReset();
         blackScreen.enabled = false;
         screenSaverTexts.SetActive(false);
+        rechargeStationInfoCanvas.SetActive(false);
     }
 
     void FixedUpdate()
@@ -83,7 +88,7 @@ public class DroneBattery : MonoBehaviour
     }
     private void rechargeBatteryFromZero()
     {
-        Debug.Log(batteryRechargeTime);
+        //Debug.Log(batteryRechargeTime);
         if (batteryRechargeTime > 0)
         {
             batteryRechargeTime -= Time.deltaTime;
@@ -171,8 +176,17 @@ public class DroneBattery : MonoBehaviour
     }
     public void rechargeDroneBatteryFromAny()
     {
+        if (rechargeStationInfoCanvas != null)
+        {
+            rechargeStationInfoCanvas.SetActive(true);
+        }
+
         if (isLookingAtTablet == false && isBatteryRechargeFromZero == false)
         {
+            if (rechargeStationInfoCanvas != null)
+            {
+                Destroy(rechargeStationInfoCanvas);
+            }
             isTimerOn = false;
             if (batteryTime >= batteryMaxTime)
             {
@@ -193,6 +207,13 @@ public class DroneBattery : MonoBehaviour
     {
         StopAllCoroutines();
         screenSaverTexts.SetActive(false);
+    }
+    public void removeRechargeStationInfo()
+    {
+        if (rechargeStationInfoCanvas != null)
+        {
+            rechargeStationInfoCanvas.SetActive(false);
+        }
     }
     public void setPlayerLookingAtTablet(bool lookingAtTablet)
     {
