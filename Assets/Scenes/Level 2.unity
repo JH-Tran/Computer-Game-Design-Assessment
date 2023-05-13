@@ -2658,6 +2658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 5002693104898665956, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1014067503993840497, guid: 43666659bb116634c9039ca85a4a3e0b, type: 3}
@@ -35438,6 +35442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 1333754171}
   secretBox: {fileID: 1632704704}
+  playerInfo: {fileID: 0}
 --- !u!1 &1927539229
 GameObject:
   m_ObjectHideFlags: 0
