@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel1 : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class EndLevel1 : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Drone")
+        if (other.gameObject.tag == "Object")
         {
             SceneManager.LoadScene("Level 2");
         }
