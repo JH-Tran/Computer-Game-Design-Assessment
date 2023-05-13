@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class EndingLevel3 : MonoBehaviour
+public class ReactorLevelConnector : Reactor
 {
     [SerializeField] private PlayerEndingInformation playerInfo;
 
@@ -11,17 +10,14 @@ public class EndingLevel3 : MonoBehaviour
     void Start()
     {
         playerInfo = GameObject.FindGameObjectWithTag("PlayerInformation").GetComponent<PlayerEndingInformation>();
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Drone")
+        if (playerInfo.isLevel2SecretActive == true)
         {
-            if (playerInfo != null)
-            {
-                playerInfo.isLevel3SecretActive = true;
-            }
-            SceneManager.LoadScene("MainMenu");
+            activateReactor();
         }
+        else
+        {
+            deactivateReactor();
+        }
+
     }
 }
