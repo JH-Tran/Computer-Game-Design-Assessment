@@ -1329,7 +1329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5737272287925488190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2249,7 +2249,7 @@ Transform:
   m_Children:
   - {fileID: 6224516840027803948}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6224516839074958647
 MeshFilter:
@@ -3776,7 +3776,7 @@ MonoBehaviour:
   flavourText:
   - Screen Limit Reached!
   - Liquid Dectected!
-  rechargeStationInfoCanvas: {fileID: 0}
+  rechargeStationInfoCanvas: {fileID: 4870868348581823278}
   batteryTime: 0
   isTimerOn: 0
 --- !u!1 &8459222996894140364

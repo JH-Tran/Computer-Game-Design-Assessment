@@ -43,7 +43,6 @@ public class DroneBattery : MonoBehaviour
         droneMovement = GameObject.Find("Drone1.0").GetComponent<DroneMovement>();
         clawGrabber = GameObject.Find("ClawHitBox").GetComponent<ClawGrabber>();
         droneAttachmentManager = GameObject.Find("DroneAttachments").GetComponent<DroneAttachmentManager>();
-        rechargeStationInfoCanvas = GameObject.Find("RechargeStationReminder");
         TimerReset();
         blackScreen.enabled = false;
         screenSaverTexts.SetActive(false);
