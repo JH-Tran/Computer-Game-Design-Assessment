@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class DoNotDestroy : MonoBehaviour
 {
+    [HideInInspector]
+    public string objectID;
     private void Awake()
     {
-        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
-        if(musicObj.Length > 1)
+        objectID = name + transform.position.ToString() + transform.eulerAngles.ToString();
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < Object.FindObjectsOfType<DoNotDestroy>().Length; i++)
         {
-            Destroy(this.gameObject);
+            if (Object.FindObjectsOfType<DoNotDestroy>()[i] != this)
+            {
+                if (Object.FindObjectsOfType<DoNotDestroy>()[i].objectID == objectID)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }

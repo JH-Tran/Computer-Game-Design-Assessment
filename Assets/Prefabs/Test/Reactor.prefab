@@ -132,7 +132,9 @@ MonoBehaviour:
   blackCube: {fileID: 4593877365873774349}
   reactorActiveMaterial: {fileID: 2100000, guid: 72faff15c3a826746bb40caf1413b523, type: 2}
   notReactorActiveMaterial: {fileID: 2100000, guid: a233a98e40270674a984a7712bbfec8f, type: 2}
+  brokenReactorMaterial: {fileID: 2100000, guid: 500904377e527f743ba683d9055dda7c, type: 2}
   isReactorStatic: 0
+  isReactorAvaliable: 1
 --- !u!1 &5922115349452954958
 GameObject:
   m_ObjectHideFlags: 0

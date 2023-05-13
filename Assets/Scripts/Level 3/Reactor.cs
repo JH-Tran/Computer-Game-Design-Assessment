@@ -8,13 +8,19 @@ public class Reactor : MonoBehaviour
     [SerializeField] private GameObject blackCube;
     [SerializeField] private Material reactorActiveMaterial;
     [SerializeField] private Material notReactorActiveMaterial;
+    [SerializeField] private Material brokenReactorMaterial;
     [SerializeField] private bool isReactorStatic = false;
+    [SerializeField] private bool isReactorAvaliable = true;
 
     private void Awake()
     {
         if (isReactorStatic)
         {
             activateReactor();
+        }
+        else if (!isReactorAvaliable)
+        {
+            brokenReactor();
         }
         else
         {
@@ -31,5 +37,10 @@ public class Reactor : MonoBehaviour
     public void deactivateReactor()
     {
         reactorGlass.GetComponent<Renderer>().material = notReactorActiveMaterial;
+    }
+
+    public void brokenReactor()
+    {
+        reactorGlass.GetComponent<Renderer>().material = brokenReactorMaterial;
     }
 }
