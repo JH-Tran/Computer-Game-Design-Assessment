@@ -20,6 +20,8 @@ public class BallMachine : MonoBehaviour
     private float ballCooldown = 1f;
     private float ballCooldownCurrent;
 
+    public AudioSource shootSound;
+
     private void Start()
     {
         currentFeatureIndicator = GameObject.Find("FeatureIcon").GetComponent<Image>();
@@ -58,6 +60,7 @@ public class BallMachine : MonoBehaviour
                 Destroy(ballList[0].gameObject);
                 ballList.RemoveAt(0);
             }
+            shootSound.Play();
             var prefabBall = Instantiate(ball, launchTransform.position, launchTransform.rotation);
             ballList.Add(prefabBall);
             prefabBall.GetComponent<Rigidbody>().velocity = launchTransform.forward * launchVelocity;

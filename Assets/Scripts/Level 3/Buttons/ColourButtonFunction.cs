@@ -8,10 +8,13 @@ public class ColourButtonFunction : MonoBehaviour, IInteractable
     [SerializeField] private Material activeButtonMaterial;
     [SerializeField] private List<GameObject> objectChanger = new List<GameObject>();
 
+    public AudioSource paintSound;
+
     public void Interact()
     {
         //Debug.Log("Interacted with this Button: " + materialType.name);
         GetComponent<Renderer>().material = activeButtonMaterial;
+        paintSound.Play();
         StartCoroutine(resetColourButton(1));
         foreach (GameObject gameO in objectChanger) {
             gameO.GetComponentInChildren<ObjectChangerPlatform>().changeObjectMaterials(materialType);

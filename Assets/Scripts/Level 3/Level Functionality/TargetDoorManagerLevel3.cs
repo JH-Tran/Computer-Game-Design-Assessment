@@ -10,6 +10,9 @@ public class TargetDoorManagerLevel3 : MonoBehaviour
     [SerializeField] private GameObject[] doorLightIndicator;
     [SerializeField] Material activeIndicator;
 
+    public AudioSource doorSound;
+    public bool isOpen = false;
+
     private void Start()
     {
         doorAnimator = gameObject.GetComponent<Animator>();
@@ -23,6 +26,11 @@ public class TargetDoorManagerLevel3 : MonoBehaviour
         if (target1 && target2 && target3)
         {
             doorAnimator.SetTrigger("triggerDoor");
+            if (isOpen == false)
+            {
+                doorSound.Play();
+                isOpen = true;
+            }
         }
     }
     public void setTargetTrue(int targetID)

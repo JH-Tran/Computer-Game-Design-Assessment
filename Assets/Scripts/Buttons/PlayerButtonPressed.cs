@@ -11,6 +11,8 @@ public class PlayerButtonPressed : MonoBehaviour
 
     public GameObject door2;
     public Animator door2Anim;
+    public bool soundPlayed = false;
+    public AudioSource doorSound;
 
     // Start is called before the first frame update
     void Start()

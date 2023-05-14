@@ -10,6 +10,7 @@ public class TargetColor : MonoBehaviour
     public bool isOpen = false;
     private bool condition = true;
     public InvisDoor1 lockedDoor;
+    public AudioSource hitSound;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class TargetColor : MonoBehaviour
                 lockedDoor.lightsGreen += 1;
                 isOpen = true;
                 x = 2;
+                hitSound.Play();
                 if (condition == true)
                 {
                     condition = false;

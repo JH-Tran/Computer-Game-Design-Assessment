@@ -8,6 +8,7 @@ public class InvisDoor1 : MonoBehaviour
     public int greenLightsNeeded;
     private bool isDoorOpen = false;
     public Animator doorAnim;
+    public AudioSource doorSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class InvisDoor1 : MonoBehaviour
     {
         if (lightsGreen == greenLightsNeeded && isDoorOpen == false)
         {
+            doorSound.Play();
             doorAnim.SetBool("isOpen", true);
             isDoorOpen = true;
         }

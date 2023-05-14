@@ -9,6 +9,7 @@ public class ButtonPressed : MonoBehaviour
     Renderer rend;
     public bool isOpen = false;
     public GameObject e;
+    public AudioSource buttonSound;
     private bool condition = true;
 
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class ButtonPressed : MonoBehaviour
         {
             isOpen = true;
             x = 2;
+            buttonSound.Play();
             if (condition == true)
             {
                 e.SetActive(true);
