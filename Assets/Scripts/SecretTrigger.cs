@@ -7,6 +7,7 @@ public class SecretTrigger : MonoBehaviour
     public GameObject trigger;
     public GameObject secretBox;
     [SerializeField] private PlayerEndingInformation playerInfo;
+    public AudioSource secretSound;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class SecretTrigger : MonoBehaviour
     {
         if (collision.gameObject == secretBox)
         {
+            secretSound.Play();
             trigger.SetActive(true);
             if (playerInfo != null)
             {

@@ -9,6 +9,8 @@ public class TargetCount : MonoBehaviour
     [SerializeField] Material targetHitMaterial;
     [SerializeField] GameObject[] TargetObject;
 
+    public AudioSource hitSound;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -17,6 +19,7 @@ public class TargetCount : MonoBehaviour
             {
                 i.GetComponent<Renderer>().material = targetHitMaterial;
             }
+            hitSound.Play();
             door.setTargetTrue(targetId);
         }
     }

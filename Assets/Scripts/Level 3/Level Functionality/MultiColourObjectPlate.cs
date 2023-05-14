@@ -15,6 +15,10 @@ public class MultiColourObjectPlate : MonoBehaviour
 
     [SerializeField] private GameObject[] basketBorder;
 
+    public AudioSource basketIn;
+    public AudioSource doorSound;
+    private bool soundIsPlayed = false;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Object"))
@@ -27,6 +31,12 @@ public class MultiColourObjectPlate : MonoBehaviour
                     foreach (GameObject i in basketBorder)
                     {
                         i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
+                    }
+                    if (soundIsPlayed == false)
+                    {
+                        basketIn.Play();
+                        doorSound.Play();
+                        soundIsPlayed = true;
                     }
                 }
             }
@@ -42,6 +52,12 @@ public class MultiColourObjectPlate : MonoBehaviour
                     {
                         i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
                     }
+                    if (soundIsPlayed == false)
+                    {
+                        basketIn.Play();
+                        doorSound.Play();
+                        soundIsPlayed = true;
+                    }
                 }
             }
             else if (other.GetComponent<Renderer>().material.name == redMaterial.name + " (Instance)")
@@ -51,7 +67,12 @@ public class MultiColourObjectPlate : MonoBehaviour
                     foreach (Animator redAnimator in redDoorAnimator)
                     {
                         redAnimator.SetBool("isDoorOpen", true);
-
+                    }
+                    if (soundIsPlayed == false)
+                    {
+                        basketIn.Play();
+                        doorSound.Play();
+                        soundIsPlayed = true;
                     }
                 }
                 if (other.GetComponent<Renderer>().material.name != basketBorder[0].GetComponent<Renderer>().material.name + " (Instance)")
@@ -59,6 +80,12 @@ public class MultiColourObjectPlate : MonoBehaviour
                     foreach (GameObject i in basketBorder)
                     {
                         i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
+                    }
+                    if (soundIsPlayed == false)
+                    {
+                        basketIn.Play();
+                        doorSound.Play();
+                        soundIsPlayed = true;
                     }
                 }
             }
@@ -76,6 +103,7 @@ public class MultiColourObjectPlate : MonoBehaviour
                 {
                     i.GetComponent<Renderer>().material = defaultMaterial;
                 }
+                soundIsPlayed = false;
             }
             else if (other.GetComponent<Renderer>().material.name == yellowMaterial.name + " (Instance)")
             {
@@ -84,6 +112,7 @@ public class MultiColourObjectPlate : MonoBehaviour
                 {
                     i.GetComponent<Renderer>().material = defaultMaterial;
                 }
+                soundIsPlayed = false;
             }
             else if (other.GetComponent<Renderer>().material.name == redMaterial.name + " (Instance)")
             {
@@ -94,6 +123,11 @@ public class MultiColourObjectPlate : MonoBehaviour
                     {
                         i.GetComponent<Renderer>().material = defaultMaterial;
                     }
+                }
+                if (soundIsPlayed == true)
+                {
+                    doorSound.Play();
+                    soundIsPlayed = false;
                 }
             }
         }

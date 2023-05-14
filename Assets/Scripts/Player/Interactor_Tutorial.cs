@@ -26,6 +26,9 @@ public class Interactor_Tutorial : Interactor
     public GameObject playerButton;
     public Animator playerButtonAnim;
     public PlayerButtonPressed playerButtonPressed;
+    public AudioSource pickUp;
+    public AudioSource doorSound;
+    public AudioSource buttonSound;
 
     //Change Button sign when interacted
     [SerializeField] GameObject pressButtonSign;
@@ -54,6 +57,7 @@ public class Interactor_Tutorial : Interactor
             {
                 if (hitInfo.transform.gameObject.tag == "Remote")
                 {
+                    pickUp.Play();
                     pickedup = true;
                     //Removes E
                     GameObject.FindGameObjectWithTag("Part1").SetActive(false);
@@ -66,6 +70,7 @@ public class Interactor_Tutorial : Interactor
                 {
                     if (playerButtonPressed.isOpen == false)
                     {
+                        doorSound.Play();
                         playerButtonPressed.isOpen = true;
                         playerButtonPressed.x = 2;
                         playerButtonPressed.door2Anim.SetBool("isOpen", true);

@@ -11,7 +11,9 @@ public class ColourDoorObjectPlate : MonoBehaviour
     [SerializeField] private GameObject[] basketBorder;
     [SerializeField] private Material defaultMaterial;
     [SerializeField] private bool isBasketChangingColour = true;
-
+    public AudioSource basketIn;
+    public bool isAudioPlayed = false;
+    public AudioSource openDoor;
 
     private void OnTriggerStay(Collider other)
     {
@@ -20,6 +22,10 @@ public class ColourDoorObjectPlate : MonoBehaviour
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 doorAnimator.SetBool("isDoorOpen", true);
+                if (isAudioPlayed == false)
+                {
+                    openDoor.Play();
+                }
             }
             if (isBasketChangingColour == true)
             {
@@ -29,6 +35,11 @@ public class ColourDoorObjectPlate : MonoBehaviour
                     {
                         i.GetComponent<Renderer>().material = other.GetComponent<Renderer>().material;
                     }
+                }
+                if (isAudioPlayed == false)
+                {
+                    basketIn.Play();
+                    isAudioPlayed = true;
                 }
             }
         }
@@ -41,11 +52,13 @@ public class ColourDoorObjectPlate : MonoBehaviour
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 doorAnimator.SetBool("isDoorOpen", false);
+                isAudioPlayed = false;
             }
             foreach (GameObject i in basketBorder)
             {
                 i.GetComponent<Renderer>().material = defaultMaterial;
             }
         }
+        isAudioPlayed = false;
     }
 }

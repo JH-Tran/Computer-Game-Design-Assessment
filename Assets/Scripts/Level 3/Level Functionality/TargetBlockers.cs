@@ -8,6 +8,8 @@ public class TargetBlockers : MonoBehaviour
     [SerializeField] Material targetHitMaterial;
     [SerializeField] GameObject[] TargetObject;
 
+    public AudioSource hitSound;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -16,6 +18,7 @@ public class TargetBlockers : MonoBehaviour
             {
                 i.GetComponent<Renderer>().material = targetHitMaterial;
             }
+            hitSound.Play();
             blocker.SetActive(false);
         }
     }

@@ -17,6 +17,8 @@ public class ClawGrabber : MonoBehaviour
     public bool isMagnetActive = false;
     public bool isMagnetHoldingObject = false;
     public bool isObjectFound = false;
+    public AudioSource grabSound;
+    public AudioSource releaseSound;
     private float autoOffGrab = 2;
     private List<GameObject> objectGrabbed = new List<GameObject>();
 
@@ -37,6 +39,7 @@ public class ClawGrabber : MonoBehaviour
             isObjectFound = true;
             if (isMagnetActive == true && isMagnetHoldingObject == false)
             {
+                grabSound.Play();
                 currentFeatureIndicator.color = Color.green;
                 other.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
                 other.transform.parent = gameObject.transform;
@@ -91,6 +94,7 @@ public class ClawGrabber : MonoBehaviour
                 objectGrabbed[i].transform.parent = null;
             }
             objectGrabbed.Clear();
+            releaseSound.Play();
             isMagnetHoldingObject = false;
         }
         isMagnetActive = false;

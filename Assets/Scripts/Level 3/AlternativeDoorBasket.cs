@@ -5,6 +5,8 @@ using UnityEngine;
 public class AlternativeDoorBasket : ColourDoorObjectPlate
 {
     [SerializeField] private GameObject reactor;
+    public AudioSource secretTrigger;
+    private bool soundIsPlayed = false;
 
     private void OnTriggerStay(Collider other)
     {
@@ -13,6 +15,11 @@ public class AlternativeDoorBasket : ColourDoorObjectPlate
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 reactor.GetComponent<Reactor>().activateReactor();
+                if (soundIsPlayed == false)
+                {
+                    secretTrigger.Play();
+                    soundIsPlayed = true;
+                }
             }
         }
     }
@@ -23,6 +30,7 @@ public class AlternativeDoorBasket : ColourDoorObjectPlate
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
                 reactor.GetComponent<Reactor>().deactivateReactor();
+                soundIsPlayed = false;
             }
         }
     }

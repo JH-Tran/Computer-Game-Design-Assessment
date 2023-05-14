@@ -8,6 +8,7 @@ public class mainMenu : MonoBehaviour
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject levelSelectorUI;
     [SerializeField] private GameObject graphicSettingUI;
+    public AudioSource menuClick;
 
     public void Awake()
     {
@@ -18,8 +19,6 @@ public class mainMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
-    
 
     public void PlayGame()
     {
@@ -34,17 +33,20 @@ public class mainMenu : MonoBehaviour
         mainMenuUI.SetActive(false);
         levelSelectorUI.SetActive(true);
         graphicSettingUI.SetActive(false);
+        menuClick.Play();
     }
     public void LoadGraphicSettingUI()
     {
         mainMenuUI.SetActive(false);
         levelSelectorUI.SetActive(false);
         graphicSettingUI.SetActive(true);
+        menuClick.Play();
     }
     public void ExitToMainMenu()
     {
         mainMenuUI.SetActive(true);
         levelSelectorUI.SetActive(false);
         graphicSettingUI.SetActive(false);
+        menuClick.Play();
     }
 }

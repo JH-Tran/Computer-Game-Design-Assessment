@@ -9,6 +9,8 @@ public class DoorButtonSensor : MonoBehaviour
 
     public GameObject playerButton;
     public Animator playerButtonAnim;
+    public bool soundPlayed = false;
+    public AudioSource doorSound;
 
     public ButtonPressed button;
     // Start is called before the first frame update
@@ -25,10 +27,16 @@ public class DoorButtonSensor : MonoBehaviour
         {
             doorAnim.SetBool("isOpen", true);
             playerButtonAnim.SetBool("isActive", true);
+            if(soundPlayed == false)
+            {
+                doorSound.Play();
+                soundPlayed = true;
+            }
         }
         else
         {
             doorAnim.SetBool("isOpen", false);
+            soundPlayed = false;
         }
     }
 }

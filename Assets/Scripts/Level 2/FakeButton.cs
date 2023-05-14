@@ -9,6 +9,7 @@ public class FakeButton : MonoBehaviour
     Renderer rend;
     public bool isOpen = false;
     private bool condition = true;
+    public AudioSource buttonSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class FakeButton : MonoBehaviour
         {
             isOpen = true;
             x = 2;
+            buttonSound.Play();
             if (condition == true)
             {
                 condition = false;

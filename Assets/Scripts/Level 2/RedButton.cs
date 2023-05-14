@@ -11,6 +11,8 @@ public class RedButton : MonoBehaviour, IInteractable
     Renderer rend;
     public bool isPressed = false;
 
+    public AudioSource buttonSound;
+
     void Start()
     {
         x = 1;
@@ -26,6 +28,7 @@ public class RedButton : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        buttonSound.Play();
         if (isPressed == false)
         {
             isPressed = true;
