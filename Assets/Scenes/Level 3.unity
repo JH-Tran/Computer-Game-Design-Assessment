@@ -206,7 +206,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyMaterial: {fileID: 2100000, guid: 500904377e527f743ba683d9055dda7c, type: 2}
   doorAnimator: {fileID: 1583271605}
-  basketBorder: []
+  basketBorder:
+  - {fileID: 497478028}
+  - {fileID: 1193698752}
+  - {fileID: 980456399}
+  - {fileID: 1782133204}
   defaultMaterial: {fileID: 2100000, guid: 500904377e527f743ba683d9055dda7c, type: 2}
   isBasketChangingColour: 0
   reactor: {fileID: 763808969}
