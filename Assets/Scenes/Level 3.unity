@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6479504}
   - component: {fileID: 6479505}
-  - component: {fileID: 6479506}
   - component: {fileID: 6479507}
   - component: {fileID: 6479508}
   - component: {fileID: 6479509}
@@ -177,26 +176,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.169913, y: 0.20584969, z: 1.2187604}
   m_Center: {x: -0.03826797, y: 0.020685852, z: 0.04378883}
---- !u!114 &6479506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6479503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ae869140f1f394986b7aaf1bb3c0dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyMaterial: {fileID: 2100000, guid: 500904377e527f743ba683d9055dda7c, type: 2}
-  doorAnimator: {fileID: 1583271605}
-  basketBorder: []
-  defaultMaterial: {fileID: 2100000, guid: 500904377e527f743ba683d9055dda7c, type: 2}
-  isBasketChangingColour: 1
-  basketIn: {fileID: 0}
-  isAudioPlayed: 0
-  openDoor: {fileID: 0}
 --- !u!114 &6479507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14435,7 +14414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051905149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.009999971, y: -0.32862854, z: 0.030000051}
+  m_LocalPosition: {x: -0.009999971, y: -0.37, z: -0.02}
   m_LocalScale: {x: 1.4438736, y: 0.36846793, z: 1.4438736}
   m_ConstrainProportionsScale: 0
   m_Children: []

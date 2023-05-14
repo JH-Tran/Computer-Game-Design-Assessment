@@ -6,7 +6,7 @@ public class ColourDoorObjectPlate : MonoBehaviour
 {
     //If the object has the same material as the door the door "opens".
     public Material keyMaterial;
-    [SerializeField] private Animator doorAnimator;
+    public Animator doorAnimator;
     //BasketColour
     [SerializeField] private GameObject[] basketBorder;
     [SerializeField] private Material defaultMaterial;

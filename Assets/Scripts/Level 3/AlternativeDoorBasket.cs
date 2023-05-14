@@ -14,6 +14,7 @@ public class AlternativeDoorBasket : ColourDoorObjectPlate
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
+                doorAnimator.SetBool("isDoorOpen", true);
                 reactor.GetComponent<Reactor>().activateReactor();
                 if (soundIsPlayed == false)
                 {
@@ -29,6 +30,7 @@ public class AlternativeDoorBasket : ColourDoorObjectPlate
         {
             if (other.GetComponent<Renderer>().material.name == keyMaterial.name + " (Instance)")
             {
+                doorAnimator.SetBool("isDoorOpen", false);
                 reactor.GetComponent<Reactor>().deactivateReactor();
                 soundIsPlayed = false;
             }
