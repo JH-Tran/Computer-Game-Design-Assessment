@@ -19,12 +19,14 @@ public class DroneBattery : MonoBehaviour
     [SerializeField] private String[] flavourText;
     //Recharge Station Reminder
     [SerializeField] private GameObject rechargeStationInfoCanvas;
+    //Low Battery Indicator
+    [SerializeField] private Animator lowBatteryAnim;
 
 
     private ClawGrabber clawGrabber;
     private DroneAttachmentManager droneAttachmentManager;
     //Using battery to move drone around. 90 max time and 3 cooldown (SUBJECT TO CHANGE)
-    private float batteryMaxTime = 90f;
+    private float batteryMaxTime = 90;
     [SerializeField] private float batteryTime;
     //Recharing Battery
     private float batteryCooldownTime = 3f;
@@ -67,10 +69,14 @@ public class DroneBattery : MonoBehaviour
         {
             ChangeDroneMovement(isLookingAtTablet);
             blackScreen.enabled = false;
-            if (droneMovement.getDroneVelocity() > 0.1)
+            if (droneMovement.getDroneVelocity() > 0.1f)
             {
                 batteryTime -= Time.deltaTime;
                 batteryInner.fillAmount = batteryTime / batteryMaxTime;
+            }
+            if ((batteryTime/batteryMaxTime) <= 0.2f && (batteryTime / batteryMaxTime) > 0)
+            {
+                lowBatteryAnim.SetBool("isBatteryLow", true);
             }
         }
         else
@@ -96,6 +102,7 @@ public class DroneBattery : MonoBehaviour
                 batteryRechargeTime = 0;
             }
             isScreenSaverVisible();
+            lowBatteryAnim.SetBool("isBatteryLow", false);
         }
         else
         {
@@ -116,12 +123,14 @@ public class DroneBattery : MonoBehaviour
         droneCamera.changeDroneState(isTimerOn);
         droneMovement.changeDroneState(isTimerOn);
         droneMovement.changeDroneGravity(false);
+        lowBatteryAnim.SetBool("isBatteryLow", false);
     }
     //Disable drone base on a different cooldown that can be used by other scripts
     public void DisableDrone(float cooldown)
     {
         batteryInner.fillAmount = 0;
         batteryTime = 0;
+        lowBatteryAnim.SetBool("isBatteryLow", false);
         blackScreen.enabled = true;
         isTimerOn = false;
         if (droneAttachmentManager.getClawActive())
@@ -137,6 +146,7 @@ public class DroneBattery : MonoBehaviour
     private void DisableDrone()
     {
         batteryTime = 0;
+        lowBatteryAnim.SetBool("isBatteryLow", false);
         blackScreen.enabled = true;
         isTimerOn = false;
         droneCamera.changeDroneState(isTimerOn);
@@ -196,6 +206,7 @@ public class DroneBattery : MonoBehaviour
                 batteryTime += rechargeSpeed * Time.deltaTime;
             }
             batteryInner.fillAmount = batteryTime / batteryMaxTime;
+            lowBatteryAnim.SetBool("isBatteryLow", false);
         }
         else if (isLookingAtTablet == true && batteryRechargeTime <= 0 && isBatteryRechargeFromZero == false)
         {

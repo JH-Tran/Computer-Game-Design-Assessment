@@ -2412,33 +2412,9 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1992077036386157512, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_Size.x
-      value: 0.025121307
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992077036386157512, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_Size.y
-      value: 0.037737284
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992077036386157512, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_Center.x
-      value: 0.00042059305
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992077036386157512, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_Center.y
-      value: 0.000115273
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992077036386157512, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_Name
       value: Drone1.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781883058251520335, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_RootOrder
@@ -2483,14 +2459,6 @@ PrefabInstance:
     - target: {fileID: 5266812304262562805, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895698186810406, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: checkpointTransform
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664895699530280564, guid: cb2e42389934ce1449e0f7d55184ecde, type: 3}
-      propertyPath: m_Convex
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -6878,18 +6846,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3000987364893492143, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 50.85193
-      objectReference: {fileID: 0}
-    - target: {fileID: 3000987364893492143, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.2062988
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224516839074958640, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: enableHeadBob
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6224516839074958646, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6941,30 +6897,6 @@ PrefabInstance:
     - target: {fileID: 6224516839074958650, guid: ff564b8f644b26145b297d14102eed18, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996456806720, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996654260926, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2cf5ab9fd336c1740846f256bb481c71, type: 3}
-    - target: {fileID: 8459222996655996927, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: flavourText.Array.data[0]
-      value: Out Of Battery!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222996894140364, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8459222998055539293, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8490978147731434980, guid: ff564b8f644b26145b297d14102eed18, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.2062988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:

@@ -11,31 +11,31 @@ public class SettingsMenu : MonoBehaviour
     {
         if (QualitySettings.GetQualityLevel() == 2)
         {
-            currentGraphicsQuality.text = currentGraphicsBasicText + "Good";
+            currentGraphicsQuality.text = currentGraphicsBasicText + "High";
         }
         else if (QualitySettings.GetQualityLevel() == 1)
         {
-            currentGraphicsQuality.text = currentGraphicsBasicText + "Low";
+            currentGraphicsQuality.text = currentGraphicsBasicText + "Medium";
         }
         else if (QualitySettings.GetQualityLevel() == 0)
         {
-            currentGraphicsQuality.text = currentGraphicsBasicText + "Fastest";
+            currentGraphicsQuality.text = currentGraphicsBasicText + "Low";
         }
 
     }
     public void goodGraphics()
     {
         QualitySettings.SetQualityLevel(2, true);
-        currentGraphicsQuality.text = currentGraphicsBasicText + "Good";
+        currentGraphicsQuality.text = currentGraphicsBasicText + "High";
     }
     public void lowGraphics()
     {
         QualitySettings.SetQualityLevel(1, true);
-        currentGraphicsQuality.text = currentGraphicsBasicText + "Low";
+        currentGraphicsQuality.text = currentGraphicsBasicText + "Medium";
     }
     public void fastestGraphics()
     {
         QualitySettings.SetQualityLevel(0, true);
-        currentGraphicsQuality.text = currentGraphicsBasicText + "Fastest";
+        currentGraphicsQuality.text = currentGraphicsBasicText + "Low";
     }
 }

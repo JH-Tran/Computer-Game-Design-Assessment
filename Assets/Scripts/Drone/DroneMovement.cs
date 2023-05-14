@@ -60,6 +60,8 @@ public class DroneMovement : MonoBehaviour
     {
         gameObject.transform.position = checkpointTransform.position;
         gameObject.transform.rotation = checkpointTransform.rotation;
+        droneRigidbody.velocity = Vector3.zero;
+        droneRigidbody.angularVelocity = Vector3.zero;
     }
     public void updateCheckpointPosition(Transform updatedTransform) 
     {

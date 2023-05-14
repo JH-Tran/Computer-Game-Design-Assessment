@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 390498556}
   - component: {fileID: 390498555}
   m_Layer: 5
-  m_Name: Low Graphics
+  m_Name: Medium Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,8 +1062,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025431313, y: -80.40001}
-  m_SizeDelta: {x: 191.77, y: 30}
+  m_AnchoredPosition: {x: 0, y: -81}
+  m_SizeDelta: {x: 166.7936, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390498555
 MonoBehaviour:
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good Graphics
+  m_text: High
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1871,7 +1871,7 @@ GameObject:
   - component: {fileID: 989848815}
   - component: {fileID: 989848814}
   m_Layer: 5
-  m_Name: Fastest Graphics
+  m_Name: Low Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,8 +1895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025431313, y: -130.4}
-  m_SizeDelta: {x: 191.77, y: 30}
+  m_AnchoredPosition: {x: 0, y: -133}
+  m_SizeDelta: {x: 166.7936, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989848814
 MonoBehaviour:
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Low Graphics
+  m_text: Medium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2603,7 +2603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Current Graphics: Good'
+  m_Text: 'Current Graphics: High'
 --- !u!222 &1406829314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3076,7 +3076,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499463772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3599,7 +3599,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Low and Fastest Graphics Setting Will Effect Quality and Lighting
+  m_Text: Medium and Low Graphics Setting Will Effect Game Quality and Lighting
 --- !u!222 &1605264656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3890,7 +3890,7 @@ GameObject:
   - component: {fileID: 1720145521}
   - component: {fileID: 1720145520}
   m_Layer: 5
-  m_Name: Good
+  m_Name: High Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3914,8 +3914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025431313, y: -32.40001}
-  m_SizeDelta: {x: 191.7699, y: 30}
+  m_AnchoredPosition: {x: 0, y: -28}
+  m_SizeDelta: {x: 166.7935, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720145520
 MonoBehaviour:
@@ -4702,7 +4702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fastest Graphics
+  m_text: Low
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
